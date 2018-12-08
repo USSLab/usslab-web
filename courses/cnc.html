@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <base href="/" />
+    <!-- Site Properties -->
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+
+    <style type="text/css">
+        .hidden.menu {
+            display: none;
+        }
+        
+        .largeheader {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+        
+        .ui.vertical.stripe {
+            padding: 3em 0em;
+        }
+        
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+        
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
+        
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+        
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
+        
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+        
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+        
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+        
+        .footer.segment {
+            padding: 5em 0em;
+        }
+        
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+        
+        .top.fixed.menu .ftoc.item {
+            display: none;
+        }
+        
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .logo,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+            .masthead.segment {
+                min-height: 350px;
+            }
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+        
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .top.fixed.menu .item,
+            .top.fixed.menu .menu {
+                display: none;
+            }
+            .top.fixed.menu .ftoc.item {
+                display: block;
+            }
+        }
+        
+        .logo.image {
+            width: 50px;
+            margin-right: 1px;
+        }
+        
+        .galary {
+            margin-top: 20px;
+        }
+        
+        .swiper-container {
+            width: 100%;
+            height: 600px;
+        }
+        
+        .beian:hover {
+            color: white;
+        }
+        
+        .beian {
+            color: grey;
+        }
+    </style>
+
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="semantic/dist/components/visibility.js"></script>
+    <script src="semantic/dist/components/sidebar.js"></script>
+    <script src="semantic/dist/components/transition.js"></script>
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+    <script>
+        $(document)
+            .ready(function() {
+
+                // fix menu when passed
+                $('.secondary.menu')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function() {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function() {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    speed: 1000,
+                    centeredSlides: true,
+                    autoplay: 2500,
+                });
+
+            });
+    </script>
+</head>
+
+<body>
+
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="ftoc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="header item">
+                <img class="logo" src="images/logo.png" /> USSLab.
+            </a>
+            <a class="item" href="/">Home</a>
+            <a class="item" href="projects/">Projects</a>
+            <a class="item" href="publications.html">Publications</a>
+            <a class="item" href="member/">Members</a>
+            <a class="item active">Courses</a>
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+            <a class="right item" href="/contact.html">Contact us</a>
+
+
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <div class="item">
+            <a class="ui logo icon image">
+                <img src="images/logo.png" />
+            </a>
+            <a href="#"><b>USSLab.</b></a>
+        </div>
+        <a class="item" href="/">Home</a>
+        <a class="item" href="projects/">Projects</a>
+        <a class="item" href="publications.html">Publications</a>
+        <a class="item" href="member/">Members</a>
+        <a class="item active">Courses</a>
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+        <a class="right item" href="/contact.html">Contact us</a>
+    </div>
+
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui inverted vertical center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="ui logo icon image">
+                        <img src="images/logo.png" />
+                    </a>
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+                    <a class="item" href="/">Home</a>
+                    <a class="item" href="projects/">Projects</a>
+                    <a class="item" href="publications.html">Publications</a>
+                    <a class="item" href="member/">Members</a>
+                    <a class="item active">Courses</a>
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+                    <a class="right item" href="/contact.html">Contact us</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ui vertical stripe container segment">
+            <h1 class="ui header">Computer Network and Communication</h1>
+            <div class="ui divider"></div>
+            <p> <b> •	Course Description.</b> This course provides an introduction to fundamental concepts in the design and implementation of computer communication networks, their protocols, and applications. Topics to be covered include: layered network architectures, applications, network programming interfaces (e.g., sockets), transport, physical media, data link protocols, local area networks and network routing. Examples will be drawn primarily from the Internet (e.g., TCP, UDP, and IP) protocol suite. <br/>
+                <br/>
+                <b> •	Course Specifics.</b>       <br/>
+                -      Place and Time: Tuesday & Thursday. 9:50 – 11:25 (教4-401)        <br/>
+                -      Instructor: Dr. Wenyuan Xu (wyxu@zju.edu.cn)       <br/>
+                -      TA:  Li, Chaohao (李超豪)  (664748013@qq.com)       <br/>
+                -      Announcements and assignments are posted in QQ group (315218514). Please use your real name when applying.
+                <br/>      <br/>
+
+                <b> •	Prerequisites.  </b>A rudimentary understanding of computer architecture, operating systems, and probability would be helpful.
+                <br/>          <br/>
+
+                <b> •	Textbooks:  </b>    <br/>
+                &emsp;  -- <b>Required:</b>  ``Computer Networking: A Top-Down Approach,''  by Jim Kurose and Keith Ross, 4th , 5th or 6th Edition. <br/>
+                &emsp;          -- <b>Recommended References:</b>  <br/>
+                &emsp;      &emsp;         o	``Computer Networks: A Systems Approach,'' by Larry L. Peterson and Bruce S. Davie.
+
+                <br/>  <br/>
+                <b> •	Expected Work. </b>    <br/>
+                -   <b> Homework (20%): </b> There will be five homework assignments. Not all homework assignments will be graded, but doing your homework will definitely help you with the exams.<br/>
+                -   <b> Six+ quizzes (10%):</b>  At least six quizzes will be given in class, and they will be based on homework assignments and slides. So do your homework and review the slides before the quizzes! Yes, I only count the best 90% of all quizzes and one cheat sheet is allowed.<br/>
+                -   <b> Laboratory Projects (20%): </b>  There will be two laboratory projects.<br/>
+                -   <b> Final (50%): </b> The final exam is closed book, and comprehensive. Any material covered in class is a fair game. But I reserve the right to examine your ability to go beyond the basic course materials. You are allowed to bring 4-page (double-sided) <b> hand-written</b>  cheat sheets.<br/><br/>
+
+                <b> •	Project Submission Policy</b>    <br/>
+                All the laboratory projects have to be done <b>individually</b>. DO NOT copy from others! A hardcopy of project reports must be submitted<b> in class. I accept late submission, but will take 10% off per day up to 4 days! </b> <br/>  <br/>
+
+                If you have questions regarding the grading of your projects or exams, you must come to see the instructor within <b>two weeks </b>after the date your projects or exams have been returned to you. If you believe that your projects or exams have been lost, please notify us as soon as possible (within two weeks). I am not responsible for missing projects or exams two weeks after they have been returned.
+
+                <br/>  <br/>
+
+                <b> •	Email Policies </b>    <br/>
+                -      Make sure you put your course (ZJU-CN) in the subject of the message. I get roughly 400 spam messages a day. If you don't, your mail may be tagged as spam, which means I would not get it.  <br/>
+
+                -      Remember that it is not my emergency if you need help at the last minute. I may check my emails in time to help you make a deadline, but this may not necessarily be the case. Even if I check my emails, I may not have the time to reply if it's an involved problem. Bottom line: don't rely on emails!
+                <br/>  <br/>
+
+                <b> •	Integrity Policies.  </b>    PLEASE DO YOUR OWN WORK! You get no return for your time and money spent at the university by cheating. As such, cheating and plagiarism will not be tolerated, will be reported to the proper University officials, and will be followed up on.
+                <br/>     <br/>
+
+                <b> •	Permitted Collaboration:  </b>    <br/>The following items are encouraged and allowed at all times for all students in this class:<br/>
+                &emsp; o	Discussion of material covered during lecture or in handouts    <br/>
+                &emsp; o	Discussion of the requirements of an assignment<br/>
+                &emsp; o	Discussion of the use of tools<br/>
+                &emsp; o	Discussion of general approaches to solving problems<br/>
+                &emsp; o	Discussion between a student and the instructor for the course<br/><br/>
+
+                <b> •	Unpermitted Collaboration:  </b>All submissions must represent original, independent work. Some examples of activities that do not represent original work include:<br/>
+                o	   &emsp; Copying solutions from others. In particular, do not ask anyone to provide a copy of his or her solution or, conversely, give a solution to another student who requests it. Use of solutions posted to websites, such as at other universities, is prohibited.<br/>
+                o	   &emsp; Using work from past semesters. The use of another student's solution or the posted class solutions from a previous semester constitutes a violation. We use a sophisticated tool that cross-checks every assignment against every other assignment submitted this year, and previous years.<br/>
+                o	   &emsp; Studying another student's solution. Do not read another solution submission whether in electronic or printed form, even to "check answers."<br/><br/>
+                &emsp; <i>This section was based on a handout from Professor Nick McKeown, who teaches CS224A at Stanford.</i><br/><br/>
+
+                <img width="50%" src="images/cnc_schedule.png" />
+                <br/>
+
+
+
+            </p>
+            <br/>
+        </div>
+
+        <div class="ui inverted vertical footer segment">
+            <div class="ui center aligned container">
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+                <div class="ui horizontal inverted small divided link list">
+                    Copyright &copy; USS Lab. 2016-2017
+                    <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+                    <br/> All Right Reserved.
+                    <br/>
+                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+                        <b>浙ICP备16045554号-1</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

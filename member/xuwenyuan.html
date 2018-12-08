@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+    <!-- Standard Meta -->
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <base href="/" />
+
+    <!-- Site Properties -->
+
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+
+
+
+    <style type="text/css">
+
+        .hidden.menu {
+
+            display: none;
+
+        }
+
+        
+
+        .largeheader {
+
+            margin-top: 3em;
+
+            margin-bottom: 0em;
+
+            font-size: 4em;
+
+            font-weight: normal;
+
+        }
+
+        
+
+        .ui.vertical.stripe {
+
+            padding: 3em 0em;
+
+        }
+
+        
+
+        .ui.vertical.stripe h3 {
+
+            font-size: 2em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .button+h3,
+
+        .ui.vertical.stripe p+h3 {
+
+            margin-top: 3em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .floated.image {
+
+            clear: both;
+
+        }
+
+        
+
+        .ui.vertical.stripe p {
+
+            font-size: 1.33em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .horizontal.divider {
+
+            margin: 3em 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment {
+
+            padding: 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment .grid .column {
+
+            padding-top: 5em;
+
+            padding-bottom: 5em;
+
+        }
+
+        
+
+        .footer.segment {
+
+            padding: 5em 0em;
+
+        }
+
+        
+
+        .secondary.pointing.menu .toc.item {
+
+            display: none;
+
+        }
+
+        
+
+        .top.fixed.menu .ftoc.item {
+
+            display: none;
+
+        }
+
+        
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .secondary.pointing.menu .item,
+
+            .secondary.pointing.menu .logo,
+
+            .secondary.pointing.menu .menu {
+
+                display: none;
+
+            }
+
+            .secondary.pointing.menu .toc.item {
+
+                display: block;
+
+            }
+
+            .masthead.segment {
+
+                min-height: 350px;
+
+            }
+
+            .masthead h1.ui.header {
+
+                font-size: 2em;
+
+                margin-top: 1.5em;
+
+            }
+
+            .masthead h2 {
+
+                margin-top: 0.5em;
+
+                font-size: 1.5em;
+
+            }
+
+        }
+
+        
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .top.fixed.menu .item,
+
+            .top.fixed.menu .menu {
+
+                display: none;
+
+            }
+
+            .top.fixed.menu .ftoc.item {
+
+                display: block;
+
+            }
+
+        }
+
+        
+
+        .logo.image {
+
+            width: 50px;
+
+            margin-right: 1px;
+
+        }
+
+        .ui.bib.button{
+            margin: 0;
+            padding: 0.2em 0.2em 0.2em 0.2em;
+            border: 0;
+            font-size: 80%;
+            vertical-align: baseline;
+        }
+        .ui.pdf.button{
+            margin: 0;
+            padding: 0.2em 0.2em 0.2em 0.2em;
+            border: 0;
+            font-size: 80%;
+            color: rgba(0,0,0,0.6);
+            vertical-align: baseline;
+        }
+        .ui.pdf.button:hover{
+            margin: 0;
+            padding: 0.2em 0.2em 0.2em 0.2em;
+            border: 0;
+            font-size: 80%;
+            color: rgba(0,0,0,0.87);
+            vertical-align: baseline;
+        }
+        .bibQuote{
+            padding: 1em 2em 1em 2em;
+            margin: 10px;
+            border-left: black 2px solid;
+            border-right: black 2px solid;
+            border-top: black 2px solid;
+            border-bottom: black 2px solid;
+        }
+
+        .galary {
+
+            margin-top: 20px;
+
+        }
+
+        
+
+        .swiper-container {
+
+            width: 100%;
+
+            height: 600px;
+
+        }
+
+        
+
+        .beian:hover {
+
+            color: white;
+
+        }
+
+        
+
+        .beian {
+
+            color: grey;
+
+        }
+
+    </style>
+
+
+
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="semantic/dist/components/visibility.js"></script>
+
+    <script src="semantic/dist/components/sidebar.js"></script>
+
+    <script src="semantic/dist/components/transition.js"></script>
+
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+    <script src="semantic/dist/extraFunc.js"></script>
+
+    <script>
+
+        $(document)
+
+            .ready(function() {
+
+
+
+                // fix menu when passed
+
+                $('.secondary.menu')
+
+                    .visibility({
+
+                        once: false,
+
+                        onBottomPassed: function() {
+
+                            $('.fixed.menu').transition('fade in');
+
+                        },
+
+                        onBottomPassedReverse: function() {
+
+                            $('.fixed.menu').transition('fade out');
+
+                        }
+
+                    });
+
+
+
+                // create sidebar and attach to menu open
+
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+
+
+
+                var swiper = new Swiper('.swiper-container', {
+
+                    pagination: '.swiper-pagination',
+
+                    paginationClickable: true,
+
+                    speed: 1000,
+
+                    centeredSlides: true,
+
+                    autoplay: 2500,
+
+                });
+
+
+
+            });
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Following Menu -->
+
+    <div class="ui large top fixed hidden menu">
+
+        <div class="ui container">
+
+            <a class="ftoc item">
+
+                <i class="sidebar icon"></i>
+
+            </a>
+
+            <a class="header item">
+
+                <img class="logo" src="images/logo.png" /> USSLab.
+
+            </a>
+
+            <a class="item" href="/">Home</a>
+
+            <a class="item" href="projects/">Projects</a>
+
+            <a class="item" href="/publications.html">Publications</a>
+
+            <a class="item active">Members</a>
+
+            <a class="item" href="/courses.html">Courses</a>
+
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+            <a class="right item" href="/contact.html">Contact us</a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Sidebar Menu -->
+
+    <div class="ui vertical inverted sidebar menu">
+
+        <div class="item">
+
+            <a class="ui logo icon image">
+
+                <img src="images/logo.png" />
+
+            </a>
+
+            <a href="#"><b>USSLab.</b></a>
+
+        </div>
+
+
+        <a class="item" href="/">Home</a>
+
+        <a class="item" href="projects/">Projects</a>
+
+        <a class="item" href="/publications.html">Publications</a>
+
+        <a class="item active">Members</a>
+
+        <a class="item" href="/courses.html">Courses</a>
+
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+        <a class="right item" href="/contact.html">Contact us</a>
+
+    </div>
+
+
+
+
+
+    <!-- Page Contents -->
+
+    <div class="pusher">
+
+        <div class="ui inverted vertical center aligned segment">
+
+            <div class="ui container">
+
+                <div class="ui large secondary inverted pointing menu">
+
+                    <a class="toc item">
+
+                        <i class="sidebar icon"></i>
+
+                    </a>
+
+                    <a class="ui logo icon image">
+
+                        <img src="images/logo.png" />
+
+                    </a>
+
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+
+                    <a class="item" href="/">Home</a>
+
+                    <a class="item" href="projects/">Projects</a>
+
+                    <a class="item" href="/publications.html">Publications</a>
+
+                    <a class="item active" href="member/">Members</a>
+
+                    <a class="item" href="/courses.html">Courses</a>
+
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+                    <a class="right item" href="/contact.html">Contact us</a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Wenyuan Xu</h1>
+
+            <div class="ui divider"></div>
+
+            <div class="ui stackable four column grid">
+
+                <div class="twelve wide column">
+
+
+                    <div class="ui stackable two column grid">
+                        <div class="ten wide column"><p>•	Professor
+                            </br>•	Department of System Science and Engineering
+                            </br>•	Zhejiang University
+                            </br>•	Research Lab: <a href="http://www.usslab.org/">USSLAB</a>
+                            </br>•	Email: xuwenyuan@zju.edu.cn
+                            </br>•	Website:  <a href="https://cse.sc.edu/~wyxu/">https://cse.sc.edu/~wyxu/</a>
+                        </p>
+                        </div>
+                        <div class="four wide column"><p>        &nbsp; </p></div>
+
+                    </div>
+
+                    </br>
+                    </br>
+
+
+                    <h2>Research Interests</h2>
+                        </br>
+                    <p>My research interests are  wireless networking, and its security and privacy. I have a particular interest in building reliable wireless networks and securing commodity wireless devices.</p>
+
+
+                    <div class="ui stackable two column grid">
+                        <div class="seven wide column"><p>•	Wireless Network Security and privacy</p></div>
+                        <div class="six wide column"><p>•	Jamming/Radio Interference</p></div>
+
+                    </div>
+
+                    <div class="ui stackable two column grid">
+
+                        <div class="seven wide column"><p>•	Cyber Security</p></div>
+                        <div class="six wide column"><p>•	Industry Control System Security</p></div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="four wide center aligned column">
+
+                    <img width="100%" src="images/xwy2.jpg">
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h2>Apply to participate in my group</h2>
+            <p> Apply to do independent study or be a member of the research team in my group, please drop me an email. I am happy to work with both undergraduate and graduate students. Postdocs may also be available. </p>
+            <div class="ui divider"></div>
+
+            <h1 class="ui header">Awards and Honors</h1>
+
+            <div class="ui divider"></div>
+
+            <div class="ui stackable two column grid">
+
+                <div class="four wide column"> <p><b>Best Paper</b></p></div>
+                <div class="twelve wide column">   <p> ACM CCS 2017</p></div>
+
+            </div>
+            <div class="ui stackable two column grid">
+
+                <div class="four wide column"> <p><b>Tesla Hall of Fame </b></p></div>
+                <div class="twelve wide column">  <p>Tesla Security Researcher Hall of Fame 2016 & 2014</p></div>
+
+            </div>
+            <div class="ui stackable two column grid">
+
+                <div class="four wide column"> <p><b>1000 Young Talent Award</p></b></div>
+                <div class="twelve wide column"><p> Organization Department of the CPC Central Committee of China 2012</p></div>
+
+            </div>
+            <div class="ui stackable two column grid">
+
+                <div class="four wide column"><p> <b>Career Award</b></p></div>
+                <div class="twelve wide column"> <p> National Science Foundation of United States 2009</p></div>
+
+            </div>
+
+
+        </div>
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Publications</h1>
+
+            <div class="ui divider"></div>
+
+            <h2 class="ui header">Book and Book Chapter Publications </h2>
+
+                <p>
+                    Yingying Chen, <b>Wenyuan Xu</b>, Wade Trappe, Yanyong Zhang, “Securing Emerging Wireless Systems: Lower-layer Approaches,” ISBN: 978-0-387-88490-5, Springer, 2009.
+
+                    &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication1'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://books.google.com/books?hl=en&lr=&id=O-yoPb5jbwcC&oi=fnd&pg=PR4&dq=Securing+Emerging+Wireless+Systems:+Lower-layer+Approaches&ots=u6oEIYxd8O&sig=MWrIPJS6kDwpZ1duBOQw6DIDiJM#v=onepage&q=Securing%20Emerging%20Wireless%20Systems%3A%20Lower-layer%20Approaches&f=false" target="_blank">PDF</a></span>
+                </p>
+                <blockquote id="xPublication1" style="display:none " class="bibQuote">
+                    @book{chen2008securing,
+                    title={Securing Emerging Wireless Systems: Lower-layer Approaches},
+                    author={Chen, Yingying and <b>Xu, Wenyuan</b> and Trappe, Wade and Zhang, YanYong},
+                    year={2008},
+                    publisher={Springer Science \& Business Media}
+                    }
+                </blockquote>
+
+
+            <h2 class="ui header">Journal Publications</h2>
+
+            <h4>2018</h4>
+
+            <ul>
+                <li><p><b>Wenyuan Xu</b>, Chen Yan, Xiaoyu Ji, and Jianhao Liu, “Analyzing and Enhancing the Security of Ultrasonic Sensors for Autonomous Vehicles," to appear in the IEEE Internet of Things Journal</p></li>
+            </ul>
+
+            <h4>2017</h4>
+
+            <ul>
+            <li>
+                <p>
+                    <b>Wenyuan Xu</b>, Jing Tian, Yu Chao, and Song Wang, “Challenge-Response Authentication using In-Air Handwriting Style Verification,” IEEE Transactions on Dependable and Secure Computing (TDSC), accepted 2017
+
+                    &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication3'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8038051" target="_blank">PDF</a></span>
+                </p>
+                <blockquote id="xPublication3" style="display:none " class="bibQuote">
+                    @article{tian2017challenge,
+                    title={Challenge-Response Authentication using In-Air Handwriting Style Verification},
+                    author={Tian, Jing and Cao, Yu and Xu, Wenyuan and Wang, Song},
+                    journal={IEEE Transactions on Dependable and Secure Computing},
+                    year={2017},
+                    publisher={IEEE}
+                    }
+
+                </blockquote></li>
+
+            </ul>
+
+
+            <h4>2016</h4>
+            <ul>
+                <li>
+                    <p>
+                        Weili Han, Zhigong Li, Minyue Ni, Guofei Gu, and <b>Wenyuan Xu</b>, “Shadow Attacks based on Password Reuses: A Quantitative Empirical Analysis,” IEEE Transactions on Dependable and Secure Computing (TDSC), May 2016
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication4'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7469392" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication4" style="display:none " class="bibQuote">
+                        @article{han2016shadow,
+                        title={Shadow attacks based on password reuses: A quantitative empirical view},
+                        author={Han, Weili and Li, Zhigong and Ni, Minyue and Gu, Guofei and Xu, Wenyuan},
+                        journal={IEEE Transactions on Dependable and Secure Computing},
+                        year={2016},
+                        publisher={IEEE}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Hossen Mustafa, <b>Wenyuan Xu</b>, Ahmad-Reza Sadeghi, and Steffen Schulz, “End-to-End Detection of Caller ID Spoofing Attacks,” IEEE Transactions on Dependable and Secure Computing (TDSC), June 2016
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication5'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7491306" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication5" style="display:none " class="bibQuote">
+                        @article{mustafa2016end,
+                        title={End-to-end detection of caller ID spoofing attacks},
+                        author={Mustafa, Hossen and Xu, Wenyuan and Sadeghi, Ahmad-Reza and Schulz, Steffen},
+                        journal={IEEE Transactions on Dependable and Secure Computing},
+                        year={2016},
+                        publisher={IEEE}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Miao Xu, <b>Wenyuan Xu</b>, Tingrui Han, and Zhiyun Lin, “Energy Efficient Time Synchronization in Wireless Sensor Networks via Temperature-Aware Compensation,” ACM Transactions on Sensor Networks (TOSN), Vol. 12(2), May 2016
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication6'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://delivery.acm.org/10.1145/2880000/2876508/a12-xu.pdf?ip=183.157.162.225&id=2876508&acc=CHORUS&key=BF85BBA5741FDC6E%2E0E9E463C2E5391F8%2E4D4702B0C3E38B35%2E6D218144511F3437&__acm__=1523885649_2ef5975e8dfc1db00811d15e9ead208d" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication6" style="display:none " class="bibQuote">
+                        @article{xu2016energy,
+                        title={Energy-efficient time synchronization in wireless sensor networks via temperature-aware compensation},
+                        author={Xu, Miao and Xu, Wenyuan and Han, Tingrui and Lin, Zhiyun},
+                        journal={ACM Transactions on Sensor Networks (TOSN)},
+                        volume={12},
+                        number={2},
+                        pages={12},
+                        year={2016},
+                        publisher={ACM}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Wweili Han, Zhigong Li, Lang Yuan, <b>Wenyuan Xu</b>, “Regional Patterns and Vulnerability Analysis of Chinese Web Passwords,” IEEE Transactions on Information Forensics and Security (TIFS), Vol. 11(2), pp. 258 – 272, October 2015
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication7'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7298428" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication7" style="display:none " class="bibQuote">
+                        @article{han2016regional,
+                        title={Regional patterns and vulnerability analysis of chinese web passwords},
+                        author={Han, Weili and Li, Zhigong and Yuan, Lang and Xu, Wenyuan},
+                        journal={IEEE Transactions on Information Forensics and Security},
+                        volume={11},
+                        number={2},
+                        pages={258--272},
+                        year={2016},
+                        publisher={IEEE}
+                        }
+
+                    </blockquote></li>
+
+            </ul>
+
+            <h4>2014</h4>
+            <ul>
+                <li>
+                    <p>
+                        Ming Xia, Yabo Dong, <b>Wenyuan Xu</b>, Xiangyang Li, and Dongming Lu, "MC2: Multi-Mode User-Centric Design of Wireless Sensor Networks for Long-Term Monitoring, " ACM Transactions on Sensor Networks (TOSN), Vol. 10(3), pp.52:1--52:30, January 2014
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication8'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://delivery.acm.org/10.1145/2510000/2509856/a52-xia.pdf?ip=183.157.162.225&id=2509856&acc=ACTIVE%20SERVICE&key=BF85BBA5741FDC6E%2E0E9E463C2E5391F8%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1523885683_1c4a0a06c08ae5ac90df161172e8128d" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication8" style="display:none " class="bibQuote">
+                        @article{xia2014mc,
+                        title={Mc 2: Multimode user-centric design of wireless sensor networks for long-term monitoring},
+                        author={Xia, Ming and Dong, Yabo and Xu, Wenyuan and Li, Xiangyang and Lu, Dongming},
+                        journal={ACM Transactions on Sensor Networks (TOSN)},
+                        volume={10},
+                        number={3},
+                        pages={52},
+                        year={2014},
+                        publisher={ACM}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Zhenhua Liu, Hongbo Liu, <b>Wenyuan Xu</b>, and Yingying Chen, "An Error Minimizing Framework for Localizing Jammers in Wireless Networks," IEEE Transaction on Parallel and Distributed Systems (TPDS), Vol. 25(2), pp. 508-517, February 2014
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication9'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6463399" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication9" style="display:none " class="bibQuote">
+                        @article{liu2014error,
+                        title={An error-minimizing framework for localizing jammers in wireless networks},
+                        author={Liu, Zhenhua and Liu, Hongbo and Xu, Wenyuan and Chen, Yingying},
+                        journal={IEEE Transactions on Parallel and Distributed Systems},
+                        volume={25},
+                        number={2},
+                        pages={508--517},
+                        year={2014},
+                        publisher={IEEE}
+                        }
+
+                    </blockquote></li>
+
+
+
+            </ul>
+
+            <h4>2012</h4>
+            <ul>
+                <li>
+                    <p>
+                        Hossen Mustafa, Xin Zhang, Zhenhua Liu, <b>Wenyuan Xu</b>, and Adrian Perrig, "Jamming-Resilient Multipath Routing," IEEE Transaction on Dependable and Secure Computing (TDSC), Vol. 9(6), pp. 852-864, December 2012
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication10'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6261324" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication10" style="display:none " class="bibQuote">
+                        @article{mustafa2012jamming,
+                        title={Jamming-resilient multipath routing},
+                        author={Mustafa, Hossen and Zhang, Xin and Liu, Zhenhua and Xu, Wenyuan and Perrig, Adrian},
+                        journal={IEEE transactions on dependable and secure computing},
+                        volume={9},
+                        number={6},
+                        pages={852--864},
+                        year={2012},
+                        publisher={IEEE}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Jason M O’Kane and <b>Wenyuan Xu</b>, "Energy-Efficient Information Routing in Sensor Networks for Robotic Target Tracking," Wireless Networks, Vol. 18 (6), pp. 713-733, August 2012
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication11'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://link.springer.com/content/pdf/10.1007%2Fs11276-012-0471-y.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication11" style="display:none " class="bibQuote">
+                        @article{o2012energy,
+                        title={Energy-efficient information routing in sensor networks for robotic target tracking},
+                        author={O’Kane, Jason M and Xu, Wenyuan},
+                        journal={Wireless Networks},
+                        volume={18},
+                        number={6},
+                        pages={713--733},
+                        year={2012},
+                        publisher={Springer}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Zhenhua Liu, Hongbo Liu, <b>Wenyuan Xu</b>, and Yingying Chen, "Exploiting Jamming-Caused Neighbor Changes for Jammer Localization," IEEE Transaction on Parallel and Distributed Systems (TPDS), Vol. 23 (3), pp. 547-555, March 2012
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication12'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.386.2377&rep=rep1&type=pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication12" style="display:none " class="bibQuote">
+                        @article{liu2012exploiting,
+                        title={Exploiting jamming-caused neighbor changes for jammer localization},
+                        author={Liu, Zhenhua and Liu, Hongbo and Xu, Wenyuan and Chen, Yingying},
+                        journal={IEEE Transactions on Parallel and Distributed Systems},
+                        volume={23},
+                        number={3},
+                        pages={547--555},
+                        year={2012},
+                        publisher={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Guofei Chai, Miao Xu, <b>Wenyuan Xu</b>, and Zhiyun Lin, “Enhancing Sink-Location Privacy in Wireless Sensor Networks through k-Anonymity,” International Journal of Distributed Sensor Networks, 2012
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication13'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://journals.sagepub.com/doi/pdf/10.1155/2012/648058" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication13" style="display:none " class="bibQuote">
+                        @article{chai2012enhancing,
+                        title={Enhancing sink-location privacy in wireless sensor networks through k-anonymity},
+                        author={Chai, Guofei and Xu, Miao and Xu, Wenyuan and Lin, Zhiyun},
+                        journal={International Journal of Distributed Sensor Networks},
+                        volume={8},
+                        number={4},
+                        pages={648058},
+                        year={2012},
+                        publisher={SAGE Publications Sage UK: London, England}
+                        }
+                    </blockquote></li>
+
+
+                <li>
+                    <p>
+                        Zhenhua Liu and <b>Wenyuan Xu</b>, "Determining Sink Location through Zeroing-In Attackers in Wireless Sensor Networks," Wireless Networks, Vol. 18 (3), pp. 335-349, April 2012
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication14'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://link.springer.com/content/pdf/10.1007%2Fs11276-011-0403-2.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication14" style="display:none " class="bibQuote">
+                        @article{liu2012determining,
+                        title={Determining sink location through Zeroing-In attackers in wireless sensor networks},
+                        author={Liu, Zhenhua and Xu, Wenyuan},
+                        journal={Wireless Networks},
+                        volume={18},
+                        number={3},
+                        pages={335--349},
+                        year={2012},
+                        publisher={Springer}
+                        }
+                    </blockquote></li>
+
+            </ul>
+
+            <h4>2011</h4>
+            <ul>
+                <li>
+                    <p>
+                        Hongbo Liu, Zhenhua Liu, Yingying Chen and <b>Wenyuan Xu</b>, “Determining the Position of a Jammer Using Virtual-Force Iterative Approach,” Wireless Networks, Vol. 17 (2), pp. 531-547, 2011
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication15'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://link.springer.com/content/pdf/10.1007%2Fs11276-010-0295-6.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication15" style="display:none " class="bibQuote">
+                        @article{liu2011determining,
+                        title={Determining the position of a jammer using a virtual-force iterative approach},
+                        author={Liu, Hongbo and Liu, Zhenhua and Chen, Yingying and Xu, Wenyuan},
+                        journal={Wireless Networks},
+                        volume={17},
+                        number={2},
+                        pages={531--547},
+                        year={2011},
+                        publisher={Springer}
+                        }
+                    </blockquote></li>
+
+            </ul>
+
+            <h4>2010</h4>
+            <ul>
+                <li>
+                    <p>
+                        Ming Xia, Yabo Dong, <b>Wenyuan Xu</b>, Dongming Lu and Xiangyang Li, “Multi-mode user-centric design of wireless sensor networks for long-term monitoring,” in ACM SIGMOBILE Mobile Computing and Communications Review, Vol. 14 (1), pp. 25-27, July 2010.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication16'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://www.researchgate.net/profile/Wenyuan_Xu/publication/220410975_MC2_Multimode_user-centric_design_of_wireless_sensor_networks_for_long-term_monitoring/links/0f317533e1eaf0ad95000000/MC2-Multimode-user-centric-design-of-wireless-sensor-networks-for-long-term-monitoring.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication16" style="display:none " class="bibQuote">
+                        @article{xia2010multi,
+                        title={Multi-mode user-centric design of wireless sensor networks for long-term monitoring},
+                        author={Xia, Ming and Dong, Yabo and Xu, Wenyuan and Lu, Dongming and Li, Xiangyang},
+                        journal={ACM SIGMOBILE Mobile Computing and Communications Review},
+                        volume={14},
+                        number={1},
+                        pages={25--27},
+                        year={2010},
+                        publisher={ACM}
+                        }
+                    </blockquote></li>
+            </ul>
+
+            <h4>2009</h4>
+            <ul>
+                <li>
+                    <p>
+                        Pandurang Kamat, <b>Wenyuan Xu</b>, Wade Trappe, and Yanyong Zhang, “Temporal Privacy in Wireless Sensor Networks: Theory and Practice,” ACM Transactions on Sensor Networks (TOSN), Vol. 5(4), November, 2009.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication17'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://www.researchgate.net/profile/Yanyong_Zhang/publication/220443059_Temporal_Privacy_in_Wireless_Sensor_Networks_Theory_and_Practice/links/02e7e52ab2a4a2b9b7000000.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication17" style="display:none " class="bibQuote">
+                        @article{kamat2009temporal,
+                        title={Temporal privacy in wireless sensor networks: Theory and practice},
+                        author={Kamat, Pandurang and Xu, Wenyuan and Trappe, Wade and Zhang, Yanyong},
+                        journal={ACM Transactions on Sensor Networks (TOSN)},
+                        volume={5},
+                        number={4},
+                        pages={28},
+                        year={2009},
+                        publisher={ACM}
+                        }
+                    </blockquote></li>
+            </ul>
+
+            <h4>2008</h4>
+            <ul>
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Wade Trappe And Yanyong Zhang, “Defending Wireless Sensor Networks from Radio Interference through Channel Adaptation,” ACM Transactions on Sensor Networks (TOSN), Vol. 4(4), August. 2008.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication18'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://www.researchgate.net/profile/Yanyong_Zhang/publication/220443004_Defending_wireless_sensor_networks_from_radio_interference_through_channel_adaptation/links/02e7e52ab2a4b4101c000000.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication18" style="display:none " class="bibQuote">
+                        @article{xu2008defending,
+                        title={Defending wireless sensor networks from radio interference through channel adaptation},
+                        author={Xu, Wenyuan and Trappe, Wade and Zhang, Yanyong},
+                        journal={ACM Transactions on Sensor Networks (TOSN)},
+                        volume={4},
+                        number={4},
+                        pages={18},
+                        year={2008},
+                        publisher={ACM}
+                        }
+                    </blockquote></li>
+
+            </ul>
+
+            <h4>2006</h4>
+            <ul>
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Wade Trappe And Yanyong Zhang, “Jamming Sensor Networks: Attack and Defense Strategies,” IEEE Networks Special Issue on Sensor Networks, Vol. 20 (3), pp. 41-47, May/June 2006. (Acceptance ratio: 10.3%)
+
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication19'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1018&context=csce_facpub" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication19" style="display:none " class="bibQuote">
+                        @article{xu2006jamming,
+                        title={Jamming sensor networks: attack and defense strategies},
+                        author={Xu, Wenyuan and Ma, Ke and Trappe, Wade and Zhang, Yanyong},
+                        journal={IEEE network},
+                        volume={20},
+                        number={3},
+                        pages={41--47},
+                        year={2006},
+                        publisher={IEEE}
+                        }
+                    </blockquote></li>
+
+            </ul>
+
+            <h2 class="ui header">Peer-Reviewed Conference Publications & Conference Proceedings</h2>
+            <h4>2018</h4>
+            <p>
+
+            <ul>
+                <li><p>Yushi Cheng, Xiaoyu Ji, Tianyang Lu, and <b>Wenyuan Xu</b>, “DeWiCam: Detecting Hidden Wireless Cameras via Smartphones,” in Proceedings of ACM Asia Conference on Computer & Communications Security (<b>AsiaCCS</b>) 2018, June 4th-8th, Songdo, Incheon, Korea</p></li>
+                </br><li><p>Chaohao Li, Xiaoyu Ji, Xinyan Zhou, Juchuan Zhang, Jing Tian, Yanmiao Zhang, and <b>Wenyuan Xu</b>,  “HlcAuth: Key-free and Secure Communications via Home-Limited Channel,” in Proceedings of ACM Asia Conference on Computer & Communications Security (<b>AsiaCCS</b>) 2018, June 4th-8th, Songdo, Incheon, Korea</p></li>
+                </br><li><p>Zhou Zhuang, Xiaoyu Ji, Taimin Zhang, Juchuan Zhang, <b>Wenyuan Xu</b>, Zhenhua Li, and Yunhao Liu, “FBSleuth: Fake Base Station Forensics via Radio Frequency Fingerprinting,” in Proceedings of ACM Asia Conference on Computer & Communications Security (<b>AsiaCCS</b>) 2018, June 4th-8th, Songdo, Incheon, Korea</p></li>
+            </ul>
+
+            <h4>2017</h4>
+
+            <ul>
+                <li>
+                    <p>
+                        Guoming Zhang, Chen Yan, Xiaoyu Ji, Tianchen Zhang, Taimin Zhang, <b>Wenyuan Xu</b>, “DolphinAttack: Inaudible Voice Commands,” in Proceedings of the 24th ACM Conference on Computer and Communications Security 2017 (Acceptance ratio: 18.0%) <b><font color="red">(Best Paper Award)</font></b>&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication23'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://arxiv.org/pdf/1708.09537.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication23" style="display:none " class="bibQuote">
+                        @inproceedings{zhang2017dolphinattack,
+                        title={DolphinAttack: Inaudible voice commands},
+                        author={Zhang, Guoming and Yan, Chen and Ji, Xiaoyu and Zhang, Tianchen and Zhang, Taimin and <b>Xu, Wenyuan</b>},
+                        booktitle={Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+                        pages={103--117},
+                        year={2017},
+                        organization={ACM}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Yuwei Zheng, Lin Huang, Haoqi Shan, Jun Li, Qing Yang, and <b>Wenyuan Xu</b>, “Ghost Telephonist Impersonates You: Vulnerability in 4G LTE CS Fallback,” in Proceedings of the IEEE Communications and Network Security (CNS) 2017&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication24'); return false;">Bibtex</span>&#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+                    </p>
+                    <blockquote id="xPublication24" style="display:none " class="bibQuote">
+                        @inproceedings{zheng2017ghost,
+                        title={Ghost telephonist impersonates you: Vulnerability in 4G LTE CS fallback},
+                        author={Zheng, Yuwei and Huang, Lin and Shan, Haoqi and Li, Jun and Yang, Qing and <b>Xu, Wenyuan</b>},
+                        booktitle={Communications and Network Security (CNS), 2017 IEEE Conference on},
+                        pages={1--9},
+                        year={2017},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Xiaopeng Li, <b>Wenyuan Xu</b>, Song Wang, and Xianshan Qu, “Are You Lying: Validating the Time-Location of Outdoor Images,” in Proceedings of International Conference on Applied Cryptography and Network Security (ACNS), pp 103-123, 2017&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication25'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://pdfs.semanticscholar.org/cfec/c6fd703de0ec72399aedd181c2bae6db6329.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication25" style="display:none " class="bibQuote">
+                        @inproceedings{li2017you,
+                        title={Are You Lying: Validating the Time-Location of Outdoor Images},
+                        author={Li, Xiaopeng and <b>Xu, Wenyuan</b> and Wang, Song and Qu, Xianshan},
+                        booktitle={International Conference on Applied Cryptography and Network Security},
+                        pages={103--123},
+                        year={2017},
+                        organization={Springer}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Timothy Trippel,  Ofir Weisse, <b>Wenyuan Xu</b>,  Peter Honeyman, Kevin Fu, “WALNUT: Waging doubt on integrity of MEMS AcceLerometers by iNjecting acoUsTics,” in Proceedings of the 2nd IEEE European Symposium on Security and Privacy (EuroS&P'17), Paris France, April 26-28 2017 (Acceptance ratio: 19.6%)&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication26'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://pdfs.semanticscholar.org/a5a1/47be45a38cacff1b21a9c05fc8c408df237b.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication26" style="display:none " class="bibQuote">
+                        @inproceedings{trippel2017walnut,
+                        title={WALNUT: Waging doubt on the integrity of mems accelerometers with acoustic injection attacks},
+                        author={Trippel, Timothy and Weisse, Ofir and <b>Xu, Wenyuan</b> and Honeyman, Peter and Fu, Kevin},
+                        booktitle={Security and Privacy (EuroS\&P), 2017 IEEE European Symposium on},
+                        pages={3--18},
+                        year={2017},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+            </ul>
+
+            <h4>2016</h4>
+
+            <ul>
+                <li>
+                <p>
+                    Yannan Liu, Lingxiao Wei, Zhe Zhou, Kehuan  Zhang, <b>Wenyuan Xu</b>, Qiang Xu, “On Code Execution Tracking via Power Side-Channel,” to appear in Proceedings of the 23nd ACM Conference on Computer and Communications Security (CCS 2016)&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication27'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://delivery.acm.org/10.1145/2980000/2978299/p1019-liu.pdf?ip=183.157.162.219&id=2978299&acc=CHORUS&key=BF85BBA5741FDC6E%2E0E9E463C2E5391F8%2E4D4702B0C3E38B35%2E6D218144511F3437&__acm__=1523885279_c47c432b343ab31e7d4ff6baa39130a6" target="_blank">PDF</a></span>
+                </p>
+                <blockquote id="xPublication2" style="display:none " class="bibQuote">
+                    @inproceedings{liu2016code,
+                    title={On code execution tracking via power side-channel},
+                    author={Liu, Yannan and Wei, Lingxiao and Zhou, Zhe and Zhang, Kehuan and <b>Xu, Wenyuan</b> and Xu, Qiang},
+                    booktitle={Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security},
+                    pages={1019--1031},
+                    year={2016},
+                    organization={ACM}
+                    }
+                </blockquote></li>
+
+                <li>
+                    <p>
+                        Xiaohui Wang, Yanjing Wu, and <b>Wenyuan Xu</b>, “WindCompass: Determine Wind Direction Using Smartphones,” in Proceedings of the 13th IEEE International Conference on Sensing, Communication and Networking (IEEE SECON), London, UK, June 27-30, 2016&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication28'); return false;">Bibtex</span>
+                    </p>
+                    <blockquote id="xPublication28" style="display:none " class="bibQuote">
+                        @inproceedings{wang2016windcompass,
+                        title={WindCompass: Determine Wind Direction Using Smartphones},
+                        author={Wang, Xiaohui and Wu, Yanjing and <b>Xu, Wenyuan</b>},
+                        booktitle={Sensing, Communication, and Networking (SECON), 2016 13th Annual IEEE International Conference on},
+                        pages={1--9},
+                        year={2016},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+            </ul>
+
+
+            <h4>2014</h4>
+            <ul>
+
+                <li>
+                    <p>
+                        Gorkem Kar, Hossen Mustafa, Yan Wang, Yingying Chen, <b>Wenyuan Xu</b>, Marco Gruteser, and Tam Vu, “Detection of On-Road Vehicles Emanating GPS Interference,” in Proceedings of the 21th ACM Conference on Computer and Communications Security (ACM CCS), Scottsdale, Arizona, USA, November 3 - 7, 2014 (Acceptance ratio: 19.5%)&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication29'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://winlab.rutgers.edu/~gruteser/papers/ccsfp448s-kar.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication29" style="display:none " class="bibQuote">
+                        @inproceedings{kar2014detection,
+                        title={Detection of on-road vehicles emanating gps interference},
+                        author={Kar, Gorkem and Mustafa, Hossen and Wang, Yan and Chen, Yingying and <b>Xu, Wenyuan</b> and Gruteser, Marco and Vu, Tam},
+                        booktitle={Proceedings of the 2014 ACM SIGSAC Conference on Computer and Communications Security},
+                        pages={621--632},
+                        year={2014},
+                        organization={ACM}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Hossen Mustafa and <b>Wenyuan Xu</b>, “CETAD: Detecting Evil Twin Access Point Attacks in Wireless Hotspots,” in Proceedings of the IEEE Communications and Network Security (CNS) 2014 conference, pp. 238 – 246, San Francisco, CA, October 29-31, 2014&#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication30'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://www.researchgate.net/publication/283489615_CETAD_Detecting_Evil_Twin_Access_Point_Attacks_in_Wireless_Hotspots" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication30" style="display:none " class="bibQuote">
+                        @inproceedings{mustafa2014cetad,
+                        title={Cetad: Detecting evil twin access point attacks in wireless hotspots},
+                        author={Mustafa, Hossen and <b>Xu, Wenyuan</b>},
+                        booktitle={Communications and Network Security (CNS), 2014 IEEE Conference on},
+                        pages={238--246},
+                        year={2014},
+                        organization={IEEE}
+                        }
+
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Zhigong Li, Weili Han, and Wenyuan Xu, “A Large-Scale Empirical Analysis of Chinese Web Passwords,” in Proceedings of the 23th USENIX Security Symposium, San Diego, CA, August 20-22, 2014 (Acceptance ratio: 19.1%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication31'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-li-zhigong.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication31" style="display:none " class="bibQuote">
+                        @inproceedings{li2014large,
+                        title={A Large-Scale Empirical Analysis of Chinese Web Passwords.},
+                        author={Li, Zhigong and Han, Weili and <b>Xu, Wenyuan</b>},
+                        booktitle={USENIX Security Symposium},
+                        pages={559--574},
+                        year={2014}
+                        }
+
+                    </blockquote></li>
+
+
+                <li>
+                    <p>
+                        Mustafa, Hossen and <b>Xu, Wenyuan</b> and Sadeghi, Ahmad Reza and Schulz, Steffen, “You Can Call but You Can't Hide: Detecting Caller ID Spoofing Attacks,” in Proceedings of the 44th Dependable Systems and Networks (DSN), Atlanta, GA, June 23-26, 2014, pp.168 – 179
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication32'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://pdfs.semanticscholar.org/2ab9/1190edd8d7c732985ce166d16fca1bc45a71.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication32" style="display:none " class="bibQuote">
+                        @inproceedings{mustafa2014you,
+                        title={You can call but you can't hide: Detecting caller ID spoofing attacks},
+                        author={Mustafa, Hossen and <b>Xu, Wenyuan</b> and Sadeghi, Ahmad Reza and Schulz, Steffen},
+                        booktitle={Dependable Systems and Networks (DSN), 2014 44th Annual IEEE/IFIP International Conference on},
+                        pages={168--179},
+                        year={2014},
+                        organization={IEEE}
+                        }
+
+                    </blockquote></li>
+
+
+                <li>
+                    <p>
+                        Dey, Sanorita and Roy, Nirupam and <b>Xu, Wenyuan</b> and Choudhury, Romit Roy and Nelakuditi, Srihari, “AccelPrint: Imperfections of Accelerometers Make Smartphones Trackable,” in Proceedings of the 21th Annual Network & Distributed System Security Symposium (NDSS), San Diego, February 23-26, 2014 (Acceptance ratio: 18.6%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication33'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://pdfs.semanticscholar.org/38cb/8060ad77cc4b50e7701592d273a8f65cdb5b.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication33" style="display:none " class="bibQuote">
+                        @inproceedings{dey2014accelprint,
+                        title={AccelPrint: Imperfections of Accelerometers Make Smartphones Trackable.},
+                        author={Dey, Sanorita and Roy, Nirupam and <b>Xu, Wenyuan</b> and Choudhury, Romit Roy and Nelakuditi, Srihari},
+                        booktitle={NDSS},
+                        year={2014}
+                        }
+
+                    </blockquote></li>
+
+
+
+            </ul>
+
+
+            <h4>2013</h4>
+            <ul>
+                <li>
+                    <p>
+                        Xu, Miao and <b>Xu, Wenyuan</b>, “TACO: Time Synchronization in Wireless Sensor Networks through Temperature-Aware Compensation,” in Proceedings of 10th IEEE International Conference on Mobile Ad-hoc and Sensor Systems (IEEE MASS), 2013
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication34'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6680231" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication34" style="display:none " class="bibQuote">
+                        @inproceedings{xu2013taco,
+                        title={Taco: Temperature-aware compensation for time synchronization in wireless sensor networks},
+                        author={Xu, Miao and <b>Xu, Wenyuan</b>},
+                        booktitle={Mobile Ad-Hoc and Sensor Systems (MASS), 2013 IEEE 10th International Conference on},
+                        pages={122--130},
+                        year={2013},
+                        organization={IEEE}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Xu, Miao and <b>Xu, Wenyuan</b> and Walker, Jesse and Moore, Benjamin, “Lightweight secure communication protocols for in-vehicle sensor networks,” in Proceedings of the 2013 ACM workshop on Security, privacy & dependability for cyber vehicles (ACM CyCAR), 2013
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication35'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://dl.acm.org/ft_gateway.cfm?id=2517973&ftid=1412043&dwn=1&CFID=25963011&CFTOKEN=a41831748ef3c2b4-1215456C-A8B5-27A3-2042A9F5647920BF" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication35" style="display:none " class="bibQuote">
+                        @inproceedings{xu2013lightweight,
+                        title={Lightweight secure communication protocols for in-vehicle sensor networks},
+                        author={Xu, Miao and <b>Xu, Wenyuan</b> and Walker, Jesse and Moore, Benjamin},
+                        booktitle={Proceedings of the 2013 ACM workshop on Security, privacy \& dependability for cyber vehicles},
+                        pages={19--30},
+                        year={2013},
+                        organization={ACM}
+                        }
+
+                    </blockquote></li>
+
+
+                <li>
+                    <p>
+                        Clark, Shane S and Ransford, Benjamin and Rahmati, Amir and Guineau, Shane and Sorber, Jacob and <b>Xu, Wenyuan</b> and Fu, Kevin and Rahmati, A and Salajegheh, M and Holcomb, D and others, “WattsUpDoc: Power Side Channels to Nonintrusively Discover Untargeted Malware on Embedded Medical Devices,” in Proceedings of USENIX security workshop on Health information Technologies, 2013
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication36'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://www.usenix.org/system/files/conference/healthtech13/healthtech13-clark.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication36" style="display:none " class="bibQuote">
+                        @inproceedings{clark2013wattsupdoc,
+                        title={WattsUpDoc: Power Side Channels to Nonintrusively Discover Untargeted Malware on Embedded Medical Devices.},
+                        author={Clark, Shane S and Ransford, Benjamin and Rahmati, Amir and Guineau, Shane and Sorber, Jacob and <b>Xu, Wenyuan</b> and Fu, Kevin and Rahmati, A and Salajegheh, M and Holcomb, D and others},
+                        booktitle={HealthTech},
+                        year={2013}
+                        }
+
+                    </blockquote></li>
+
+
+                <li>
+                    <p>
+                        Clark, Shane S and Mustafa, Hossen and Ransford, Benjamin and Sorber, Jacob and Fu, Kevin and <b>Xu, Wenyuan</b>, “Current Events: Identifying Webpages by Tapping the Electrical Outlet,” in Proceedings of the European Symposium on Research in Computer Security (ESORICS), 2013 (Acceptance ratio: 17.8%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication37'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" http://sharps.org/wp-content/uploads/CLARK-TECH-PAPER.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication37" style="display:none " class="bibQuote">
+                        @inproceedings{clark2013current,
+                        title={Current events: Identifying webpages by tapping the electrical outlet},
+                        author={Clark, Shane S and Mustafa, Hossen and Ransford, Benjamin and Sorber, Jacob and Fu, Kevin and <b>Xu, Wenyuan</b>},
+                        booktitle={European Symposium on Research in Computer Security},
+                        pages={700--717},
+                        year={2013},
+                        organization={Springer}
+                        }
+
+                    </blockquote></li>
+
+                     
+                <li>
+                    <p>
+                        Kune, Denis Foo and Backes, John and Clark, Shane S and Kramer, Daniel and Reynolds, Matthew and Fu, Kevin and Kim, Yongdae and <b>Xu, Wenyuan</b>, “Ghost Talk: Mitigating EMI Signal Injection Attacks against Analog Sensors,” in Proceedings of the IEEE Symposium on Security & Privacy, 2013 (Acceptance ratio: 12.1%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication38'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" http://ieeexplore.ieee.org/iel7/6547086/6547088/06547107.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication38" style="display:none " class="bibQuote">
+                        @inproceedings{kune2013ghost,
+                        title={Ghost talk: Mitigating EMI signal injection attacks against analog sensors},
+                        author={Kune, Denis Foo and Backes, John and Clark, Shane S and Kramer, Daniel and Reynolds, Matthew and Fu, Kevin and Kim, Yongdae and <b>Xu, Wenyuan</b>},
+                        booktitle={Security and Privacy (SP), 2013 IEEE Symposium on},
+                        pages={145--159},
+                        year={2013},
+                        organization={IEEE}
+                        }
+
+                    </blockquote></li>
+
+
+                <li>
+                    <p>
+                        Tian, Jing and Qu, Chengzhang and <b><b>Xu, Wenyuan</b></b> and Wang, Song, “KinWrite: Handwriting-Based Authentication Using Kinect,” in Proceedings of the 20th Annual Network & Distributed System Security Symposium (NDSS), San Diego, February 24-27, 2013 (Acceptance ratio: 18.8%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication39'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" http://cse.sc.edu/~songwang/document/ndss13.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication39" style="display:none " class="bibQuote">
+                        @inproceedings{tian2013kinwrite,
+                        title={KinWrite: Handwriting-Based Authentication Using Kinect.},
+                        author={Tian, Jing and Qu, Chengzhang and <b>Xu, Wenyuan</b> and Wang, Song},
+                        booktitle={NDSS},
+                        year={2013}
+                        }
+
+                    </blockquote></li>
+
+            </ul>
+
+            <h4>2012</h4>
+            <ul>
+                <li>
+                    <p>
+                        Rouf, Ishtiaq and Mustafa, Hossen and Xu, Miao and <b>Xu, Wenyuan</b> and Miller, Rob and Gruteser, Marco, “Neighborhood Watch: Security and Privacy Analysis of Automatic Meter Reading Systems,” in Proceedings of the 19th ACM Conference on Computer and Communications Security (ACM CCS), Raleigh, NC, October 16-18, 2012 (Acceptance ratio: 19%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication40'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://dl.acm.org/ft_gateway.cfm?id=2382246&ftid=1296278&dwn=1&CFID=25963011&CFTOKEN=a41831748ef3c2b4-1215456C-A8B5-27A3-2042A9F5647920BF" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication40" style="display:none " class="bibQuote">
+                        @inproceedings{rouf2012neighborhood,
+                        title={Neighborhood watch: security and privacy analysis of automatic meter reading systems},
+                        author={Rouf, Ishtiaq and Mustafa, Hossen and Xu, Miao and <b>Xu, Wenyuan</b> and Miller, Rob and Gruteser, Marco},
+                        booktitle={Proceedings of the 2012 ACM conference on Computer and communications security},
+                        pages={462--473},
+                        year={2012},
+                        organization={ACM}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Liu, Zhenhua and Liu, Hongbo and Xu, Wenyuan and Chen, Yingying, “Error Minimizing Jammer Localization Through Smart Estimation of Ambient Noise,” in Proceedings of the 9th IEEE International Conference on Mobile Ad-hoc and Sensor Systems (IEEE MASS), 2012
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication41'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6502530" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication41" style="display:none " class="bibQuote">
+                        @inproceedings{liu2012error,
+                        title={Error minimizing jammer localization through smart estimation of ambient noise},
+                        author={Liu, Zhenhua and Liu, Hongbo and Xu, Wenyuan and Chen, Yingying},
+                        booktitle={Mobile Adhoc and Sensor Systems (MASS), 2012 IEEE 9th International Conference on},
+                        pages={308--316},
+                        year={2012},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Steffen Schulz, Ahmad-Reza Sadeghi, Maria  Zhdanova, Hossen Mustafa, Wenyuan Xu, and Vijay Varadharajan, “Tetherway: A Framework for Tethering Camouflage,” in Proceedings of ACM Conference on Wireless Network Security (WiSec), 2012
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication42'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_TRUST/PubsPDF/wisec66-schulz.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication42" style="display:none " class="bibQuote">
+                        @inproceedings{schulz2012tetherway,
+                        title={Tetherway: a framework for tethering camouflage},
+                        author={Schulz, Steffen and Sadeghi, Ahmad-Reza and Zhdanova, Maria and Mustafa, Hossen and Xu, Wenyuan and Varadharajan, Vijay},
+                        booktitle={Proceedings of the fifth ACM conference on Security and Privacy in Wireless and Mobile Networks},
+                        pages={149--160},
+                        year={2012},
+                        organization={ACM}
+                        }
+                    </blockquote></li>
+            </ul>
+
+            <h4>2011</h4>
+            <ul>
+                <li>
+                    <p>
+                        Xu, Miao and Xu, Wenyuan and O'Kane, Jason, "Content-Aware Data Dissemination for Enhancing Privacy and Availability in Wireless Sensor Networks," in Proceedings of 8th IEEE International Conference on Mobile Ad-hoc and Sensor Systems (IEEE MASS), 2011
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication43'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.456.7166&rep=rep1&type=pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication43" style="display:none " class="bibQuote">
+                        @inproceedings{xu2011content,
+                        title={Content-Aware Data Dissemination for Enhancing Privacy and Availability in Wireless Sensor Networks},
+                        author={Xu, Miao and Xu, Wenyuan and O'Kane, Jason},
+                        booktitle={Mobile Adhoc and Sensor Systems (MASS), 2011 IEEE 8th International Conference on},
+                        pages={361--370},
+                        year={2011},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Mustafa, Hossen A and Zhang, Xin and Liu, Zhenhua and Xu, Wenyuan and Perrig, Adrian, "Short Paper: Jamming-Resilient Multipath Routing Leveraging Availability-Based Correlation,” in Proceedings of ACM Conference on Wireless Network Security (WiSec) 2011
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication44'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.206.2133&rep=rep1&type=pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication44" style="display:none " class="bibQuote">
+                        @inproceedings{mustafa2011short,
+                        title={Short paper: Jamming-resilient multipath routing leveraging availability-based correlation},
+                        author={Mustafa, Hossen A and Zhang, Xin and Liu, Zhenhua and Xu, Wenyuan and Perrig, Adrian},
+                        booktitle={Proceedings of the fourth ACM conference on Wireless network security},
+                        pages={41--46},
+                        year={2011},
+                        organization={ACM}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Liu, Hongbo and Liu, Zhenhua and Chen, Yingying and Xu, Wenyuan, "Localizing Multiple Jamming Attackers in Wireless Networks," in Proceedings of Int'l Conference on Distributed Computing Systems (ICDCS), 2011 (Acceptance ratio: 15.4%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication45'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://cse.sc.edu/~wyxu/papers/ICDCS11Liu.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication45" style="display:none " class="bibQuote">
+                        @inproceedings{liu2011localizing,
+                        title={Localizing multiple jamming attackers in wireless networks},
+                        author={Liu, Hongbo and Liu, Zhenhua and Chen, Yingying and Xu, Wenyuan},
+                        booktitle={Distributed Computing Systems (ICDCS), 2011 31st International Conference on},
+                        pages={517--528},
+                        year={2011},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+
+
+
+            </ul>
+
+            <h4>2010</h4>
+            <ul>
+                <li>
+                    <p>
+                        Hou, Jian and Lin, Zhiyun and Xu, Wenyuan and Yan, Gangfeng, “Distributed Transmit Beamforming with Autonomous and Self-organizing Mobile Antennas,” in Proceedings of IEEE Global Communications Conference (IEEE Globecom), Miami, FL, 2010
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication46'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5683432" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication46" style="display:none " class="bibQuote">
+                        @inproceedings{hou2010distributed,
+                        title={Distributed transmit beamforming with autonomous and self-organizing mobile antennas},
+                        author={Hou, Jian and Lin, Zhiyun and Xu, Wenyuan and Yan, Gangfeng},
+                        booktitle={Global Telecommunications Conference (GLOBECOM 2010), 2010 IEEE},
+                        pages={1--5},
+                        year={2010},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Jason M O’Kane and Wenyuan Xu, “Network-assisted target tracking via smart local routing,” in Proceedings of IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Taipei, Taiwan, October, 2010
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication47'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://cse.sc.edu/~jokane/papers/OKaXu10.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication47" style="display:none " class="bibQuote">
+                        @inproceedings{o2010network,
+                        title={Network-assisted target tracking via smart local routing},
+                        author={O'Kane, Jason M and Xu, Wenyuan},
+                        booktitle={Intelligent Robots and Systems (IROS), 2010 IEEE/RSJ International Conference on},
+                        pages={4818--4823},
+                        year={2010},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Ishtiaq Rouf, Rob Miller, Hossen Mustafa, Travis Taylor, Sangho Ohb, Wenyuan Xu, Marco Gruteser, Wade Trappe, and Ivan Seskar , "Security and Privacy Vulnerabilities of In-Car Wireless Networks: A Tire Pressure Monitoring System Case Study,” in Proceedings of the 19th USENIX Security Symposium, Washington DC, August 11-13, 2010. (Acceptance ratio: 14.5%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication48'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://www.usenix.org/legacy/event/sec10/tech/full_papers/Rouf.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication48" style="display:none " class="bibQuote">
+                        @inproceedings{ishtiaq2010security,
+                        title={Security and privacy vulnerabilities of in-car wireless networks: A tire pressure monitoring system case study},
+                        author={Ishtiaq Roufa, Rob Millerb and Mustafaa, Hossen and Travis Taylora, Sangho Ohb and Xua, Wenyuan and Gruteserb, Marco and Trappeb, Wade and Seskarb, Ivan},
+                        booktitle={19th USENIX Security Symposium, Washington DC},
+                        pages={11--13},
+                        year={2010}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Liu, Zhenhua and Liu, Hongbo and Xu, Wenyuan and Chen, Yingying, "Wireless Jamming Localization by Exploiting Nodes' Hearing Ranges," in Proceedings of the International Conference on Distributed Computing in Sensor System(DCOSS), Santa Barbara, CA, June 2010.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication49'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5683432" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication49" style="display:none " class="bibQuote">
+                        @inproceedings{liu2010wireless,
+                        title={Wireless jamming localization by exploiting nodes’ hearing ranges},
+                        author={Liu, Zhenhua and Liu, Hongbo and Xu, Wenyuan and Chen, Yingying},
+                        booktitle={International Conference on Distributed Computing in Sensor Systems},
+                        pages={348--361},
+                        year={2010},
+                        organization={Springer}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Ishtiaq  Rouf, Rob Miller, Hossen  Mustafa, Travis  Taylor, Sangho Ohb, Wenyuan Xu, Marco Gruteser, Wade Trappe, and Ivan Seskar , "Security and Privacy Vulnerabilities of In-Car Wireless Networks: A Tire Pressure Monitoring System Case Study,” Poster Session, IEEE Symposium on Security and Privacy, Oakland, CA, May, 2010.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication50'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href=" https://www.usenix.org/legacy/event/sec10/tech/full_papers/Rouf.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication50" style="display:none " class="bibQuote">
+                        @inproceedings{ishtiaq2010security,
+                        title={Security and privacy vulnerabilities of in-car wireless networks: A tire pressure monitoring system case study},
+                        author={Ishtiaq Roufa, Rob Millerb and Mustafaa, Hossen and Travis Taylora, Sangho Ohb and Xua, Wenyuan and Gruteserb, Marco and Trappeb, Wade and Seskarb, Ivan},
+                        booktitle={19th USENIX Security Symposium, Washington DC},
+                        pages={11--13},
+                        year={2010}
+                        }
+                    </blockquote></li>
+                     
+
+                <li>
+                    <p>
+                        Zhenhua Liu and <b>Wenyuan Xu</b> "Zeroing-In on Network Metric Minima for Sink Location Determination," in Proceedings of ACM Conference on Wireless Network Security (WiSec), 2010. (Acceptance ratio: 21%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication51'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://cse.sc.edu/~wyxu/papers/wisec53-liu.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication51" style="display:none " class="bibQuote">
+                        @inproceedings{liu2010zeroing,
+                        title={Zeroing-in on network metric minima for sink location determination},
+                        author={Liu, Zhenhua and Xu, Wenyuan},
+                        booktitle={Proceedings of the third ACM conference on Wireless network security},
+                        pages={99--104},
+                        year={2010},
+                        organization={ACM}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Ming Xia, Yabo Dong, <b>Wenyuan Xu</b>, Dongming Lu and Xiangyang Li, “Multi-Mode User-Centric Design of Wireless Sensor Networks for Long-Term Monitoring,” Poster Session, the ACM International Conference on Mobile Computing and Networking, 2009.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication52'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://www.researchgate.net/profile/Wenyuan_Xu/publication/220410975_MC2_Multimode_user-centric_design_of_wireless_sensor_networks_for_long-term_monitoring/links/0f317533e1eaf0ad95000000/MC2-Multimode-user-centric-design-of-wireless-sensor-networks-for-long-term-monitoring.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication52" style="display:none " class="bibQuote">
+                        @article{xia2010multi,
+                        title={Multi-mode user-centric design of wireless sensor networks for long-term monitoring},
+                        author={Xia, Ming and Dong, Yabo and Xu, Wenyuan and Lu, Dongming and Li, Xiangyang},
+                        journal={ACM SIGMOBILE Mobile Computing and Communications Review},
+                        volume={14},
+                        number={1},
+                        pages={25--27},
+                        year={2010},
+                        publisher={ACM}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Hongbo Liu, <b>Wenyuan Xu</b>, Yingying Chen and Zhenhua Liu, "Localizing Jammers in Wireless Networks," in Proceedings of IEEE PerCom International Workshop on Pervasive Wireless Networking (IEEE PWN) (Held in conjunction with IEEE PerCom), Texas, March 2009.
+
+                        &#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><a class="pdf ui button" href="https://www.researchgate.net/profile/Wenyuan_Xu/publication/221037078_Localizing_Jammers_in_Wireless_Networks/links/0c96053027c46cda75000000/Localizing-Jammers-in-Wireless-Networks.pdf" target="_blank">PDF</a></span>
+                    </p>
+            </ul>
+
+
+            <h4>2009</h4>
+            <ul>
+                <li>
+                    <p>
+                        Jason M. O’Kane and <b>Wenyuan Xu</b>, “Energy efficient target tracking with a sensorless robot and a network of unreliable one-bit proximity sensors,” in Proceedings of IEEE International Conference of Robotics and Automation (ICRA), Kobe, Japan, May 2009.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication54'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://cse.sc.edu/~jokane/papers/OKaXu10b.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication54" style="display:none " class="bibQuote">
+                        @inproceedings{o2009energy,
+                        title={Energy-efficient target tracking with a sensorless robot and a network of unreliable one-bit proximity sensors},
+                        author={O'Kane, Jason M and Xu, Wenyuan},
+                        booktitle={Robotics and Automation, 2009. ICRA'09. IEEE International Conference on},
+                        pages={750--755},
+                        year={2009},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+
+
+            </ul>
+
+            <h4>2008</h4>
+            <ul>
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Wade Trappe and Yanyong Zhang, "Anti-Jamming Timing Channels for Wireless Networks," in proceedings of 1st ACM Conference on Wireless Security (WiSec2008), pg 203-213, 2008. (Acceptance ratio: 16.7%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication55'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://delivery.acm.org/10.1145/1360000/1352567/p203-xu.pdf?ip=39.174.145.110&id=1352567&acc=ACTIVE%20SERVICE&key=BF85BBA5741FDC6E%2E0E9E463C2E5391F8%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1523931877_0d7176e054993d5655f9bcdabcc4f613" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication55" style="display:none " class="bibQuote">
+                        @inproceedings{xu2008anti,
+                        title={Anti-jamming timing channels for wireless networks},
+                        author={Xu, Wenyuan and Trappe, Wade and Zhang, Yanyong},
+                        booktitle={Proceedings of the first ACM conference on Wireless network security},
+                        pages={203--213},
+                        year={2008},
+                        organization={ACM}
+                        }
+                    </blockquote></li>
+
+            </ul>
+
+            <h4>2007</h4>
+            <ul>
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, “On Adjusting Power to Defend Wireless Networks from Jamming,” in proceedings of the First Workshop on the Security and Privacy of Emerging Ubiquitous Communication Systems (speucs), 2007.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication56'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://pdfs.semanticscholar.org/03c8/8e3e653ca3e3e3a4097815b6f0c0f0288237.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication56" style="display:none " class="bibQuote">
+                        @inproceedings{xu2007adjusting,
+                        title={On adjusting power to defend wireless networks from jamming},
+                        author={Xu, Wenyuan},
+                        booktitle={Mobile and Ubiquitous Systems: Networking \& Services, 2007. MobiQuitous 2007. Fourth Annual International Conference on},
+                        pages={1--6},
+                        year={2007},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Rob Miller, <b>Wenyuan Xu</b>, Pandurang Kamat and Wade Trappe, “Service Discovery and Device Identification in Cognitive Radio Networks,” in Proceedings of the IEEE Workshop on Networking Technologies for Software Defined Radio (SDR) Networks (Held in Conjunction with IEEE SECON), 2007.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication57'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://cse.sc.edu/~wyxu/papers/SDDI-sdr2007.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication57" style="display:none " class="bibQuote">
+                        @inproceedings{miller2007service,
+                        title={Service discovery and device identification in cognitive radio networks},
+                        author={Miller, Rob and Xu, Wenyuan and Kamat, Pandurang and Trappe, Wade},
+                        booktitle={Sensor, Mesh and Ad Hoc Communications and Networks, 2007. SECON'07. 4th Annual IEEE Communications Society Conference on},
+                        pages={670--677},
+                        year={2007},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        Pandurang Kamat, <b>Wenyuan Xu</b>, Wade Trappe and Yanyong Zhang, “Temporal Privacy in wireless sensor networks,” in Proceedings of the 27th International Conference on Distributed Computing Systems (ICDCS2007), pg. 23, 2007. (Acceptance ratio: 13.5%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication58'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://static1.squarespace.com/static/59653dfc72af6539c7ae11f1/t/59760c313a041155fa50e688/1500908594032/TemporalPrivacy_ICDCS07.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication58" style="display:none " class="bibQuote">
+                        @inproceedings{kamat2007temporal,
+                        title={Temporal privacy in wireless sensor networks},
+                        author={Kamat, Pandurang and Xu, Wenyuan and Trappe, Wade and Zhang, Yanyong},
+                        booktitle={Distributed Computing Systems, 2007. ICDCS'07. 27th International Conference on},
+                        pages={23--23},
+                        year={2007},
+                        organization={IEEE}
+                        }
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Wade Trappe and Yanyong Zhang, “Channel Surfing: Defending Wireless Sensor Networks from Jamming and Interference,” in Proceedings of the 6th International Conference on Information Processing in Sensor Networks (IPSN07), pg. 499-508, 2007. (Acceptance ratio: 22.3%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication59'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://www.ece.rutgers.edu/~yyzhang/research/papers/ipsn07-xu.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication59" style="display:none " class="bibQuote">
+                        @inproceedings{xu2007channel,
+                        title={Channel surfing: defending wireless sensor networks from interference},
+                        author={Xu, Wenyuan and Trappe, Wade and Zhang, Yanyong},
+                        booktitle={Proceedings of the 6th international conference on Information processing in sensor networks},
+                        pages={499--508},
+                        year={2007},
+                        organization={ACM}
+                        }
+                    </blockquote></li>
+
+
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Wade Trappe and Yanyong Zhang, “Poster Abstract: Channel Surfing: Defending Wireless Sensor Networks from Jamming and Interference,” in Proceedings of the 4th ACM Conference on Embedded Networked Sensor Systems (SenSys), pg. 403-404, 2006.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication60'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://www.ece.rutgers.edu/~yyzhang/research/papers/ipsn07-xu.pdf" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication60" style="display:none " class="bibQuote">
+                        @inproceedings{xu2007channel,
+                        title={Channel surfing: defending wireless sensor networks from interference},
+                        author={Xu, Wenyuan and Trappe, Wade and Zhang, Yanyong},
+                        booktitle={Proceedings of the 6th international conference on Information processing in sensor networks},
+                        pages={499--508},
+                        year={2007},
+                        organization={ACM}
+                        }
+                    </blockquote></li>
+
+
+            </ul>
+
+            <h4>2006</h4>
+            <ul>
+                <li>
+                    <p>
+                        Z. Li, <b>Wenyuan Xu</b>, Rob Miller and Wade Trappe, “Securing Wireless Systems via Lower Layer Enforcements,” in Proceedings of the 2006 ACM Workshop on Wireless Security (WiSe), pg. 33-42, 2006. (Acceptance ratio: 19.6%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication61'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://delivery.acm.org/10.1145/1170000/1161297/p33-li.pdf?ip=183.157.162.225&id=1161297&acc=ACTIVE%20SERVICE&key=BF85BBA5741FDC6E%2E0E9E463C2E5391F8%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1523932910_ce875a686bebcd66cef40c48c6d91668" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication61" style="display:none " class="bibQuote">
+                        @inproceedings{li2006securing,
+                        title={Securing wireless systems via lower layer enforcements},
+                        author={Li, Zang and Xu, Wenyuan and Miller, Rob and Trappe, Wade},
+                        booktitle={Proceedings of the 5th ACM workshop on Wireless security},
+                        pages={33--42},
+                        year={2006},
+                        organization={ACM}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Pandurang  Kamat and Wade Trappe, “TRIESTE: A Trusted Radio Infrastructure for Enforcing SpecTrum Etiquettes,” in Proceedings of the IEEE Workshop on Networking Technologies for Software Defined Radio (SDR) Networks (Held in Conjunction with IEEE SECON), 2006.
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication62'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4286332" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication62" style="display:none " class="bibQuote">
+                        @inproceedings{xu2006trieste,
+                        title={TRIESTE: A trusted radio infrastructure for enforcing spectrum etiquettes},
+                        author={Xu, Wenyuan and Kamat, Pandurang and Trappe, Wade},
+                        booktitle={Networking Technologies for Software Defined Radio Networks, 2006. SDR'06.1 st IEEE Workshop on},
+                        pages={101--109},
+                        year={2006},
+                        organization={IEEE}
+                        }
+
+                    </blockquote></li>
+            </ul>
+
+            <h4>2005</h4>
+            <ul>
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Wade  Trappe, Yanyong Zhang and Timothy Wood, “The Feasibility of Launching and Detecting Jamming Attacks in Wireless Networks,” in Proceedings of ACM International Symposium on Mobile Ad Hoc Networking and Computing (Mobihoc), pg. 46-57, 2005. (Acceptance ratio: 14.2%)
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication63'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://delivery.acm.org/10.1145/1070000/1062697/p46-xu.pdf?ip=183.157.162.225&id=1062697&acc=ACTIVE%20SERVICE&key=BF85BBA5741FDC6E%2E0E9E463C2E5391F8%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1523933049_b72c5eac19472c4933b2f3c9b3a48151" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication63" style="display:none " class="bibQuote">
+                        @inproceedings{xu2005feasibility,
+                        title={The feasibility of launching and detecting jamming attacks in wireless networks},
+                        author={Xu, Wenyuan and Trappe, Wade and Zhang, Yanyong and Wood, Timothy},
+                        booktitle={Proceedings of the 6th ACM international symposium on Mobile ad hoc networking and computing},
+                        pages={46--57},
+                        year={2005},
+                        organization={ACM}
+                        }
+
+                    </blockquote></li>
+            </ul>
+
+            <h4>2004</h4>
+            <ul>
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Timothy  Wood, Wade Trappe, and Yanyong Zhang, “Channel surfing and spatial retreats: defenses against wireless denial of service,” in Proceedings of the 2004 ACM workshop on Wireless security (WiSe), pg. 80-89, 2004. (Acceptance ratio: 20%)
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication64'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://delivery.acm.org/10.1145/1030000/1023661/p80-xu.pdf?ip=183.157.162.225&id=1023661&acc=ACTIVE%20SERVICE&key=BF85BBA5741FDC6E%2E0E9E463C2E5391F8%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1523933134_e1af13642d6e47dfe095e6f5af8721c2" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication64" style="display:none " class="bibQuote">
+                        @inproceedings{xu2004channel,
+                        title={Channel surfing and spatial retreats: defenses against wireless denial of service},
+                        author={Xu, Wenyuan and Wood, Timothy and Trappe, Wade and Zhang, Yanyong},
+                        booktitle={Proceedings of the 3rd ACM workshop on Wireless security},
+                        pages={80--89},
+                        year={2004},
+                        organization={ACM}
+                        }
+
+                    </blockquote></li>
+
+                <li>
+                    <p>
+                        <b>Wenyuan Xu</b>, Wade Trappe, and Sanjoy Paul, “Key Management for 3G MBMS Security,” in Proceeding of IEEE Global Telecommunications Conference (GLOBECOM), Vol. 4, pg. 2276-2280, 2004.
+
+                        &#160;&#160;<span class="bib ui button"  onclick="toggleMe('xPublication65'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1378414" target="_blank">PDF</a></span>
+                    </p>
+                    <blockquote id="xPublication65" style="display:none " class="bibQuote">
+                        @inproceedings{xu2004key,
+                        title={Key management for 3G MBMS security},
+                        author={Xu, Wenyuan and Trappe, Wade and Paul, Sanjoy},
+                        booktitle={Global Telecommunications Conference, 2004. GLOBECOM'04. IEEE},
+                        volume={4},
+                        pages={2276--2280},
+                        year={2004},
+                        organization={IEEE}
+                        }
+
+                    </blockquote></li>
+
+            </ul>
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Professional Activities</h1>
+
+            <div class="ui divider"></div>
+            <h2 class="ui header">Program Chair</h2>
+            <ul>
+                <li> <p>The 8th IEEE International Conference on Distributed Computing in Sensor Systems (DCOSS '12) </p></li>
+                <li> <p>The First IEEE International Workshop on Generation C Wireless Networks (GenCWiNets 2008) </p></li>
+            </ul>
+
+
+            <h2 class="ui header">Technical Program Committees </h2>
+
+            <ul>
+                <li><p>Usenix Enigma (2015, 2017)</p></li>
+                <li><p>ACM Conference on Computer and Communications Security (CCS2015, CCS2016)</p></li>
+                <li><p>Usenix Security Symposium (2011, 2014)</p></li>
+                <li><p>NDSS (2014) </p></li>
+                <li><p>Percom (2013, 2014, 2015)</p> </li>
+                <li><p>ACNS (2014, 2016) </p></li>
+                <li><p>Mobysis (2014)</p></li>
+                <li><p>IEEE CNS (2013, 2014, 2015, 2016)</p> </li>
+                <li><p>IEEE International Conference on Mobile Ad-hoc and Sensor Systems (MASS 2012)</p></li>
+                <li><p>International Conference On Principles Of DIstributed Systems(OPODIS 2012)</p></li>
+                <li><p>WiSec (The ACM Conference on Wireless Network Security) (2009, 2010, 2012, 2013, 2016)</p> </li>
+                <li><p>The International Conference on Computer Communications and Networks (ICCCN 2007, ICCCN 2009, ICCCN2010, ICCCN2011)</p></li>
+                <li><p>IEEE International Conference on Communications 2010, System Security Symposium ( ICC’11 CISS, ICC’12 CISS, ICC’13 CISS)</p> </li>
+                <li><p>IEEE Global Telecommunications Conference (GlobeCom 2011) </p></li>
+            </ul>
+
+        </div>
+
+
+
+
+        <div class="ui inverted vertical footer segment">
+
+            <div class="ui center aligned container">
+
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+                <div class="ui horizontal inverted small divided link list">
+
+                    Copyright &copy; USS Lab. 2016-2017
+
+                    <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+
+                    <br/> All Right Reserved.
+
+                    <br/>
+
+                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+
+                        <b>浙ICP备16045554号-1</b>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+
+</html>

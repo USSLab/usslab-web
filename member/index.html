@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <base href="/" />
+    <!-- Site Properties -->
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+    <style type="text/css">
+        .hidden.menu {
+            display: none;
+        }
+        .largeheader {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+        .ui.vertical.stripe {
+            padding: 3em 0em;
+        }
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+        .footer.segment {
+            padding: 5em 0em;
+        }
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+        .top.fixed.menu .ftoc.item {
+            display: none;
+        }
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .logo,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+            .masthead.segment {
+                min-height: 350px;
+            }
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .top.fixed.menu .item,
+            .top.fixed.menu .menu {
+                display: none;
+            }
+            .top.fixed.menu .ftoc.item {
+                display: block;
+            }
+        }
+        .logo.image {
+            width: 50px;
+            margin-right: 1px;
+        }
+        .galary {
+            margin-top: 20px;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 600px;
+        }
+        .beian:hover {
+            color: white;
+        }
+        .beian {
+            color: grey;
+        }
+    </style>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="semantic/dist/components/visibility.js"></script>
+    <script src="semantic/dist/components/sidebar.js"></script>
+    <script src="semantic/dist/components/transition.js"></script>
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+                // fix menu when passed
+                $('.secondary.menu')
+                    .visibility({
+                        once: false
+                        , onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        }
+                        , onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+                // create sidebar and attach to menu open
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination'
+                    , paginationClickable: true
+                    , speed: 1000
+                    , centeredSlides: true
+                    , autoplay: 2500
+                    ,
+                });
+            });
+    </script>
+</head>
+<body>
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="ftoc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="header item">
+                <img class="logo" src="images/logo.png" /> USSLab.
+            </a>
+            <a class="item" href="/">Home</a>
+            <a class="item" href="projects/">Projects</a>
+            <a class="item" href="/publications.html">Publications</a>
+            <a class="item active">Members</a>
+            <a class="item" href="/courses.html">Courses</a>
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+            <a class="item" href="/seminar.html">Seminar</a>
+            <a class="right item" href="/contact.html">Contact us</a>
+        </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <div class="item">
+            <a class="ui logo icon image">
+                <img src="images/logo.png" />
+            </a>
+            <a href="#"><b>USSLab.</b></a>
+        </div>
+        <a class="item" href="/">Home</a>
+        <a class="item" href="projects/">Projects</a>
+        <a class="item" href="/publications.html">Publications</a>
+        <a class="item active">Members</a>
+        <a class="item" href="/courses.html">Courses</a>
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+        <a class="item" href="/seminar.html">Seminar</a>
+        <a class="right item" href="/contact.html">Contact us</a>
+    </div>
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui inverted vertical center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="ui logo icon image">
+                        <img src="images/logo.png" />
+                    </a>
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+                    <a class="item" href="/">Home</a>
+                    <a class="item" href="projects/">Projects</a>
+                    <a class="item" href="/publications.html">Publications</a>
+                    <a class="item active">Members</a>
+                    <a class="item" href="/courses.html">Courses</a>
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+                    <a class="item" href="/seminar.html">Seminar</a>
+                    <a class="right item" href="/contact.html">Contact us</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui vertical stripe container segment">
+            <h1 class="ui header">Members</h1>
+            <div class="ui divider"></div>
+            <img width="100%" src="images/hz3.jpg" />
+            <h3>Faculty</h3>
+            <div class="ui stackable bottom aligned three column grid">
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/xuwenyuan.html">
+                                <img width="100%" src="images/xwy2.jpg">
+                            </a>
+                            <a href="member/xuwenyuan.html">Xu Wenyuan</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="https://sites.google.com/site/xiaoyuijh/home">
+                                <img width="100%" src="images/jxy1.jpg">
+                            </a>
+                            <a>Ji Xiaoyu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>Ph.D. Students</h3>
+            <div class="ui stackable bottom aligned three column grid">
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/zhangtaimin.html">
+                                <img width="100%" src="images/ztm1.jpg">
+                            </a>
+                            <a href="member/zhangtaimin.html">Zhang Taimin</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/zhouxinyan.html">
+                                <img width="100%" src="images/zxy1.png">
+                            </a>
+                            <a href="member/zhouxinyan.html">Zhou Xinyan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a>
+                                <img width="100%" src="images/lxp.png">
+                            </a>
+                            <a>Li Xiaopeng</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/yanchen.html">
+                                <img width="100%" src="images/yc1.JPG">
+                            </a>
+                            <a href="member/yanchen.html">Yan Chen</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/lichaohao.html">
+                                <img width="100%" src="images/lch1.jpg">
+                            </a>
+                            <a href="member/lichaohao.html">Li Chaohao</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/zhangguoming.html">
+                                <img width="100%" src="images/zgm1.jpg">
+                            </a>
+                            <a href="member/zhangguoming.html">Zhang Guoming</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui stackable bottom aligned three column grid">
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/chengyushi.html">
+                                <img width="100%" src="images/cys1.jpg">
+                            </a>
+                            <a href="member/chengyushi.html">Cheng Yushi</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a>
+                                <img width="100%" src="images/zzc.png">
+                            </a>
+                            <a>Zhang Juchuan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>Master Students</h3>
+            <div class="ui stackable bottom aligned three column grid">
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/jiaweibin.html">
+                                <img width="100%" src="images/jwb1.jpg">
+                            </a>
+                            <a href="member/jiaweibin.html">Jia Weibin</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/luxin.html">
+                                <img width="100%" src="images/lx1.png">
+                            </a>
+                            <a href="member/luxin.html">Lu Xin</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/mazhuoran.html">
+                                <img width="100%" src="images/mzr1.jpg">
+                            </a>
+                            <a href="member/mazhuoran.html">Ma Zhuoran</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a>
+                                <img width="100%" src="images/ztc.png">
+                            </a>
+                            <a>Zhang Tianchen</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/ouyangxuan.html">
+                                <img width="100%" src="images/oyx1.JPG">
+                            </a>
+                            <a href="member/ouyangxuan.html">Ouyang Xuan</a>
+                        </div>
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a href="member/zhuangzhou.html">
+                                <img width="100%" src="images/zhuangzhou.jpg">
+                            </a>
+                            <a href="member/zhuangzhou.html">Zhuang Zhou</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui two column grid">
+                        <div class="bottom aligned column" style="text-align:center;">
+                            <a>
+                                <img width="100%" src="images/zym.png">
+                            </a>
+                            <a>Zhang Yanmiao</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>Alumni Students</h3>
+            <div class="ui container">
+                <div class="ui stackable bottom aligned three column grid">
+                    <div class="five wide column">
+                        <div class="ui two column grid">
+                            <div class="bottom aligned column" style="text-align:center;">
+                                <a>
+                                    <img width="100%" src="images/xm.png">
+                                </a>
+                                <a>Xu Miao</a>
+                            </div>
+                            <div class="bottom aligned column" style="text-align:center;">
+                                <a>
+                                    <img width="100%" src="images/wxh1.jpg">
+                                </a>
+                                <a>Wang Xiaohui</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <div class="ui two column grid">
+                            <div class="bottom aligned column" style="text-align:center;">
+                                <a>
+                                    <img width="100%" src="images/wanghaoran1.jpg">
+                                </a>
+                                <a>Wang Haoran</a>
+                            </div>
+                            <div class="bottom aligned column" style="text-align:center;">
+                                <a>
+                                    <img width="100%" src="images/wyj1.png">
+                                </a>
+                                <a>Wu Yanjing</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <div class="ui two column grid">
+                            <div class="bottom aligned column" style="text-align:center;">
+                                <a href="member/xiaoyujun.html">
+                                    <img width="100%" src="images/xiaoyujun1.jpg">
+                                </a>
+                                <a href="member/xiaoyujun.html">Xiao Yujun</a>
+                            </div>
+                            <div class="bottom aligned column" style="text-align:center;">
+                                <a>
+                                    <img width="100%" src="images/wangjiaheng1.jpg">
+                                </a>
+                                <a>Wang Jiaheng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="ui inverted vertical footer segment">
+            <div class="ui center aligned container">
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+                <div class="ui horizontal inverted small divided link list">
+                    Copyright &copy; USS Lab.&nbsp;&nbsp;2016-2017
+                    <br /> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+                    <br /> All Right Reserved.
+                    <br /><a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+                        <b>浙ICP备16045554号-1</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

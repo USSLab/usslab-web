@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+    <!-- Standard Meta -->
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <base href="/" />
+
+    <!-- Site Properties -->
+
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+
+
+
+    <style type="text/css">
+
+        .hidden.menu {
+
+            display: none;
+
+        }
+
+        
+
+        .largeheader {
+
+            margin-top: 3em;
+
+            margin-bottom: 0em;
+
+            font-size: 4em;
+
+            font-weight: normal;
+
+        }
+
+        
+
+        .ui.vertical.stripe {
+
+            padding: 3em 0em;
+
+        }
+
+        
+
+        .ui.vertical.stripe h3 {
+
+            font-size: 2em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .button+h3,
+
+        .ui.vertical.stripe p+h3 {
+
+            margin-top: 3em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .floated.image {
+
+            clear: both;
+
+        }
+
+        
+
+        .ui.vertical.stripe p {
+
+            font-size: 1.33em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .horizontal.divider {
+
+            margin: 3em 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment {
+
+            padding: 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment .grid .column {
+
+            padding-top: 5em;
+
+            padding-bottom: 5em;
+
+        }
+
+        
+
+        .footer.segment {
+
+            padding: 5em 0em;
+
+        }
+
+        
+
+        .secondary.pointing.menu .toc.item {
+
+            display: none;
+
+        }
+
+        
+
+        .top.fixed.menu .ftoc.item {
+
+            display: none;
+
+        }
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .secondary.pointing.menu .item,
+
+            .secondary.pointing.menu .logo,
+
+            .secondary.pointing.menu .menu {
+
+                display: none;
+
+            }
+
+            .secondary.pointing.menu .toc.item {
+
+                display: block;
+
+            }
+
+            .masthead.segment {
+
+                min-height: 350px;
+
+            }
+
+            .masthead h1.ui.header {
+
+                font-size: 2em;
+
+                margin-top: 1.5em;
+
+            }
+
+            .masthead h2 {
+
+                margin-top: 0.5em;
+
+                font-size: 1.5em;
+
+            }
+
+        }
+
+        
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .top.fixed.menu .item,
+
+            .top.fixed.menu .menu {
+
+                display: none;
+
+            }
+
+            .top.fixed.menu .ftoc.item {
+
+                display: block;
+
+            }
+
+        }
+
+        .ui.pdf.button{
+            margin: 0;
+            padding: 0.2em 0.2em 0.2em 0.2em;
+            border: 0;        
+            font-size: 80%;
+            color: rgba(0,0,0,0.6);
+            vertical-align: baseline;
+        }
+        .ui.pdf.button:hover{
+            margin: 0;
+            padding: 0.2em 0.2em 0.2em 0.2em;
+            border: 0;        
+            font-size: 80%;
+            color: rgba(0,0,0,0.87);
+            vertical-align: baseline;
+        }
+
+        .logo.image {
+
+            width: 50px;
+
+            margin-right: 1px;
+
+        }
+        
+        .report.link{
+            background-position:center right;
+            background-repeat:no-repeat;
+            background-image:url(images/link.svg);
+            padding-right: 13px;
+        }
+        
+
+        .galary {
+
+            margin-top: 20px;
+
+        }
+
+        .swiper-container {
+
+            width: 100%;
+
+            height: 600px;
+
+        }
+
+        
+
+        .beian:hover {
+
+            color: white;
+
+        }
+
+        
+
+        .beian {
+
+            color: grey;
+
+        }
+
+    </style>
+
+
+
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="semantic/dist/components/visibility.js"></script>
+
+    <script src="semantic/dist/components/sidebar.js"></script>
+
+    <script src="semantic/dist/components/transition.js"></script>
+
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+
+    <script src="semantic/dist/extraFunc.js"></script>
+
+    <script>
+
+        $(document)
+
+            .ready(function() {
+
+
+
+                // fix menu when passed
+
+                $('.secondary.menu')
+
+                    .visibility({
+
+                        once: false,
+
+                        onBottomPassed: function() {
+
+                            $('.fixed.menu').transition('fade in');
+
+                        },
+
+                        onBottomPassedReverse: function() {
+
+                            $('.fixed.menu').transition('fade out');
+
+                        }
+
+                    });
+
+
+
+                // create sidebar and attach to menu open
+
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+
+
+
+                var swiper = new Swiper('.swiper-container', {
+
+                    pagination: '.swiper-pagination',
+
+                    paginationClickable: true,
+
+                    speed: 1000,
+
+                    centeredSlides: true,
+
+                    autoplay: 2500,
+
+                });
+
+
+
+            });
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Following Menu -->
+
+    <div class="ui large top fixed hidden menu">
+
+        <div class="ui container">
+
+            <a class="ftoc item">
+
+                <i class="sidebar icon"></i>
+
+            </a>
+
+            <a class="header item">
+
+                <img class="logo" src="images/logo.png" /> USSLab.
+
+            </a>
+
+            <a class="item" href="/">Home</a>
+
+            <a class="item" href="projects/">Projects</a>
+
+            <a class="item" href="/publications.html">Publications</a>
+
+            <a class="item" href="member/">Members</a>
+
+            <a class="item" href="/about.html">About us</a>
+
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+            <a class="right item" href="/contact.html">Contact us</a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Sidebar Menu -->
+
+    <div class="ui vertical inverted sidebar menu">
+
+        <div class="item">
+
+            <a class="ui logo icon image">
+
+                <img src="images/logo.png" />
+
+            </a>
+
+            <a href="#"><b>USSLab.</b></a>
+
+        </div>
+
+        <a class="item" href="/">Home</a>
+
+        <a class="item" href="projects/">Projects</a>
+
+        <a class="item" href="/publications.html">Publications</a>
+
+        <a class="item" href="member/">Members</a>
+
+        <a class="item" href="/about.html">About us</a>
+
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+        <a class="right item" href="/contact.html">Contact us</a>
+
+    </div>
+
+
+
+
+
+    <!-- Page Contents -->
+
+    <div class="pusher">
+
+        <div class="ui inverted vertical center aligned segment">
+
+            <div class="ui container">
+
+                <div class="ui large secondary inverted pointing menu">
+
+                    <a class="toc item">
+
+                        <i class="sidebar icon"></i>
+
+                    </a>
+
+                    <a class="ui logo icon image">
+
+                        <img src="images/logo.png" />
+
+                    </a>
+
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+
+                    <a class="item" href="/">Home</a>
+
+                    <a class="item" href="projects/">Projects</a>
+
+                    <a class="item" href="/publications.html">Publications</a>
+
+                    <a class="item" href="member/">Members</a>
+
+                    <a class="item" href="/about.html">About us</a>
+
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+                    <a class="right item" href="/contact.html">Contact us</a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">DeWiCam</h1>
+
+
+            <div class="ui stackable four column grid">
+
+                <div class="eleven wide column">
+
+                    <div class="ui divider"></div>
+                    
+                    <h2>Introduction</h2>
+
+                    <p style="text-align: justify;">
+
+                        Wireless cameras are widely deployed in surveillance systems for security guarding. However, the privacy concerns associated with unauthorized videotaping, are drawing an increasing attention recently. Existing detection methods for unauthorized wireless cameras are either limited by their detection accuracy or requiring dedicated devices. In this work, we propose DeWiCam, a lightweight and effective detection mechanism using smartphones. The basic idea of DeWiCam is to utilize the intrinsic traffic patterns of flows from wireless cameras. Compared with traditional traffic pattern analysis, DeWiCam is more challenging because it cannot access the encrypted information in the data packets. Yet, DeWiCam overcomes the difficulty and can detect nearby wireless cameras reliably. To further identify whether a camera is in an interested room, we propose a human-assisted identification model. Extension functions of DeWiCam enable the video resolution and audio channel inference to provide further protection. We implement DeWiCam on the Android platform and evaluate it with extensive experiments on 20 cameras. The evaluation results show that DeWiCam can detect cameras with an accuracy of 99% within 2.7 s.
+                    </p>
+
+                    <p style="text-align: justify;">
+                        we envision that DeWiCam can be used as follows: when a user enters an untrusted room (e.g., an Airbnb rental), she/ he runs DeWiCam on her/ his smartphone briefly to detect whether a wireless camera is inside the room. Essentially, DeWiCam will automatically analyze wireless traffic to recognize the distinct traffic patterns of wireless cameras, if any, and inform the user of the existence as well as the exact number of wireless cameras.
+                    </p>
+
+                    <br/>
+
+                    <div style="text-align: center">
+                    <img src="images/dewicam1.png" width="60%" alt=""  />
+                    </div>
+
+                    <br/>
+
+                    <p style="text-align: justify;">
+                        Figure 1: Hidden wireless cameras cause privacy invasion by remote monitoring. DeWiCam detects wireless cameras over wireless channels using ubiquitous smartphones.
+                    </p>
+
+                    <br/>
+
+                    <div style="text-align: center">
+                        <img src="images/dewicam2.png" width="60%" alt="" />
+                    </div>
+
+
+                    <br/>
+                    <p style="text-align: justify;">
+                        Figure 2: The UI snapshot of DeWiCam. The left figure illustrates the case one camera is detected and the right one shows two cameras are detected in real detection.
+                    </p>
+
+
+                    <p style="text-align: center;">
+                        <video id="videoId" width="30%" controls="controls" >
+                            <source src="videos/dewicam.mp4" type="video/mp4" />
+                        </video>
+                    </p>
+
+                    <div style="text-align: center">
+                        <p >
+                            Video: Real-time wireless camera detection in a lab.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="five wide column">
+
+                    <h2>Group Members</h2>
+
+                    <div class="ui top aligned two column grid">
+
+                        <div class="column" style="text-align:center;">
+
+                            <a>
+
+                                <img width="100%" src="images/xwy1.jpg">
+
+                            </a>
+
+                            <div class="pro_intro_txtstyle">
+
+                                <a>Xu Wenyuan<br/>(Professor)</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="column" style="text-align:center;">
+
+                            <a href="https://sites.google.com/site/xiaoyuijh/home">
+
+                                <img width="100%" src="images/jxy1.jpg">
+
+                            </a>
+
+                            <div class="pro_intro_txtstyle">
+
+                                <a href="https://sites.google.com/site/xiaoyuijh/home">Ji Xiaoyu<br/>(Assistant Professor)</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="column" style="text-align:center;">
+
+                            <a href="member/chengyushi.html">
+
+                                <img width="100%" src="images/cys1.jpg">
+
+                            </a>
+
+                            <div class="pro_intro_txtstyle">
+
+                                <a href="member/chengyushi.html">Chen Yushi<br/>(Ph.D. Student)</a>
+
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <br/>
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Publications</h1>
+
+            <div class="ui divider"></div>
+
+            <p>
+                Yushi Cheng, Xiaoyu Ji, Tianyang Lu, Wenyuan Xu. DeWiCam: Detecting Hidden Wireless Cameras via Smartphones. ACM Asia Conference on Computer and Communications Security, 2018. <span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+            </p>
+
+            <br/>
+
+            <div class="ui divider"></div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="ui inverted vertical footer segment">
+
+            <div class="ui center aligned container">
+
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+                <div class="ui horizontal inverted small divided link list">
+
+                    Copyright &copy; USS Lab. 2016-2017
+
+                    <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+
+                    <br/> All Right Reserved.
+
+                    <br/>
+
+                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+
+                        <b>浙ICP备16045554号-1</b>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+
+</html>

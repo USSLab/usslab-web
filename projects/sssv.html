@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+    <!-- Standard Meta -->
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <base href="/" />
+
+    <!-- Site Properties -->
+
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+
+
+
+    <style type="text/css">
+
+        .hidden.menu {
+
+            display: none;
+
+        }
+
+        
+
+        .largeheader {
+
+            margin-top: 3em;
+
+            margin-bottom: 0em;
+
+            font-size: 4em;
+
+            font-weight: normal;
+
+        }
+
+        
+
+        .ui.vertical.stripe {
+
+            padding: 3em 0em;
+
+        }
+
+        
+
+        .ui.vertical.stripe h3 {
+
+            font-size: 2em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .button+h3,
+
+        .ui.vertical.stripe p+h3 {
+
+            margin-top: 3em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .floated.image {
+
+            clear: both;
+
+        }
+
+        
+
+        .ui.vertical.stripe p {
+
+            font-size: 1.33em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .horizontal.divider {
+
+            margin: 3em 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment {
+
+            padding: 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment .grid .column {
+
+            padding-top: 5em;
+
+            padding-bottom: 5em;
+
+        }
+
+        
+
+        .footer.segment {
+
+            padding: 5em 0em;
+
+        }
+
+        
+
+        .secondary.pointing.menu .toc.item {
+
+            display: none;
+
+        }
+
+        
+
+        .top.fixed.menu .ftoc.item {
+
+            display: none;
+
+        }
+
+        
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .secondary.pointing.menu .item,
+
+            .secondary.pointing.menu .logo,
+
+            .secondary.pointing.menu .menu {
+
+                display: none;
+
+            }
+
+            .secondary.pointing.menu .toc.item {
+
+                display: block;
+
+            }
+
+            .masthead.segment {
+
+                min-height: 350px;
+
+            }
+
+            .masthead h1.ui.header {
+
+                font-size: 2em;
+
+                margin-top: 1.5em;
+
+            }
+
+            .masthead h2 {
+
+                margin-top: 0.5em;
+
+                font-size: 1.5em;
+
+            }
+
+        }
+
+        
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .top.fixed.menu .item,
+
+            .top.fixed.menu .menu {
+
+                display: none;
+
+            }
+
+            .top.fixed.menu .ftoc.item {
+
+                display: block;
+
+            }
+
+        }
+
+        
+
+        .logo.image {
+
+            width: 50px;
+
+            margin-right: 1px;
+
+        }
+
+        
+
+        .galary {
+
+            margin-top: 20px;
+
+        }
+
+        
+
+        .swiper-container {
+
+            width: 100%;
+
+            height: 600px;
+
+        }
+
+        
+
+        .beian:hover {
+
+            color: white;
+
+        }
+
+        
+
+        .beian {
+
+            color: grey;
+
+        }
+
+    </style>
+
+
+
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="semantic/dist/components/visibility.js"></script>
+
+    <script src="semantic/dist/components/sidebar.js"></script>
+
+    <script src="semantic/dist/components/transition.js"></script>
+
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+
+    <script>
+
+        $(document)
+
+            .ready(function() {
+
+
+
+                // fix menu when passed
+
+                $('.secondary.menu')
+
+                    .visibility({
+
+                        once: false,
+
+                        onBottomPassed: function() {
+
+                            $('.fixed.menu').transition('fade in');
+
+                        },
+
+                        onBottomPassedReverse: function() {
+
+                            $('.fixed.menu').transition('fade out');
+
+                        }
+
+                    });
+
+
+
+                // create sidebar and attach to menu open
+
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+
+
+
+                var swiper = new Swiper('.swiper-container', {
+
+                    pagination: '.swiper-pagination',
+
+                    paginationClickable: true,
+
+                    speed: 1000,
+
+                    centeredSlides: true,
+
+                    autoplay: 2500,
+
+                });
+
+
+
+            });
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Following Menu -->
+
+    <div class="ui large top fixed hidden menu">
+
+        <div class="ui container">
+
+            <a class="ftoc item">
+
+                <i class="sidebar icon"></i>
+
+            </a>
+
+            <a class="header item">
+
+                <img class="logo" src="images/logo.png" /> USSLab.
+
+            </a>
+
+            <a class="item" href="/">Home</a>
+
+            <a class="item" href="projects/">Projects</a>
+
+            <a class="item" href="/publications.html">Publications</a>
+
+            <a class="item" href="member/">Members</a>
+
+            <a class="item" href="/about.html">About us</a>
+
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+            <a class="right item" href="/contact.html">Contact us</a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Sidebar Menu -->
+
+    <div class="ui vertical inverted sidebar menu">
+
+        <div class="item">
+
+            <a class="ui logo icon image">
+
+                <img src="images/logo.png" />
+
+            </a>
+
+            <a href="#"><b>USSLab.</b></a>
+
+        </div>
+
+        <a class="item" href="/">Home</a>
+
+        <a class="item" href="projects/">Projects</a>
+
+        <a class="item" href="/publications.html">Publications</a>
+
+        <a class="item" href="member/">Members</a>
+
+        <a class="item" href="/about.html">About us</a>
+
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+        <a class="right item" href="/contact.html">Contact us</a>
+
+    </div>
+
+
+
+
+
+    <!-- Page Contents -->
+
+    <div class="pusher">
+
+        <div class="ui inverted vertical center aligned segment">
+
+            <div class="ui container">
+
+                <div class="ui large secondary inverted pointing menu">
+
+                    <a class="toc item">
+
+                        <i class="sidebar icon"></i>
+
+                    </a>
+
+                    <a class="ui logo icon image">
+
+                        <img src="images/logo.png" />
+
+                    </a>
+
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+
+                    <a class="item" href="/">Home</a>
+
+                    <a class="item" href="projects/">Projects</a>
+
+                    <a class="item" href="/publications.html">Publications</a>
+
+                    <a class="item" href="member/">Members</a>
+
+                    <a class="item" href="/about.html">About us</a>
+
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+                    <a class="right item" href="/contact.html">Contact us</a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Securing Sensors of Self-Driving Vehicles</h1>
+
+            <div class="ui divider"></div>
+
+            <div class="ui stackable four column grid">
+
+                <div class="ten wide column">
+
+                    <h2>Introduction</h2>
+
+                    <p>
+
+                    To improve road safety and driving experiences, autonomous vehicles have emerged recently, and they can sense their surroundings and navigate without human intervention. Although promising and improving safety features, the trustworthiness of these cars has to be examined before they can be widely adopted on the road. Unlike traditional network security, autonomous vehicles rely heavily on their sensory ability of their surroundings to make driving decision, which makes sensors an interface for attacks. Thus, in this project we examine the security of the sensors of autonomous vehicles, and investigate the trustworthiness of the ‘eyes’ of the cars.
+
+                    </p>
+
+                    <p>
+
+                    Our work investigates sensors whose measurements are used to guide driving, i.e., millimeter-wave radars, ultrasonic sensors, forward-looking cameras. In particular, we present contactless attacks on these sensors and show our results collected both in the laboratory and outdoors on a Tesla Model S automobile. We show that using off-the-shelf hardware, we are able to perform jamming and spoofing attacks, which caused the Tesla’s blindness and malfunction, all of which could potentially lead to crashes and impair the safety of self-driving vehicles.
+
+                    </p>
+
+                    <img src="images/sssv3.png" width="100%"/>
+
+                </div>
+
+                <div class="six wide column">
+
+                    <h2>Group Members</h2>
+
+                    <div class="ui top aligned two column grid">
+
+                        <div class="column" style="text-align:center;">
+
+                            <a>
+
+                                <img width="100%" src="images/xwy1.jpg">
+
+                            </a>
+
+                            <div class="pro_intro_txtstyle">
+
+                                <a>Xu Wenyuan<br/>(Professor)</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="column" style="text-align:center;">
+
+                            <a href="member/yanchen.html">
+
+                                <img width="100%" src="images/yc1.JPG">
+
+                            </a>
+
+                            <div class="pro_intro_txtstyle">
+
+                                <a href="member/yanchen.html">Yan Chen<br/>(Ph.D. Student)</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="column" style="text-align:center;">
+
+                            <a href="member/jiaweibin.html">
+
+                                <img width="100%" src="images/jwb1.jpg">
+
+                            </a>
+
+                            <div class="pro_intro_txtstyle">
+
+                                <a href="member/jiaweibin.html">Jia Weibin<br/>(Master Student)</a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="column" style="text-align:center;">
+
+                            <a>
+
+                                <img width="100%" src="images/ljh1.png">
+
+                            </a>
+
+                            <div class="pro_intro_txtstyle">
+
+                                <a>Liu Jianhao</a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <br/>
+
+                </div>
+
+            </div>
+
+            <br/>
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Publications</h1>
+
+            <div class="ui divider"></div>
+
+            <p>Chen Yan, Wenyuan Xu, Jianhao Liu, "Can you trust autonomous vehicles: Contactless attacks against sensors of self-driving vehicles." DEF CON 24 (2016)</p>
+
+            <br/>
+
+            <div class="ui divider"></div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="ui inverted vertical footer segment">
+
+            <div class="ui center aligned container">
+
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+                <div class="ui horizontal inverted small divided link list">
+
+                    Copyright &copy; USS Lab. 2016-2017
+
+                    <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+
+                    <br/> All Right Reserved.
+
+                    <br/>
+
+                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+
+                        <b>浙ICP备16045554号-1</b>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+
+</html>

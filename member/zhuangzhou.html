@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+    <!-- Standard Meta -->
+
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <base href="/" />
+
+    <!-- Site Properties -->
+
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+
+
+
+    <style type="text/css">
+
+        .hidden.menu {
+
+            display: none;
+
+        }
+
+        
+
+        .largeheader {
+
+            margin-top: 3em;
+
+            margin-bottom: 0em;
+
+            font-size: 4em;
+
+            font-weight: normal;
+
+        }
+
+        
+
+        .ui.vertical.stripe {
+
+            padding: 3em 0em;
+
+        }
+
+        
+
+        .ui.vertical.stripe h3 {
+
+            font-size: 2em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .button+h3,
+
+        .ui.vertical.stripe p+h3 {
+
+            margin-top: 3em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .floated.image {
+
+            clear: both;
+
+        }
+
+        
+
+        .ui.vertical.stripe p {
+
+            font-size: 1.33em;
+
+        }
+
+        
+
+        .ui.vertical.stripe .horizontal.divider {
+
+            margin: 3em 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment {
+
+            padding: 0em;
+
+        }
+
+        
+
+        .quote.stripe.segment .grid .column {
+
+            padding-top: 5em;
+
+            padding-bottom: 5em;
+
+        }
+
+        
+
+        .footer.segment {
+
+            padding: 5em 0em;
+
+        }
+
+        
+
+        .secondary.pointing.menu .toc.item {
+
+            display: none;
+
+        }
+
+        
+
+        .top.fixed.menu .ftoc.item {
+
+            display: none;
+
+        }
+
+        
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .secondary.pointing.menu .item,
+
+            .secondary.pointing.menu .logo,
+
+            .secondary.pointing.menu .menu {
+
+                display: none;
+
+            }
+
+            .secondary.pointing.menu .toc.item {
+
+                display: block;
+
+            }
+
+            .masthead.segment {
+
+                min-height: 350px;
+
+            }
+
+            .masthead h1.ui.header {
+
+                font-size: 2em;
+
+                margin-top: 1.5em;
+
+            }
+
+            .masthead h2 {
+
+                margin-top: 0.5em;
+
+                font-size: 1.5em;
+
+            }
+
+        }
+
+        
+
+        @media only screen and (max-width: 700px) {
+
+            .ui.fixed.menu {
+
+                display: none !important;
+
+            }
+
+            .top.fixed.menu .item,
+
+            .top.fixed.menu .menu {
+
+                display: none;
+
+            }
+
+            .top.fixed.menu .ftoc.item {
+
+                display: block;
+
+            }
+
+        }
+
+        
+
+        .logo.image {
+
+            width: 50px;
+
+            margin-right: 1px;
+
+        }
+
+        
+
+        .galary {
+
+            margin-top: 20px;
+
+        }
+
+        
+
+        .swiper-container {
+
+            width: 100%;
+
+            height: 600px;
+
+        }
+
+        
+
+        .beian:hover {
+
+            color: white;
+
+        }
+
+        
+
+        .beian {
+
+            color: grey;
+
+        }
+
+    </style>
+
+
+
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="semantic/dist/components/visibility.js"></script>
+
+    <script src="semantic/dist/components/sidebar.js"></script>
+
+    <script src="semantic/dist/components/transition.js"></script>
+
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+
+    <script>
+
+        $(document)
+
+            .ready(function() {
+
+
+
+                // fix menu when passed
+
+                $('.secondary.menu')
+
+                    .visibility({
+
+                        once: false,
+
+                        onBottomPassed: function() {
+
+                            $('.fixed.menu').transition('fade in');
+
+                        },
+
+                        onBottomPassedReverse: function() {
+
+                            $('.fixed.menu').transition('fade out');
+
+                        }
+
+                    });
+
+
+
+                // create sidebar and attach to menu open
+
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+
+
+
+                var swiper = new Swiper('.swiper-container', {
+
+                    pagination: '.swiper-pagination',
+
+                    paginationClickable: true,
+
+                    speed: 1000,
+
+                    centeredSlides: true,
+
+                    autoplay: 2500,
+
+                });
+
+
+
+            });
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Following Menu -->
+
+    <div class="ui large top fixed hidden menu">
+
+        <div class="ui container">
+
+            <a class="ftoc item">
+
+                <i class="sidebar icon"></i>
+
+            </a>
+
+            <a class="header item">
+
+                <img class="logo" src="images/logo.png" /> USSLab.
+
+            </a>
+
+            <a class="item" href="/">Home</a>
+
+            <a class="item" href="projects/">Projects</a>
+
+            <a class="item" href="/publications.html">Publications</a>
+
+            <a class="item active">Members</a>
+
+            <a class="item" href="/courses.html">Courses</a>
+
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+            <a class="right item" href="/contact.html">Contact us</a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Sidebar Menu -->
+
+    <div class="ui vertical inverted sidebar menu">
+
+        <div class="item">
+
+            <a class="ui logo icon image">
+
+                <img src="images/logo.png" />
+
+            </a>
+
+            <a href="#"><b>USSLab.</b></a>
+
+        </div>
+
+
+        <a class="item" href="/">Home</a>
+
+        <a class="item" href="projects/">Projects</a>
+
+        <a class="item" href="/publications.html">Publications</a>
+
+        <a class="item active">Members</a>
+
+        <a class="item" href="/courses.html">Courses</a>
+
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+        <a class="right item" href="/contact.html">Contact us</a>
+
+    </div>
+
+
+
+
+
+    <!-- Page Contents -->
+
+    <div class="pusher">
+
+        <div class="ui inverted vertical center aligned segment">
+
+            <div class="ui container">
+
+                <div class="ui large secondary inverted pointing menu">
+
+                    <a class="toc item">
+
+                        <i class="sidebar icon"></i>
+
+                    </a>
+
+                    <a class="ui logo icon image">
+
+                        <img src="images/logo.png" />
+
+                    </a>
+
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+
+                    <a class="item" href="/">Home</a>
+
+                    <a class="item" href="projects/">Projects</a>
+
+                    <a class="item" href="/publications.html">Publications</a>
+
+                    <a class="item active" href="member/">Members</a>
+
+                    <a class="item" href="/courses.html">Courses</a>
+
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+                    <a class="right item" href="/contact.html">Contact us</a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Zhuang Zhou</h1>
+
+            <div class="ui divider"></div>
+
+            <div class="ui stackable four column grid">
+
+                <div class="twelve wide column">
+
+                    <h2>Self-introduction</h2>
+
+                    <p>
+
+                        I am a Master degree candidate at Zhejiang University, and a member of USSLab (Ubiquitous System Security Laboratory) led by Prof. Wenyuan Xu. I received my undergraduate degree in Electrical Engineering from Zhejiang University in 2016. My research areas are the security and privacy of wireless communication and IoT devices.
+
+
+
+                    </p>
+
+                </div>
+
+                <div class="four wide center aligned column">
+
+                    <img width="100%" src="images/zhuangzhou.jpg">
+
+                    <i class="mail icon"></i>&nbsp;&nbsp;unknown
+
+                    <br/>
+
+                    <a href="http://www.usslab.org/member/cvs/CV-Zhou%20Zhuang.pdf"><i class="file pdf outline icon"  target="_blank"></i>&nbsp;&nbsp;Curriculum Vitae</a>
+
+                    <br/>
+
+                </div>
+
+            </div>
+
+            <br/>
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Projects</h1>
+
+            <div class="ui divider"></div>
+
+            
+            <p> 
+                <b>Data Mining on Novels of Keigo Higashino</b> <br/>
+                -Designed and programmed web crawler to collect related information for each novel in Quora, Douban and Zhihu. <br/>
+                -Utilized Baidu API and Jie-ba for Word Segmentation and word frequency count with python script.  <br/>
+                -Applied the TF-IDF and LSI model to compare the similarity among the novels. <br/>
+             
+                <b>The Design of a High Speed and Inaudible Communication System</b> <br/>
+                -Discovered and utilized the linearity of MEMS microphone to received ultrasound for communication. <br/>
+                -Used FDM modulation mechanism and dynamic gain control technology to implement the whole system on the mobile.  <br/>
+                -Achieved the 16.24kHz transmission rate which is currently the highest speed for inaudible sound wave communication.   <br/>
+            
+                <b>Study of Fake Base Station Forensics </b> <br/>
+                -Designed a FBS forensics framework utilizing radio frequency (RF) fingerprints to solve the FBS forensics conundrum. <br/>
+                -Modeled the RF fingerprint from the tiny variance of the signal traces and construct features in 51 dimensions.  <br/>
+                -Utilized popular machine learning algorithm for identification and choose SVM for the final implementation.  <br/>
+            
+                <b>Study of Mobile Communication Systems Securities</b> <br/>
+                -Employed OpenBTS and USRP, combined OsmocomBB open source projects, built a fake BTS system, designed an Android app to monitor fake BTS attack from a mobile. <br/>
+                -Used Android Studio to develop the monitoring program of the fake BTS system for cellphones.  <br/>
+                -Simulated and tested fake BTS attacks to online-payment systems based on SMS 2FA, improving 2FA mechanism.  </p> <br/>
+
+        </div>
+
+
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Publications</h1>
+
+            <div class="ui divider"></div>
+
+            <p>Zhou Zhuang, Xiaoyu Ji, Taimin Zhuang, Juchuan Zhang, Wenyuan Xu, Zhenhua Li, Yunhao Liu et al. FBSleuth: Fake Base Station Forensics via Radio Frequency Fingerprinting. ACM Asia Conference on Computer and Communications Security, 2018 <br/>
+             Zhang, T., Wang, Y., Liang, X., Zhuang, Zhou., & Xu, W. (2017, May). Cyber attacks in cyber-physical power systems: A case study with GPRS-based SCADA systems. In Control And Decision Conference (CCDC), 2017 29th Chinese (pp. 6847-6852). IEEE.  <br/>
+             Le Tian, Mini Wu, Zhou Zhuang, Qinfen Lu “Analysis and Design of a Linear Oscillatory Motor with moving magnet”, Journal of Mechanical& Electrical Engineering 2015. <br/>
+            </p>
+        </div>
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Honors & Awards </h1>
+
+            <div class="ui divider"></div>
+
+            <p>IET Present Around The World Competition China Region Campus Finalist Award(2018)<br/>
+            Infineon Scholarship(2017)<br/>
+            Award of Honor for Graduate(2017)<br/>
+            Graduate of Merit/Triple A graduate(2017)<br/>
+            G20 Hangzhou Summit Outstanding Volunteer Award(2017)<br/>
+            Excellent Graduate of Zhejiang Province(2016)<br/>
+            ChuKochen Honors College Dean scholarship(2016)<br/>
+            Meritorious Winner of Mathematical Contest in Modeling (MCM)(2015)<br/>
+            First-class academic scholarship for Undergraduate Students at ZJU(2015)<br/>
+            First-class outstanding student scholarship for Undergraduate Students at ZJU(2015)<br/>
+            Second-class academic scholarship for Undergraduate Students at ZJU(2013&2014)<br/>
+            Second-class outstanding student scholarship for Undergraduate Students at ZJU(2013&2014)<br/>
+            Honors Excellent Students of Zhejiang University（2013&2014&2015）<br/>
+            </p>
+        </div>
+
+        <div class="ui vertical stripe container segment">
+
+            <h1 class="ui header">Activities </h1>
+
+            <div class="ui divider"></div>
+
+            <p><b>Overseas Programs Team Leader </b><br/>
+                -Participated in program organization, managed task assignment and scheduling of the team in UC Davis and NUS.<br/>
+                <b>ChuKochen Honors College Student Union Vice President</b><br/>
+                -Led a team (over 30 people) in organizing academic lectures and workshops.<br/>
+                -Trained members in service and communication skills, led in seeking and providing consultancy for potential members.<br/>
+                -Cooperated with companies for funding.<br/>
+                -Ran the student union official website and journalism.<br/>
+            </p>
+        </div>
+
+
+
+        <div class="ui inverted vertical footer segment">
+
+            <div class="ui center aligned container">
+
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+                <div class="ui horizontal inverted small divided link list">
+
+                    Copyright &copy; USS Lab. 2016-2017
+
+                    <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+
+                    <br/> All Right Reserved.
+
+                    <br/>
+
+                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+
+                        <b>浙ICP备16045554号-1</b>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+
+</html>
