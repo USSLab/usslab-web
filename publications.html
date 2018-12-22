@@ -3,141 +3,152 @@
 
 <head>
     <!-- Standard Meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <base href="/" />
+    <base href="/"/>
     <!-- Site Properties -->
     <title>USS Lab. - Ubiquitous System Security Lab.</title>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css"/>
 
     <style type="text/css">
         .hidden.menu {
             display: none;
         }
-        
-        
+
+
         .largeheader {
             margin-top: 3em;
             margin-bottom: 0em;
             font-size: 4em;
             font-weight: normal;
         }
-        
+
         .ui.vertical.stripe {
             padding: 3em 0em;
         }
-        
+
         .ui.vertical.stripe h3 {
             font-size: 2em;
         }
-        
+
         .ui.vertical.stripe .button + h3,
         .ui.vertical.stripe p + h3 {
             margin-top: 3em;
         }
-        
+
         .ui.vertical.stripe .floated.image {
             clear: both;
         }
-        
+
         .ui.vertical.stripe p {
             font-size: 1.33em;
         }
-        
+
         .ui.vertical.stripe .horizontal.divider {
             margin: 3em 0em;
         }
-        
+
         .quote.stripe.segment {
             padding: 0em;
         }
-        
+
         .quote.stripe.segment .grid .column {
             padding-top: 5em;
             padding-bottom: 5em;
         }
-        
+
         .footer.segment {
             padding: 5em 0em;
         }
-        
+
         .secondary.pointing.menu .toc.item {
             display: none;
         }
-        
+
         .top.fixed.menu .ftoc.item {
             display: none;
         }
-        
+
         @media only screen and (max-width: 700px) {
             .ui.fixed.menu {
                 display: none !important;
             }
+
             .secondary.pointing.menu .item,
             .secondary.pointing.menu .logo,
             .secondary.pointing.menu .menu {
                 display: none;
             }
+
             .secondary.pointing.menu .toc.item {
                 display: block;
             }
+
             .masthead.segment {
                 min-height: 350px;
             }
+
             .masthead h1.ui.header {
                 font-size: 2em;
                 margin-top: 1.5em;
             }
+
             .masthead h2 {
                 margin-top: 0.5em;
                 font-size: 1.5em;
             }
         }
-        
+
         @media only screen and (max-width: 700px) {
             .ui.fixed.menu {
                 display: none !important;
             }
+
             .top.fixed.menu .item,
             .top.fixed.menu .menu {
                 display: none;
             }
+
             .top.fixed.menu .ftoc.item {
                 display: block;
             }
         }
-        
+
         .logo.image {
             width: 50px;
             margin-right: 1px;
         }
-        .ui.bib.button{
+
+        .ui.bib.button {
             margin: 0;
             padding: 0.2em 0.2em 0.2em 0.2em;
-            border: 0;        
+            border: 0;
             font-size: 80%;
             vertical-align: baseline;
         }
-        .ui.pdf.button{
+
+        .ui.pdf.button {
             margin: 0;
             padding: 0.2em 0.2em 0.2em 0.2em;
-            border: 0;        
+            border: 0;
             font-size: 80%;
-            color: rgba(0,0,0,0.6);
+            color: rgba(0, 0, 0, 0.6);
             vertical-align: baseline;
         }
-        .ui.pdf.button:hover{
+
+        .ui.pdf.button:hover {
             margin: 0;
             padding: 0.2em 0.2em 0.2em 0.2em;
-            border: 0;        
+            border: 0;
             font-size: 80%;
-            color: rgba(0,0,0,0.87);
+            color: rgba(0, 0, 0, 0.87);
             vertical-align: baseline;
         }
-        .bibQuote{
+
+        .bibQuote {
             padding: 1em 2em 1em 2em;
             margin: 10px;
             border-left: black 2px solid;
@@ -145,19 +156,22 @@
             border-top: black 2px solid;
             border-bottom: black 2px solid;
         }
+
         .galary {
             margin-top: 20px;
         }
-        
+
         .swiper-container {
             width: 100%;
             height: 600px;
         }
-        .beian:hover{
-            color:white;
+
+        .beian:hover {
+            color: white;
         }
+
         .beian {
-            color:grey;
+            color: grey;
         }
     </style>
 
@@ -193,7 +207,8 @@
                     , speed: 1000
                     , centeredSlides: true
                     , autoplay: 2500
-                , });
+                    ,
+                });
 
             });
     </script>
@@ -201,34 +216,15 @@
 
 <body>
 
-    <!-- Following Menu -->
-    <div class="ui large top fixed hidden menu">
-        <div class="ui container">
-            <a class="ftoc item">
-                <i class="sidebar icon"></i>
-            </a>
-            <a class="header item">
-                <img class="logo" src="images/logo.png" /> USSLab.
-            </a>
-            <a class="item" href="/">Home</a>
-            <a class="item" href="projects/">Projects</a>
-            <a class="item active">Publications</a>
-            <a class="item" href="member/">Members</a>
-            <a class="item" href="/courses.html">Courses</a>
-            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
-            <a class="item" href="/seminar.html">Seminar</a>
-            <a class="right item" href="/contact.html">Contact us</a>
-        </div>
-    </div>
-
-    <!-- Sidebar Menu -->
-    <div class="ui vertical inverted sidebar menu">
-        <div class="item">
-            <a class="ui logo icon image">
-                <img src="images/logo.png" />
-            </a>
-            <a href="#"><b>USSLab.</b></a>
-        </div>
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+    <div class="ui container">
+        <a class="ftoc item">
+            <i class="sidebar icon"></i>
+        </a>
+        <a class="header item">
+            <img class="logo" src="images/logo.png"/> USSLab.
+        </a>
         <a class="item" href="/">Home</a>
         <a class="item" href="projects/">Projects</a>
         <a class="item active">Publications</a>
@@ -238,226 +234,332 @@
         <a class="item" href="/seminar.html">Seminar</a>
         <a class="right item" href="/contact.html">Contact us</a>
     </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+    <div class="item">
+        <a class="ui logo icon image">
+            <img src="images/logo.png"/>
+        </a>
+        <a href="#"><b>USSLab.</b></a>
+    </div>
+    <a class="item" href="/">Home</a>
+    <a class="item" href="projects/">Projects</a>
+    <a class="item active">Publications</a>
+    <a class="item" href="member/">Members</a>
+    <a class="item" href="/courses.html">Courses</a>
+    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+    <a class="item" href="/seminar.html">Seminar</a>
+    <a class="right item" href="/contact.html">Contact us</a>
+</div>
 
 
-    <!-- Page Contents -->
-    <div class="pusher">
-        <div class="ui inverted vertical center aligned segment">
-            <div class="ui container">
-                <div class="ui large secondary inverted pointing menu">
-                    <a class="toc item">
-                        <i class="sidebar icon"></i>
-                    </a>
-                    <a class="ui logo icon image">
-                        <img src="images/logo.png" />
-                    </a>
-                    <a class="item" href="/"><b>USS Lab.</b></a>
-                    <a class="item" href="/">Home</a>
-                    <a class="item" href="projects/">Projects</a>
-                    <a class="item active">Publications</a>
-                    <a class="item" href="member/">Members</a>
-                    <a class="item" href="/courses.html">Courses</a>
-                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
-                    <a class="item" href="/seminar.html">Seminar</a>
-                    <a class="right item" href="/contact.html">Contact us</a>
-                </div>
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="ui inverted vertical center aligned segment">
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="ui logo icon image">
+                    <img src="images/logo.png"/>
+                </a>
+                <a class="item" href="/"><b>USS Lab.</b></a>
+                <a class="item" href="/">Home</a>
+                <a class="item" href="projects/">Projects</a>
+                <a class="item active">Publications</a>
+                <a class="item" href="member/">Members</a>
+                <a class="item" href="/courses.html">Courses</a>
+                <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+                <a class="item" href="/seminar.html">Seminar</a>
+                <a class="right item" href="/contact.html">Contact us</a>
             </div>
-
         </div>
 
-        <div class="ui vertical stripe container segment">
-            <h1 class="ui header">Publications</h1>
-            <div class="ui divider"></div>
-            <h4>2018</h4>
-            <p>
-                Chaohao Li, Xiaoyu Ji, Xinyan Zhou, Juchuan Zhang, Jing Tian, Yanmiao Zhang, Wenyuan Xu. HlcAuth: Key-free and Secure Communications via Home-Limited Channel. ACM Asia Conference on Computer and Communications Security, 2018. <span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
-            </p>
-            <p>
-                Zhou Zhuang, Xiaoyu Ji, Taimin Zhuang, Juchuan Zhang, Wenyuan Xu, Zhenhua Li, Yunhao Liu et al. FBSleuth: Fake Base Station Forensics via Radio Frequency Fingerprinting. ACM Asia Conference on Computer and Communications Security, 2018. <span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
-            </p>
+    </div>
 
-            <p>
-                Yushi Cheng, Xiaoyu Ji, Tianyang Lu, Wenyuan Xu. DeWiCam: Detecting Hidden Wireless Cameras via Smartphones. ACM Asia Conference on Computer and Communications Security, 2018. <span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
-            </p>
+    <div class="ui vertical stripe container segment">
+        <h1 class="ui header">Publications</h1>
+        <div class="ui divider"></div>
+        <h4>2019</h4>
+        <p>
+            Xinyan Zhou, Xiaoyu Ji, Chen Yan, Jiangyi Deng, Wenyuan Xu. NAuth: Secure Face-to-Face Device Authentication
+            via Nonlinearity. IEEE INFOCOM 2019.<span><button class="bib ui button" disabled="disabled"
+                                                              target="_blank">Bibtex</button></span>&#160;&#160;<span><button
+                class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+        </p>
+        <div class="ui divider"></div>
 
-            <p>
-                Chen Yan, Kevin Fu, and Wenyuan Xu. On Cuba, Diplomats, Ultrasound, and Intermodulation Distortion. Technical report, March 2018.<span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><a class="pdf ui button" href="papers/YanFuXuCuba.pdf" target="_blank">PDF</a></span>
-            </p>
-            <div class="ui divider"></div>
-            <h4>2017</h4>
 
-            <p>
-                Yushi Cheng, Xiaoyu Ji, Xinyan Zhou, Wenyuan Xu. HomeSpy: Inferring User Presence via Encrypted Traffic of Home Surveillance Camera. The 1st International Workshop on Wireless Sensing Technology (WST 2017).<span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><a class="pdf ui button" href="papers/icpads.pdf" target="_blank">PDF</a></span>
-            </p>
+        <h4>2018</h4>
+        <p>
+            Chaohao Li, Xiaoyu Ji, Xinyan Zhou, Juchuan Zhang, Jing Tian, Yanmiao Zhang, Wenyuan Xu. HlcAuth: Key-free
+            and Secure Communications via Home-Limited Channel. ACM Asia Conference on Computer and Communications
+            Security, 2018. <span><button class="bib ui button" disabled="disabled"
+                                          target="_blank">Bibtex</button></span>&#160;&#160;<span><button
+                class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+        </p>
+        <p>
+            Zhou Zhuang, Xiaoyu Ji, Taimin Zhuang, Juchuan Zhang, Wenyuan Xu, Zhenhua Li, Yunhao Liu et al. FBSleuth:
+            Fake Base Station Forensics via Radio Frequency Fingerprinting. ACM Asia Conference on Computer and
+            Communications Security, 2018. <span><button class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><button
+                class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+        </p>
 
-            <p>
-                Guoming Zhang, Chen Yan, Xiaoyu Ji, Tianchen Zhang, Taimin Zhang, Wenyuan Xu. DolphinAttack: Inaudible Voice Commands. In Proceedings of the ACM Conference on Computer and Communications Security, 2017.<span class="bib ui button"  onclick="toggleMe('Publicatin2017:3'); return false;" >Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="papers/CCS2017_DolphinAttack_CameraReady.pdf" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2017:3" style="display:none " class="bibQuote">
-                @inproceedings{zhang2017dolphinattack,
-                title={DolphinAttack: Inaudible voice commands},
-                author={Zhang, Guoming and Yan, Chen and Ji, Xiaoyu and Zhang, Tianchen and Zhang, Taimin and Xu, Wenyuan},
-                booktitle={Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
-                pages={103--117},
-                year={2017},
-                organization={ACM}
-                }
-            </blockquote>
-            <p>
-                Xinyan Zhou, Yushi Cheng, Xiaoyu Ji, Wenyuan Xu. SADO: State-Associated and Delay-Oriented Data Collection for Intertidal WSNs, 9th WCSP, 2017.<span class="bib ui button"  onclick="toggleMe('Publicatin2017:2'); return false;">Bibtex</span>&#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
-            </p>
-            <blockquote id="Publicatin2017:2" style="display:none " class="bibQuote">
-            </blockquote>
-            <p>
-                Zhuoran Ma, Xinyan Zhou, Xuan Ouyang, Xiaoyu Ji, Wenyuan Xu. A Robust Backup Routing Protocol for Neighbor Area Network in the Smart Grid, 9th WCSP, 2017.<span class="bib ui button"  onclick="toggleMe('Publicatin2017:4'); return false;">Bibtex</span>&#160;&#160;<span><button class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
-            </p>
-            <blockquote id="Publicatin2017:4" style="display:none " class="bibQuote">
-            </blockquote>
-            <p>
-                Yujun Xiao, Wenyuan Xu, Zhenhua Jia, Zhuoran Ma, Donglian Qi. NIPAD: a non-invasive power-based anomaly detection scheme for programmable logic controllers. Frontiers of Information Technology &#38; Electronic Engineering, 2017, 18(4): 519-534.<span class="bib ui button"  onclick="toggleMe('Publicatin2017:1'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://link.springer.com/article/10.1631/FITEE.1601540" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2017:1" style="display:none " class="bibQuote">
-                            @article{Xiao2017NIPAD,
-                              title={NIPAD:a non-invasive power-based anomaly detection scheme for programmable logic controllers},
-                              author={Xiao, Yu Jun and Wen-Yuan, X. U. and Jia, Zhen Hua and Zhuo-Ran, M. A. and Dong-Lian, Q. I.},
-                              journal={信息与电子工程前沿 (英文)},
-                              volume={18},
-                              number={4},
-                              pages={519-534},
-                              year={2017},
-                            }
-            </blockquote>
-            <div class="ui divider"></div>
-            <h4>2016</h4>
-            <p>
-                Chen Yan, Wenyuan Xu, Jianhao Liu, "Can you trust autonomous vehicles: Contactless attacks against sensors of self-driving vehicles." DEF CON 24, 2016. <span class="bib ui button"  onclick="toggleMe('Publicatin2016:1'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://dc.org/files/defcon24/Speaker%20Materials/DEFCON-24-Liu-Yan-Xu-Can-You-Trust-Autonomous-Vehicles-WP.pdf" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2016:1" style="display:none " class="bibQuote">
-                            @article{yan2016can,
-                              title={Can you trust autonomous vehicles: Contactless attacks against sensors of self-driving vehicle},
-                              author={Yan, Chen and Wenyuan, X and Liu, Jianhao},
-                              journal={DEF CON},
-                              year={2016}
-                            }
-            </blockquote>
-            <p>
-                Yanjing Wu, Zhuoran Ma, Wenyuan Xu. Research of anti-eavesdropping technology based on electromagnetic interference against analog sensors. Electronic Technology, 2016.<span class="bib ui button"  onclick="toggleMe('Publicatin2016:2'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://d.wanfangdata.com.cn/periodical/dzjs201604014" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2016:2" style="display:none " class="bibQuote">
-                            @article{Wu2016Research,
-                              title={Research of anti-eavesdropping technology based on electromagnetic interference against analog sensors},
-                              author={Wu, Yanjing and Ma, Zhuoran and Xu, Wenyuan},
-                              journal={Electronic Technology},
-                              year={2016},
-                            }
-            </blockquote>
-            <p>
-                Yinan Wang, Zhiyun Lin, Xiao Liang, Wenyuan Xu, Qiang Yang, Gangfeng Yan. On Modeling of Electrical Cyber Physical Systems Considering Cyber Security. Frontiers of Information Technology &#38; Electronic Engineering, 2016, 17(5): 465-478.<span class="bib ui button"  onclick="toggleMe('Publicatin2016:3'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://link.springer.com/article/10.1631/FITEE.1500446" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2016:3" style="display:none " class="bibQuote">
-                            @article{Wang2016On,
-                              title={On modeling of electrical cyber-physical systems considering cyber security},
-                              author={Wang, Yi Nan and Lin, Zhi Yun and Liang, Xiao and Xu, Wen Yuan and Yang, Qiang and Yan, Gang Feng},
-                              journal={信息与电子工程前沿 (英文)},
-                              volume={17},
-                              number={5},
-                              pages={465-478},
-                              year={2016},
-                            }
-            </blockquote>
-            <p>
-                Yinan Wang, Zhiyun Lin, Sicheng Zeng, Wenyuan Xu, Qiang Yang, Gangfeng Yan. A New Framework of Electrical Cyber Physical Systems. IEEE Conference on Industrial Electronics and Applications(ICIEA), 2016.<span class="bib ui button"  onclick="toggleMe('Publicatin2016:4'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/7603791/" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2016:4" style="display:none " class="bibQuote">
-                            @inproceedings{Wang2016A,
-                              title={A new framework of electrical cyber physical systems},
-                              author={Wang, Yinan and Zeng, Sicheng and Yang, Qiang and Lin, Zhiyun and Xu, Wenyuan and Yan, Gangfeng},
-                              booktitle={IEEE  Conference on Industrial Electronics and Applications},
-                              pages={1334-1339},
-                              year={2016},
-                            }
-            </blockquote>
-            <p>
-                Ting Zhao, Qiang Yang, Wenyuan Xu, Zhiyun Lin. Assessing Electric Cyber-Physical System using Integrated Co-simulation Platform. Chinese Control Conference(CCC), 2016.<span class="bib ui button"  onclick="toggleMe('Publicatin2016:5'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/7554918/" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2016:5" style="display:none " class="bibQuote">
-                            @inproceedings{Zhao2016Assessing,
-                              title={Assessing electric cyber-physical system using integrated co-simulation platform},
-                              author={Zhao, Ting and Yang, Qiang and Xu, Wenyuan and Lin, Zhiyun},
-                              booktitle={Control Conference},
-                              pages={9842-9847},
-                              year={2016},
-                            }
-            </blockquote>
-            <p>
-                Ting Zhao, Yun Xu, Yinan Wang, Zhiyun Lin, Wenyuan Xu and Qiang Yang. On identifying vulnerable nodes for power system in the presence of undetectable cyber attacks. IEEE Conference on Industrial Electronics and Applications(ICIEA), 2016.<span class="bib ui button"  onclick="toggleMe('Publicatin2016:6'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/7603739/" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2016:6" style="display:none " class="bibQuote">
-                            @inproceedings{Zhao2016On,
-                              title={On identifying vulnerable nodes for power systems in the presence of undetectable cyber-attacks},
-                              author={Zhao, Ting and Xu, Yun and Wang, Yinan and Lin, Zhiyun and Xu, Wenyuan and Yang, Qiang},
-                              booktitle={Industrial Electronics and Applications},
-                              pages={1062-1067},
-                              year={2016},
-                            }
-            </blockquote>
-            <div class="ui divider"></div>
-            <h4>2013</h4>
-            <p>
-                Denis Foo Kune, John Backes, Shane Clark, Dan Kramer, Matthew Reynolds, Kevin Fu, Yongdae Kim, and Wenyuan Xu. Ghost Talk: Mitigating EMI Signal Injection Attacks against Analog Sensors. In Proceedings of the IEEE Symposium on Security &#38; Privacy, 2013.<span class="bib ui button"  onclick="toggleMe('Publicatin2013:1'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/6547107/" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2013:1" style="display:none " class="bibQuote">
-                            @inproceedings{Kune2013Ghost,
-                              title={Ghost Talk: Mitigating EMI Signal Injection Attacks against Analog Sensors},
-                              author={Kune, Denis Foo and Backes, John and Clark, Shane S. and Kramer, Daniel and Reynolds, Matthew and Fu, Kevin and Kim, Yongdae and Xu, Wenyuan},
-                              booktitle={IEEE Symposium on Security and Privacy},
-                              pages={145-159},
-                              year={2013},
-                            }
-            </blockquote>
-            <p>
-                Miao Xu, Wenyuan Xu. Taco: Temperature-aware compensation for time synchronization in wireless sensor networks. Mobile Ad-Hoc and Sensor Systems (MASS), 2013.<span class="bib ui button"  onclick="toggleMe('Publicatin2013:2'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/6680231/" target="_blank" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2013:2" style="display:none " class="bibQuote">
-                            @inproceedings{Xu2013TACO,
-                              title={TACO: Temperature-Aware Compensation for Time Synchronization in Wireless Sensor Networks},
-                              author={Xu, Miao and Xu, Wenyuan},
-                              booktitle={IEEE  International Conference on Mobile Ad-Hoc and Sensor Systems},
-                              pages={122-130},
-                              year={2013},
-                            }
-            </blockquote>
-            <div class="ui divider"></div>
-            <h4>2010</h4>
-            <p>
-                Ishtiaq Roufa, Rob Miller, et al. "Security and privacy vulnerabilities of in-car wireless networks: A tire pressure monitoring system case study." 19th USENIX Security Symposium, Washington DC. 2010.<span class="bib ui button"  onclick="toggleMe('Publicatin2010:1'); return false;">Bibtex</span>&#160;&#160;<span><a class="pdf ui button" href="https://www.usenix.org/legacy/event/sec10/tech/full_papers/Rouf.pdf" target="_blank">PDF</a></span>
-            </p>
-            <blockquote id="Publicatin2010:1" style="display:none " class="bibQuote">
-                            @inproceedings{Rouf2010Security,
-                              title={Security and Privacy Vulnerabilities of In-Car Wireless Networks: A Tire Pressure Monitoring System Case Study},
-                              author={Rouf, Ishtiaq and Miller, Rob and Mustafa, Hossen and Taylor, Travis and Oh, Sangho and Xu, Wenyuan and Gruteser, Marco and Trappe, Wade and Seskar, Ivan},
-                              booktitle={Usenix Security Symposium, Washington, Dc, Usa, August 11-13, 2010, Proceedings},
-                              pages={323-338},
-                              year={2010},
-                            }
-            </blockquote>
-            <br/>
-        </div>
-        
-        <div class="ui inverted vertical footer segment">
-            <div class="ui center aligned container">
-                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
-                <div class="ui horizontal inverted small divided link list">
-                    Copyright &copy; USS Lab. 2016-2017
-                    <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
-                    <br/> All Right Reserved.
-                    <br/><a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
-                    <b>浙ICP备16045554号-1</b>
-                    </a>
-                </div>
+        <p>
+            Yushi Cheng, Xiaoyu Ji, Tianyang Lu, Wenyuan Xu. DeWiCam: Detecting Hidden Wireless Cameras via Smartphones.
+            ACM Asia Conference on Computer and Communications Security, 2018. <span><button class="bib ui button"
+                                                                                             disabled="disabled"
+                                                                                             target="_blank">Bibtex</button></span>&#160;&#160;<span><button
+                class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+        </p>
+
+        <p>
+            Chen Yan, Kevin Fu, and Wenyuan Xu. On Cuba, Diplomats, Ultrasound, and Intermodulation Distortion.
+            Technical report, March 2018.<span><button class="bib ui button" disabled="disabled"
+                                                       target="_blank">Bibtex</button></span>&#160;&#160;<span><a
+                class="pdf ui button" href="papers/YanFuXuCuba.pdf" target="_blank">PDF</a></span>
+        </p>
+        <div class="ui divider"></div>
+        <h4>2017</h4>
+
+        <p>
+            Yushi Cheng, Xiaoyu Ji, Xinyan Zhou, Wenyuan Xu. HomeSpy: Inferring User Presence via Encrypted Traffic of
+            Home Surveillance Camera. The 1st International Workshop on Wireless Sensing Technology (WST 2017).<span><button
+                class="bib ui button" disabled="disabled" target="_blank">Bibtex</button></span>&#160;&#160;<span><a
+                class="pdf ui button" href="papers/icpads.pdf" target="_blank">PDF</a></span>
+        </p>
+
+        <p>
+            Guoming Zhang, Chen Yan, Xiaoyu Ji, Tianchen Zhang, Taimin Zhang, Wenyuan Xu. DolphinAttack: Inaudible Voice
+            Commands. In Proceedings of the ACM Conference on Computer and Communications Security, 2017.<span
+                class="bib ui button"
+                onclick="toggleMe('Publicatin2017:3'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="papers/CCS2017_DolphinAttack_CameraReady.pdf" target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2017:3" style="display:none " class="bibQuote">
+            @inproceedings{zhang2017dolphinattack,
+            title={DolphinAttack: Inaudible voice commands},
+            author={Zhang, Guoming and Yan, Chen and Ji, Xiaoyu and Zhang, Tianchen and Zhang, Taimin and Xu, Wenyuan},
+            booktitle={Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+            pages={103--117},
+            year={2017},
+            organization={ACM}
+            }
+        </blockquote>
+        <p>
+            Xinyan Zhou, Yushi Cheng, Xiaoyu Ji, Wenyuan Xu. SADO: State-Associated and Delay-Oriented Data Collection
+            for Intertidal WSNs, 9th WCSP, 2017.<span class="bib ui button"
+                                                      onclick="toggleMe('Publicatin2017:2'); return false;">Bibtex</span>&#160;&#160;<span><button
+                class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+        </p>
+        <blockquote id="Publicatin2017:2" style="display:none " class="bibQuote">
+        </blockquote>
+        <p>
+            Zhuoran Ma, Xinyan Zhou, Xuan Ouyang, Xiaoyu Ji, Wenyuan Xu. A Robust Backup Routing Protocol for Neighbor
+            Area Network in the Smart Grid, 9th WCSP, 2017.<span class="bib ui button"
+                                                                 onclick="toggleMe('Publicatin2017:4'); return false;">Bibtex</span>&#160;&#160;<span><button
+                class="bib ui button" disabled="disabled" target="_blank">PDF</button></span>
+        </p>
+        <blockquote id="Publicatin2017:4" style="display:none " class="bibQuote">
+        </blockquote>
+        <p>
+            Yujun Xiao, Wenyuan Xu, Zhenhua Jia, Zhuoran Ma, Donglian Qi. NIPAD: a non-invasive power-based anomaly
+            detection scheme for programmable logic controllers. Frontiers of Information Technology &#38; Electronic
+            Engineering, 2017, 18(4): 519-534.<span class="bib ui button"
+                                                    onclick="toggleMe('Publicatin2017:1'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="https://link.springer.com/article/10.1631/FITEE.1601540"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2017:1" style="display:none " class="bibQuote">
+            @article{Xiao2017NIPAD,
+            title={NIPAD:a non-invasive power-based anomaly detection scheme for programmable logic controllers},
+            author={Xiao, Yu Jun and Wen-Yuan, X. U. and Jia, Zhen Hua and Zhuo-Ran, M. A. and Dong-Lian, Q. I.},
+            journal={信息与电子工程前沿 (英文)},
+            volume={18},
+            number={4},
+            pages={519-534},
+            year={2017},
+            }
+        </blockquote>
+        <div class="ui divider"></div>
+        <h4>2016</h4>
+        <p>
+            Chen Yan, Wenyuan Xu, Jianhao Liu, "Can you trust autonomous vehicles: Contactless attacks against sensors
+            of self-driving vehicles." DEF CON 24, 2016. <span class="bib ui button"
+                                                               onclick="toggleMe('Publicatin2016:1'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button"
+                href="http://dc.org/files/defcon24/Speaker%20Materials/DEFCON-24-Liu-Yan-Xu-Can-You-Trust-Autonomous-Vehicles-WP.pdf"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2016:1" style="display:none " class="bibQuote">
+            @article{yan2016can,
+            title={Can you trust autonomous vehicles: Contactless attacks against sensors of self-driving vehicle},
+            author={Yan, Chen and Wenyuan, X and Liu, Jianhao},
+            journal={DEF CON},
+            year={2016}
+            }
+        </blockquote>
+        <p>
+            Yanjing Wu, Zhuoran Ma, Wenyuan Xu. Research of anti-eavesdropping technology based on electromagnetic
+            interference against analog sensors. Electronic Technology, 2016.<span class="bib ui button"
+                                                                                   onclick="toggleMe('Publicatin2016:2'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="http://d.wanfangdata.com.cn/periodical/dzjs201604014"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2016:2" style="display:none " class="bibQuote">
+            @article{Wu2016Research,
+            title={Research of anti-eavesdropping technology based on electromagnetic interference against analog
+            sensors},
+            author={Wu, Yanjing and Ma, Zhuoran and Xu, Wenyuan},
+            journal={Electronic Technology},
+            year={2016},
+            }
+        </blockquote>
+        <p>
+            Yinan Wang, Zhiyun Lin, Xiao Liang, Wenyuan Xu, Qiang Yang, Gangfeng Yan. On Modeling of Electrical Cyber
+            Physical Systems Considering Cyber Security. Frontiers of Information Technology &#38; Electronic
+            Engineering, 2016, 17(5): 465-478.<span class="bib ui button"
+                                                    onclick="toggleMe('Publicatin2016:3'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="https://link.springer.com/article/10.1631/FITEE.1500446"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2016:3" style="display:none " class="bibQuote">
+            @article{Wang2016On,
+            title={On modeling of electrical cyber-physical systems considering cyber security},
+            author={Wang, Yi Nan and Lin, Zhi Yun and Liang, Xiao and Xu, Wen Yuan and Yang, Qiang and Yan, Gang Feng},
+            journal={信息与电子工程前沿 (英文)},
+            volume={17},
+            number={5},
+            pages={465-478},
+            year={2016},
+            }
+        </blockquote>
+        <p>
+            Yinan Wang, Zhiyun Lin, Sicheng Zeng, Wenyuan Xu, Qiang Yang, Gangfeng Yan. A New Framework of Electrical
+            Cyber Physical Systems. IEEE Conference on Industrial Electronics and Applications(ICIEA), 2016.<span
+                class="bib ui button"
+                onclick="toggleMe('Publicatin2016:4'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/7603791/"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2016:4" style="display:none " class="bibQuote">
+            @inproceedings{Wang2016A,
+            title={A new framework of electrical cyber physical systems},
+            author={Wang, Yinan and Zeng, Sicheng and Yang, Qiang and Lin, Zhiyun and Xu, Wenyuan and Yan, Gangfeng},
+            booktitle={IEEE Conference on Industrial Electronics and Applications},
+            pages={1334-1339},
+            year={2016},
+            }
+        </blockquote>
+        <p>
+            Ting Zhao, Qiang Yang, Wenyuan Xu, Zhiyun Lin. Assessing Electric Cyber-Physical System using Integrated
+            Co-simulation Platform. Chinese Control Conference(CCC), 2016.<span class="bib ui button"
+                                                                                onclick="toggleMe('Publicatin2016:5'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/7554918/"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2016:5" style="display:none " class="bibQuote">
+            @inproceedings{Zhao2016Assessing,
+            title={Assessing electric cyber-physical system using integrated co-simulation platform},
+            author={Zhao, Ting and Yang, Qiang and Xu, Wenyuan and Lin, Zhiyun},
+            booktitle={Control Conference},
+            pages={9842-9847},
+            year={2016},
+            }
+        </blockquote>
+        <p>
+            Ting Zhao, Yun Xu, Yinan Wang, Zhiyun Lin, Wenyuan Xu and Qiang Yang. On identifying vulnerable nodes for
+            power system in the presence of undetectable cyber attacks. IEEE Conference on Industrial Electronics and
+            Applications(ICIEA), 2016.<span class="bib ui button" onclick="toggleMe('Publicatin2016:6'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/7603739/"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2016:6" style="display:none " class="bibQuote">
+            @inproceedings{Zhao2016On,
+            title={On identifying vulnerable nodes for power systems in the presence of undetectable cyber-attacks},
+            author={Zhao, Ting and Xu, Yun and Wang, Yinan and Lin, Zhiyun and Xu, Wenyuan and Yang, Qiang},
+            booktitle={Industrial Electronics and Applications},
+            pages={1062-1067},
+            year={2016},
+            }
+        </blockquote>
+        <div class="ui divider"></div>
+        <h4>2013</h4>
+        <p>
+            Denis Foo Kune, John Backes, Shane Clark, Dan Kramer, Matthew Reynolds, Kevin Fu, Yongdae Kim, and Wenyuan
+            Xu. Ghost Talk: Mitigating EMI Signal Injection Attacks against Analog Sensors. In Proceedings of the IEEE
+            Symposium on Security &#38; Privacy, 2013.<span class="bib ui button"
+                                                            onclick="toggleMe('Publicatin2013:1'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/6547107/"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2013:1" style="display:none " class="bibQuote">
+            @inproceedings{Kune2013Ghost,
+            title={Ghost Talk: Mitigating EMI Signal Injection Attacks against Analog Sensors},
+            author={Kune, Denis Foo and Backes, John and Clark, Shane S. and Kramer, Daniel and Reynolds, Matthew and
+            Fu, Kevin and Kim, Yongdae and Xu, Wenyuan},
+            booktitle={IEEE Symposium on Security and Privacy},
+            pages={145-159},
+            year={2013},
+            }
+        </blockquote>
+        <p>
+            Miao Xu, Wenyuan Xu. Taco: Temperature-aware compensation for time synchronization in wireless sensor
+            networks. Mobile Ad-Hoc and Sensor Systems (MASS), 2013.<span class="bib ui button"
+                                                                          onclick="toggleMe('Publicatin2013:2'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="http://ieeexplore.ieee.org/abstract/document/6680231/" target="_blank"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2013:2" style="display:none " class="bibQuote">
+            @inproceedings{Xu2013TACO,
+            title={TACO: Temperature-Aware Compensation for Time Synchronization in Wireless Sensor Networks},
+            author={Xu, Miao and Xu, Wenyuan},
+            booktitle={IEEE International Conference on Mobile Ad-Hoc and Sensor Systems},
+            pages={122-130},
+            year={2013},
+            }
+        </blockquote>
+        <div class="ui divider"></div>
+        <h4>2010</h4>
+        <p>
+            Ishtiaq Roufa, Rob Miller, et al. "Security and privacy vulnerabilities of in-car wireless networks: A tire
+            pressure monitoring system case study." 19th USENIX Security Symposium, Washington DC. 2010.<span
+                class="bib ui button"
+                onclick="toggleMe('Publicatin2010:1'); return false;">Bibtex</span>&#160;&#160;<span><a
+                class="pdf ui button" href="https://www.usenix.org/legacy/event/sec10/tech/full_papers/Rouf.pdf"
+                target="_blank">PDF</a></span>
+        </p>
+        <blockquote id="Publicatin2010:1" style="display:none " class="bibQuote">
+            @inproceedings{Rouf2010Security,
+            title={Security and Privacy Vulnerabilities of In-Car Wireless Networks: A Tire Pressure Monitoring System
+            Case Study},
+            author={Rouf, Ishtiaq and Miller, Rob and Mustafa, Hossen and Taylor, Travis and Oh, Sangho and Xu, Wenyuan
+            and Gruteser, Marco and Trappe, Wade and Seskar, Ivan},
+            booktitle={Usenix Security Symposium, Washington, Dc, Usa, August 11-13, 2010, Proceedings},
+            pages={323-338},
+            year={2010},
+            }
+        </blockquote>
+        <br/>
+    </div>
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+            <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+            <div class="ui horizontal inverted small divided link list">
+                Copyright &copy; USS Lab. 2016-2017
+                <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+                <br/> All Right Reserved.
+                <br/><a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+                <b>浙ICP备16045554号-1</b>
+            </a>
             </div>
         </div>
     </div>
+</div>
 
 </body>
 
