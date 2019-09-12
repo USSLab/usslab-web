@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8" />
@@ -12,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
-
     <style type="text/css">
         .hidden.menu {
             display: none;
@@ -131,7 +129,6 @@
             color: grey;
         }
     </style>
-
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="semantic/dist/components/visibility.js"></script>
     <script src="semantic/dist/components/sidebar.js"></script>
@@ -140,7 +137,6 @@
     <script>
         $(document)
             .ready(function() {
-
                 // fix menu when passed
                 $('.secondary.menu')
                     .visibility({
@@ -152,11 +148,9 @@
                             $('.fixed.menu').transition('fade out');
                         }
                     });
-
                 // create sidebar and attach to menu open
                 $('.ui.sidebar').sidebar('attach events', '.toc.item');
                 $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
-
                 var swiper = new Swiper('.swiper-container', {
                     pagination: '.swiper-pagination',
                     paginationClickable: true,
@@ -164,13 +158,10 @@
                     centeredSlides: true,
                     autoplay: 2500,
                 });
-
             });
     </script>
 </head>
-
 <body>
-
     <!-- Following Menu -->
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
@@ -181,24 +172,15 @@
                 <img class="logo" src="images/logo.png" /> USSLab.
             </a>
             <a class="active item" href="#">Home</a>
-
             <a class="item" href="projects/">Projects</a>
-
             <a class="item" href="publications.html">Publications</a>
-
             <a class="item" href="member/">Members</a>
-
             <a class="item" href="/courses.html">Courses</a>
-
             <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
             <a class="item" href="/seminar.html">Seminar</a>
-
             <a class="right item" href="/contact.html">Contact us</a>
-
-
         </div>
     </div>
-
     <!-- Sidebar Menu -->
     <div class="ui vertical inverted sidebar menu">
         <div class="item">
@@ -208,22 +190,14 @@
             <a href="#"><b>USSLab.</b></a>
         </div>
         <a class="active item" href="#">Home</a>
-
         <a class="item" href="projects/">Projects</a>
-
         <a class="item" href="publications.html">Publications</a>
-
         <a class="item" href="member/">Members</a>
-
         <a class="item" href="/courses.html">Courses</a>
-
         <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
         <a class="item" href="/seminar.html">Seminar</a>
-
         <a class="right item" href="/contact.html">Contact us</a>
     </div>
-
-
     <!-- Page Contents -->
     <div class="pusher">
         <div class="ui inverted vertical center aligned segment">
@@ -236,225 +210,171 @@
                         <img src="images/logo.png" />
                     </a>
                      <a class="item" href="/"><b>USS Lab.</b></a>
-
                     <a class="active item" href="#">Home</a>
-
                     <a class="item" href="projects/">Projects</a>
-
                     <a class="item" href="publications.html">Publications</a>
-
                     <a class="item" href="member/">Members</a>
-
                     <a class="item" href="/courses.html">Courses</a>
-
                     <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
                     <a class="item" href="/seminar.html">Seminar</a>
-
                     <a class="right item" href="/contact.html">Contact us</a>
                 </div>
             </div>
-
         </div>
-
         <div class="ui vertical stripe container segment">
             <h1 class="ui header">NEWS</h1>
-
-
             <div class="ui divider"></div>
-
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/dewicam6.jpg" />
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">7/23/2018</font></i>
                     <h1>Best paper award at ACM ASIACCS 2018</h1>
                     <p>
                         Our paper, DeWiCam: Detecting Hidden Wireless Cameras via Smartphones, has been awarded as best paper (3/60) at the 2018 ACM Asia Conference on Computer and Communications Security (ASIACCS). Cheers!
                     </p>
-
                     <button class="ui primary button">
                         <a href="projects/dewicam.html"> <font color="white">Read More</font>  </a>
                     </button>
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
-
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/top10.jpg"/>
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">5/29/2018</font></i>
                     <h1>Top 10 Academic Advances of Zhejiang University in 2017</h1>
                     <p>
                         The project “Dolphin Attacks” led by Xu Wenyuan and Ji Xiaoyu from Ubiquitous System Security Lab (USS LAB) of the EE College won the “Top 10 Academic Advances of Zhejiang University in 2017”....
-
                     </p>
-
                     <button class="ui primary button">
                         <a href="http://ee.zju.edu.cn/index.php?s=/English/detail/catid/112/id/186893.html"> <font color="white">Read More</font>  </a>
                     </button>
                 </div>
-
                 <br/>
             </div>
-
-
             <div class="ui divider"></div>
-
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/new_2.png" />
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">4/10/2018</font></i>
                     <h1>Paper accepted by ACM ASIACCS 2018</h1>
                     <p>
                         Our papers, "HlcAuth", "DeWiCam", "FBSleuth", have been accepted by the 2018 ACM ASIA Conference on Computer and Communications Security (ASIACCS)...
-
                     </p>
-
                     <button class="ui primary button">
                         <a href="http://asiaccs2018.org/?page_id=632"> <font color="white">Read More</font>  </a>
                     </button>
                 </div>
-
                 <br/>
             </div>
-
-
-
             <div class="ui divider"></div>
-
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/cuba_yan.jpg" />
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">3/02/2018</font></i>
                     <h1>Technical report on the "sonic weapon" in Cuba</h1>
                     <p>
                         Our technical report, “On Cuba, Diplomats, Ultrasound, and Intermodulation Distortion” is available <a class="item" href="papers/YanFuXuCuba.pdf"><b>(PDF)</b></a>. An article about our research will be published soon by IEEE Spectrum in March. Our story has been covered by <a class="item" href="https://spectrum.ieee.org/semiconductors/devices/finally-a-likely-explanation-for-the-sonic-weapon-used-at-the-us-embassy-in-cuba"><b>IEEE Spectrum</b></a> and <a class="item" href="https://theconversation.com/can-sound-be-used-as-a-weapon-4-questions-answered-83627"><b>The Conversation</b></a>.
                     </p>
-
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
-
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/best_paper.png" />
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">11/07/2017</font></i>
                     <h1>Best paper award at ACM CCS 2017</h1>
                     <p>
                         Our paper, DolphinAttack: Inaudible Voice Commands, has been awarded as best paper (5/115) at the 2017 ACM Conference on Computer and Communications Security (CCS). Cheers!
                     </p>
-
                     <button class="ui primary button">
                         <a href="https://www.sigsac.org/ccs/CCS2017/awards.html"> <font color="white">Read More</font>  </a>
                     </button>
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
         
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/new_1.png" />
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">9/21/2017</font></i>
                     <h1>USSLab gave a speech in the 1st International Robot Cyber Security Competition</h1>
                     <p>
                         On September 21, 2017,  the 1st International Robot Cyber Security Competition was held in the Dongxihu District, Wuhan...
                     </p>
-
                     <button class="ui primary button">
                     <a href="https://www.easyaq.com/news/31304930.shtml"> <font color="white">Read More</font>  </a>
                     </button>
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/new_3.png" />
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">9/15/2017</font></i>
                     <h1>DolphinAttack on the news</h1>
                     <p>
                     Our work, DolphinAttack, has been featured on <a class="item" href="https://www.technologyreview.com/s/608825/secret-ultrasonic-commands-can-control-your-smartphone-say-researchers/"><b>MIT Technology Review</b></a>, <a class="item" href="http://www.zju.edu.cn/2017/0911/c578a637706/page.htm"><b>Zhejiang University front page</b></a>, <a class="item" href="http://www.bbc.com/news/technology-41188557"><b>BBC</b></a>, <a class="item" href="https://www.wired.com/story/security-roundup-germany-election-software-is-hackable"><b>Wired</b></a>, <a class="item" href="https://www.forbes.com/sites/kevinmurnane/2017/09/11/hackers-can-talk-to-voice-assistants-like-siri-and-alexa-by-speaking-with-a-voice-you-cant-hear/#255f961549c0"><b>Forbes</b></a>,
                     <a class="item" href="http://www.huanqiukexue.com/a/qianyan/xinxi__nenyuan/2017/0914/27519.html"><b>Scientific American Chinese version</b></a>, <a class="item" href="https://securityintelligence.com/news/scientists-show-how-speech-recognition-software-can-be-compromised-via-ultrasounds/"><b>IBM Security Intelligence</b></a>, <a class="item" href="http://fortune.com/2017/09/08/amazon-echo-alexa-google-home-hack/"><b>Fortune</b></a>, etc...</p>
-
                     <button class="ui primary button">
                              <a href="projects/dolphinAttack.html"> <font color="white">Read More</font>  </a>
                     </button>
                 </div>
-
                 <br/>
             </div>
             
                <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="five wide column">
                     <img width="100%" src="images/new_2.png" />
                 </div>
-
                 <div class="ten wide column">
                     <i><font color="gray">8/3/2017</font></i>
                     <h1>Paper accepted by ACM CCS 2017</h1>
                     <p> Our paper, DolphinAttack: Inaudible Voice Commands, has been accepted by the 2017 ACM Conference on Computer and Communications Security (CCS)...</p>
-
                     <button class="ui primary button">
                               <a href="https://www.sigsac.org/ccs/CCS2017/"> <font color="white">Read More</font>  </a>
                     </button>
                 </div>
-
                 <br/>
             </div>
-            
+                <div class="ui divider"></div>
+            <div class="ui stackable two column grid">
+                <div class="five wide column">
+                    <img width="100%" src="images/ieee-infocom2.png" />
+                </div>
+                <div class="ten wide column">
+                    <i><font color="gray">12/14/2018</font></i>
+                    <h1>Paper accepted by IEEE INFOCOM 2019</h1>
+                    <p> Our paper, ” NAuth: Secure Face-to-Face Device Authentication via Nonlinearity”, has been accepted by the 2019 IEEE INFOCOM...</p>
+                    <button class="ui primary button">
+                        <a href="https://www.sigsac.org/ccs/CCS2017/"> <font color="white">Read More</font>  </a>
+                    </button>
+                </div>
+                <br/>
+            </div>
+
                <div class="ui divider"></div>
-
         </div>
-
-
-
-
-
         </div>
-
-
-
-
         <div class="ui inverted vertical footer segment">
             <div class="ui center aligned container">
                 <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
@@ -470,7 +390,5 @@
             </div>
         </div>
     </div>
-
 </body>
-
 </html>		

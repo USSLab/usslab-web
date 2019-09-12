@@ -3,400 +3,408 @@
 <html>
 
 
-
 <head>
 
-    <!-- Standard Meta -->
+  <!-- Standard Meta -->
 
-    <meta charset="utf-8" />
+  <meta charset="utf-8"/>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <base href="/" />
+  <base href="/"/>
 
-    <!-- Site Properties -->
+  <!-- Site Properties -->
 
-    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+  <title>USS Lab. - Ubiquitous System Security Lab.</title>
 
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"/>
 
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
 
-    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+  <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css"/>
 
 
+  <style type="text/css">
 
-    <style type="text/css">
+    .hidden.menu {
 
-        .hidden.menu {
+      display: none;
 
-            display: none;
+    }
 
-        }
 
-        
+    .largeheader {
 
-        .largeheader {
+      margin-top: 3em;
 
-            margin-top: 3em;
+      margin-bottom: 0em;
 
-            margin-bottom: 0em;
+      font-size: 4em;
 
-            font-size: 4em;
+      font-weight: normal;
 
-            font-weight: normal;
+    }
 
-        }
 
-        
+    .ui.vertical.stripe {
 
-        .ui.vertical.stripe {
+      padding: 3em 0em;
 
-            padding: 3em 0em;
+    }
 
-        }
 
-        
+    .ui.vertical.stripe h3 {
 
-        .ui.vertical.stripe h3 {
+      font-size: 2em;
 
-            font-size: 2em;
+    }
 
-        }
 
-        
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
 
-        .ui.vertical.stripe .button+h3,
+      margin-top: 3em;
 
-        .ui.vertical.stripe p+h3 {
+    }
 
-            margin-top: 3em;
 
-        }
+    .ui.vertical.stripe .floated.image {
 
-        
+      clear: both;
 
-        .ui.vertical.stripe .floated.image {
+    }
 
-            clear: both;
 
-        }
+    .ui.vertical.stripe p {
 
-        
+      font-size: 1.33em;
 
-        .ui.vertical.stripe p {
+    }
 
-            font-size: 1.33em;
 
-        }
+    .ui.vertical.stripe .horizontal.divider {
 
-        
+      margin: 3em 0em;
 
-        .ui.vertical.stripe .horizontal.divider {
+    }
 
-            margin: 3em 0em;
 
-        }
+    .quote.stripe.segment {
 
-        
+      padding: 0em;
 
-        .quote.stripe.segment {
+    }
 
-            padding: 0em;
 
-        }
+    .quote.stripe.segment .grid .column {
 
-        
+      padding-top: 5em;
 
-        .quote.stripe.segment .grid .column {
+      padding-bottom: 5em;
 
-            padding-top: 5em;
+    }
 
-            padding-bottom: 5em;
 
-        }
+    .footer.segment {
 
-        
+      padding: 5em 0em;
 
-        .footer.segment {
+    }
 
-            padding: 5em 0em;
 
-        }
+    .secondary.pointing.menu .toc.item {
 
-        
+      display: none;
 
-        .secondary.pointing.menu .toc.item {
+    }
 
-            display: none;
 
-        }
+    .top.fixed.menu .ftoc.item {
 
-        
+      display: none;
 
-        .top.fixed.menu .ftoc.item {
+    }
 
-            display: none;
 
-        }
+    @media only screen and (max-width: 700px) {
 
-        
+      .ui.fixed.menu {
 
-        @media only screen and (max-width: 700px) {
+        display: none !important;
 
-            .ui.fixed.menu {
+      }
 
-                display: none !important;
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .logo,
+      .secondary.pointing.menu .menu {
 
-            }
+        display: none;
 
-            .secondary.pointing.menu .item,
+      }
 
-            .secondary.pointing.menu .logo,
+      .secondary.pointing.menu .toc.item {
 
-            .secondary.pointing.menu .menu {
+        display: block;
 
-                display: none;
+      }
 
-            }
+      .masthead.segment {
 
-            .secondary.pointing.menu .toc.item {
+        min-height: 350px;
 
-                display: block;
+      }
 
-            }
+      .masthead h1.ui.header {
 
-            .masthead.segment {
+        font-size: 2em;
 
-                min-height: 350px;
+        margin-top: 1.5em;
 
-            }
+      }
 
-            .masthead h1.ui.header {
+      .masthead h2 {
 
-                font-size: 2em;
+        margin-top: 0.5em;
 
-                margin-top: 1.5em;
+        font-size: 1.5em;
 
-            }
+      }
 
-            .masthead h2 {
+    }
 
-                margin-top: 0.5em;
 
-                font-size: 1.5em;
+    @media only screen and (max-width: 700px) {
 
-            }
+      .ui.fixed.menu {
 
-        }
+        display: none !important;
 
-        
+      }
 
-        @media only screen and (max-width: 700px) {
+      .top.fixed.menu .item,
+      .top.fixed.menu .menu {
 
-            .ui.fixed.menu {
+        display: none;
 
-                display: none !important;
+      }
 
-            }
+      .top.fixed.menu .ftoc.item {
 
-            .top.fixed.menu .item,
+        display: block;
 
-            .top.fixed.menu .menu {
+      }
 
-                display: none;
+    }
 
-            }
 
-            .top.fixed.menu .ftoc.item {
+    .logo.image {
 
-                display: block;
+      width: 50px;
 
-            }
+      margin-right: 1px;
 
-        }
+    }
 
-        
 
-        .logo.image {
+    .galary {
 
-            width: 50px;
+      margin-top: 20px;
 
-            margin-right: 1px;
+    }
 
-        }
 
-        
+    .swiper-container {
 
-        .galary {
+      width: 100%;
 
-            margin-top: 20px;
+      height: 600px;
 
-        }
+    }
 
-        
 
-        .swiper-container {
+    .beian:hover {
 
-            width: 100%;
+      color: white;
 
-            height: 600px;
+    }
 
-        }
 
-        
+    .beian {
 
-        .beian:hover {
+      color: grey;
 
-            color: white;
+    }
 
-        }
+  </style>
 
-        
 
-        .beian {
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
-            color: grey;
+  <script src="semantic/dist/components/visibility.js"></script>
 
-        }
+  <script src="semantic/dist/components/sidebar.js"></script>
 
-    </style>
+  <script src="semantic/dist/components/transition.js"></script>
 
+  <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
 
+  <script>
 
-    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+		$(document)
 
-    <script src="semantic/dist/components/visibility.js"></script>
+			.ready(function () {
 
-    <script src="semantic/dist/components/sidebar.js"></script>
 
-    <script src="semantic/dist/components/transition.js"></script>
+				// fix menu when passed
 
-    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+				$('.secondary.menu')
 
-    <script>
+					.visibility({
 
-        $(document)
+						once: false,
 
-            .ready(function() {
+						onBottomPassed: function () {
 
+							$('.fixed.menu').transition('fade in');
 
+						},
 
-                // fix menu when passed
+						onBottomPassedReverse: function () {
 
-                $('.secondary.menu')
+							$('.fixed.menu').transition('fade out');
 
-                    .visibility({
+						}
 
-                        once: false,
+					});
 
-                        onBottomPassed: function() {
 
-                            $('.fixed.menu').transition('fade in');
+				// create sidebar and attach to menu open
 
-                        },
+				$('.ui.sidebar').sidebar('attach events', '.toc.item');
 
-                        onBottomPassedReverse: function() {
+				$('.ui.sidebar').sidebar('attach events', '.ftoc.item');
 
-                            $('.fixed.menu').transition('fade out');
 
-                        }
+				var swiper = new Swiper('.swiper-container', {
 
-                    });
+					pagination: '.swiper-pagination',
 
+					paginationClickable: true,
 
+					speed: 1000,
 
-                // create sidebar and attach to menu open
+					centeredSlides: true,
 
-                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+					autoplay: 2500,
 
-                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+				});
 
 
+			});
 
-                var swiper = new Swiper('.swiper-container', {
-
-                    pagination: '.swiper-pagination',
-
-                    paginationClickable: true,
-
-                    speed: 1000,
-
-                    centeredSlides: true,
-
-                    autoplay: 2500,
-
-                });
-
-
-
-            });
-
-    </script>
+  </script>
 
 </head>
-
 
 
 <body>
 
 
+<!-- Following Menu -->
 
-    <!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
 
-    <div class="ui large top fixed hidden menu">
+  <div class="ui container">
 
-        <div class="ui container">
+    <a class="ftoc item">
 
-            <a class="ftoc item">
+      <i class="sidebar icon"></i>
 
-                <i class="sidebar icon"></i>
+    </a>
 
-            </a>
+    <a class="header item">
 
-            <a class="header item">
+      <img class="logo" src="images/logo.png"/> USSLab.
 
-                <img class="logo" src="images/logo.png" /> USSLab.
+    </a>
 
-            </a>
+    <a class="item" href="/">Home</a>
 
-            <a class="item" href="/">Home</a>
+    <a class="item" href="projects/">Projects</a>
 
-            <a class="item" href="projects/">Projects</a>
+    <a class="item" href="/publications.html">Publications</a>
 
-            <a class="item" href="/publications.html">Publications</a>
+    <a class="item active">Members</a>
 
-            <a class="item active">Members</a>
+    <a class="item" href="/courses.html">Courses</a>
 
-            <a class="item" href="/courses.html">Courses</a>
+    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
 
-            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+    <a class="right item" href="/contact.html">Contact us</a>
 
-            <a class="right item" href="/contact.html">Contact us</a>
+  </div>
 
-        </div>
-
-    </div>
-
+</div>
 
 
-    <!-- Sidebar Menu -->
+<!-- Sidebar Menu -->
 
-    <div class="ui vertical inverted sidebar menu">
+<div class="ui vertical inverted sidebar menu">
 
-        <div class="item">
+  <div class="item">
 
-            <a class="ui logo icon image">
+    <a class="ui logo icon image">
 
-                <img src="images/logo.png" />
+      <img src="images/logo.png"/>
 
-            </a>
+    </a>
 
-            <a href="#"><b>USSLab.</b></a>
+    <a href="#"><b>USSLab.</b></a>
 
-        </div>
+  </div>
+
+  <a class="item" href="/">Home</a>
+
+  <a class="item" href="projects/">Projects</a>
+
+  <a class="item" href="/publications.html">Publications</a>
+
+  <a class="item active">Members</a>
+
+  <a class="item" href="/courses.html">Courses</a>
+
+  <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+
+  <a class="right item" href="/contact.html">Contact us</a>
+
+</div>
+
+
+<!-- Page Contents -->
+
+<div class="pusher">
+
+  <div class="ui inverted vertical center aligned segment">
+
+    <div class="ui container">
+
+      <div class="ui large secondary inverted pointing menu">
+
+        <a class="toc item">
+
+          <i class="sidebar icon"></i>
+
+        </a>
+
+        <a class="ui logo icon image">
+
+          <img src="images/logo.png"/>
+
+        </a>
+
+        <a class="item" href="/"><b>USS Lab.</b></a>
 
         <a class="item" href="/">Home</a>
 
@@ -404,7 +412,7 @@
 
         <a class="item" href="/publications.html">Publications</a>
 
-        <a class="item active">Members</a>
+        <a class="item active" href="member/">Members</a>
 
         <a class="item" href="/courses.html">Courses</a>
 
@@ -412,170 +420,153 @@
 
         <a class="right item" href="/contact.html">Contact us</a>
 
+      </div>
+
     </div>
 
 
+  </div>
 
 
+  <div class="ui vertical stripe container segment">
 
-    <!-- Page Contents -->
+    <h1 class="ui header">Cheng Yushi</h1>
 
-    <div class="pusher">
+    <div class="ui divider"></div>
 
-        <div class="ui inverted vertical center aligned segment">
+    <div class="ui stackable four column grid">
 
-            <div class="ui container">
+      <div class="twelve wide column">
 
-                <div class="ui large secondary inverted pointing menu">
+        <h2>Self-introduction</h2>
 
-                    <a class="toc item">
+        <p>
 
-                        <i class="sidebar icon"></i>
+          I am a Ph.D. student at Zhejiang University, and a member of USSLab (Ubiquitous System Security Laboratory)
+          led by Prof. Wenyuan Xu. I received my B.S. degree in Electrical Engineering from Zhejiang University,
+          Hangzhou, China, in 2016. My research interests include network security, IoT security, mobile & ubiquitous
+          computing, and human computer interaction.
 
-                    </a>
+        </p>
 
-                    <a class="ui logo icon image">
+      </div>
 
-                        <img src="images/logo.png" />
+      <div class="four wide center aligned column">
 
-                    </a>
+        <img width="100%" src="images/cys1.jpg">
 
-                    <a class="item" href="/"><b>USS Lab.</b></a>
+        <i class="mail icon"></i>&nbsp;&nbsp;yushicheng@zju.edu.cn
 
-                    <a class="item" href="/">Home</a>
+        <br/>
 
-                    <a class="item" href="projects/">Projects</a>
+        <a href="./pdf/YushiCheng-cv.pdf"><i class="file pdf outline icon"></i>&nbsp;&nbsp;Curriculum Vitae</a>
+        <br/>
+        <br/>
 
-                    <a class="item" href="/publications.html">Publications</a>
-
-                    <a class="item active" href="member/">Members</a>
-
-                    <a class="item" href="/courses.html">Courses</a>
-
-                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
-
-                    <a class="right item" href="/contact.html">Contact us</a>
-
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-
-
-        <div class="ui vertical stripe container segment">
-
-            <h1 class="ui header">Cheng Yushi</h1>
-
-            <div class="ui divider"></div>
-
-            <div class="ui stackable four column grid">
-
-                <div class="twelve wide column">
-
-                    <h2>Self-introduction</h2>
-
-                    <p>
-
-                        I’m a M.E. student in the College of Electrical Engineering, Zhejiang University. My research interests include usable security and privacy, biometric authentication and data mining.  I prefer problems from the real-world. I tend to create unconventional solutions by identifying novel phenomenon and analyzing its underlying principles. I focus on personal privacy and, especially secret filming detection and prevention. I think it’s a serious problem at present and will keep working on it.
-
-                    </p>
-
-                </div>
-
-                <div class="four wide center aligned column">
-
-                    <img width="100%" src="images/cys1.jpg">
-
-                    <i class="mail icon"></i>&nbsp;&nbsp;yushicheng@zju.edu.cn
-
-                    <br/>
-
-                    <a><i class="file pdf outline icon"></i>&nbsp;&nbsp;Curriculum Vitae</a>
-
-                    <br/>
-
-                </div>
-
-            </div>
-
-            <br/>
-
-        </div>
-
-
-
-        <div class="ui vertical stripe container segment">
-
-            <h1 class="ui header">Projects</h1>
-
-            <div class="ui divider"></div>
-
-            <p>Anti-photograph jammers for cameras and web cams</p>
-
-            <p>On The Detection of Hidden Wireless Camera Via Smartphones</p>
-
-        </div>
-
-
-
-        <div class="ui vertical stripe container segment">
-
-            <h1 class="ui header">Publications</h1>
-
-            <div class="ui divider"></div>
-
-            <p></p>
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="ui inverted vertical footer segment">
-
-            <div class="ui center aligned container">
-
-                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
-
-                <div class="ui horizontal inverted small divided link list">
-
-                    Copyright &copy; USS Lab. 2016-2017
-
-                    <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
-
-                    <br/> All Right Reserved.
-
-                    <br/>
-
-                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
-
-                        <b>浙ICP备16045554号-1</b>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
 
+    <br/>
+
+  </div>
+
+
+  <div class="ui vertical stripe container segment">
+
+    <h1 class="ui header">Projects</h1>
+
+    <div class="ui divider"></div>
+
+    <p>Anti-photograph jammers for cameras and web cams</p>
+
+    <p>On The Detection of Hidden Wireless Camera Via Smartphones</p>
+
+  </div>
+
+
+  <div class="ui vertical stripe container segment">
+
+    <h1 class="ui header">Publications</h1>
+
+    <div class="ui divider"></div>
+
+    <p align="left">Yushi Cheng, Xiaoyu Ji, Juchuan Zhang, Wenyuan Xu, Yi-Chao Chen. DeMiCPU: Device Fingerprinting with
+      Magnetic Signals Radiated by CPU. ACM Conference on Computer and Communications Security (CCS), 2019.
+    </p>
+
+    <p align="left">Yushi Cheng, Xiaoyu Ji, Wenyuan Xu, Hao Pan, Zhuangdi Zhu, Chuang-Wen You, Yi-Chao Chen, Lili Qiu.
+      MagAttack: Guessing Application Launching and Operation via Smartphone. ACM Asia Conference on Computer and
+      Communications Security (AsiaCCS), 2019.
+    </p>
+
+    <p align="left">Yushi Cheng, Xiaoyu Ji, Tianyang Lu, Wenyuan Xu. On Detecting Hidden Wireless Cameras: A Traffic
+      Pattern-based Approach. IEEE Transactions on Mobile Computing (TMC), 2019.
+    </p>
+
+    <p align="left">Yushi Cheng, Xiaoyu Ji, Tianyang Lu, Wenyuan Xu. DeWiCam: Detecting Hidden Wireless Cameras via
+      Smartphones. ACM Asia Conference on Computer and Communications Security (AsiaCCS), 2018. (Best Paper Award)
+    </p>
+
+    <p align="left">Xiaoyu Ji (Faculty author), Yushi Cheng, Wenyuan Xu, Xinyan Zhou. User Presence Inference via
+      Encrypted Traffic of Wireless Camera in Smart Homes. Security and Communication Networks (SCN), 2018.
+    </p>
+
+    <p align="left">Xiaopeng Li, Sharaf Malebary, Xianshan Qu, Xiaoyu Ji, Yushi Cheng, Wenyuan Xu. iCare: Automatic and
+      User-friendly Child Identification on Smartphones. The 19th International Workshop on Mobile Computing Systems &
+      Applications (ACM HotMobile), 2018.
+    </p>
+
+    <p align="left">Xinyan Zhou, Xiaoyu Ji, Bin Wang, Yushi Cheng, Zhuoran Ma, Francis Choi, Brian Helmuth, Wenyuan Xu.
+      Pido: predictive delay optimization for intertidal wireless sensor networks. Sensors, 18(5), 1464, 2018.
+    </p>
+
+    <p align="left">Yushi Cheng, Xiaoyu Ji, Xinyan Zhou, Wenyuan Xu. HomeSpy: Inferring User Presence via Encrypted
+      Traffic of Home Surveillance Camera. The 1st International Workshop on Wireless Sensing Technology (IEEE WST),
+      2017. (Best Paper Runner-up)
+    </p>
+
+    <p align="left">Xinyan Zhou, Yushi Cheng, Xiaoyu Ji, Wenyuan Xu. SADO: State-Associated and Delay-Oriented Data
+      Collection for Intertidal WSNs. The 9th International Conference on Wireless Communications and Signal Processing
+      (WCSP), 2017.
+    </p>
+
+
+  </div>
+
+
+  <div class="ui inverted vertical footer segment">
+
+    <div class="ui center aligned container">
+
+      <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+
+      <div class="ui horizontal inverted small divided link list">
+
+        Copyright &copy; USS Lab. 2016-2017
+
+        <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+
+        <br/> All Right Reserved.
+
+        <br/>
+
+        <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+
+          <b>浙ICP备16045554号-1</b>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 
 </body>
-
 
 
 </html>

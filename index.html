@@ -1,652 +1,307 @@
 <!DOCTYPE html>
-
 <html>
-
-
-
 <head>
-
     <!-- Standard Meta -->
-
     <meta charset="utf-8" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-
-
     <!-- Site Properties -->
-
     <title>USS Lab. - Ubiquitous System Security Lab.</title>
-
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
-
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-
     <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
-
-
-
     <style type="text/css">
-
         .hidden.menu {
-
             display: none;
-
         }
-
         
-
         .masthead.segment {
-
             min-height: 600px;
-
             padding: 1em 0em;
-
         }
-
         
-
         .masthead .logo.item img {
-
             margin-right: 1em;
-
         }
-
         
-
         .masthead .ui.menu .ui.button {
-
             margin-left: 0.5em;
-
         }
-
         
-
         .masthead h1.ui.header {
-
             margin-top: 3em;
-
             margin-bottom: 0em;
-
             font-size: 4em;
-
             font-weight: normal;
-
         }
-
         
-
         .largeheader {
-
             margin-top: 3em;
-
             margin-bottom: 0em;
-
             font-size: 4em;
-
             font-weight: normal;
-
         }
-
         
-
         .masthead h2 {
-
             font-size: 1.7em;
-
             font-weight: normal;
-
         }
-
         
-
         .ui.vertical.stripe {
-
             padding: 3em 0em;
-
         }
-
         
-
         .ui.vertical.stripe h3 {
-
             font-size: 2em;
-
         }
-
         
-
         .ui.vertical.stripe .button+h3,
-
         .ui.vertical.stripe p+h3 {
-
             margin-top: 3em;
-
         }
-
         
-
         .ui.vertical.stripe .floated.image {
-
             clear: both;
-
         }
-
         
-
         .ui.vertical.stripe p {
-
             font-size: 1.33em;
-
         }
-
         
-
         .ui.vertical.stripe .horizontal.divider {
-
             margin: 3em 0em;
-
         }
-
         
-
         .quote.stripe.segment {
-
             padding: 0em;
-
         }
-
         
-
         .quote.stripe.segment .grid .column {
-
             padding-top: 5em;
-
             padding-bottom: 5em;
-
         }
-
         
-
         .footer.segment {
-
             padding: 5em 0em;
-
         }
-
         
-
         .secondary.pointing.menu .toc.item {
-
             display: none;
-
         }
-
         
-
         .top.fixed.menu .ftoc.item {
-
             display: none;
-
         }
-
         
-
         @media only screen and (max-width: 700px) {
-
             .ui.fixed.menu {
-
                 display: none !important;
-
             }
-
             .secondary.pointing.menu .item,
-
             .secondary.pointing.menu .logo,
-
             .secondary.pointing.menu .menu {
-
                 display: none;
-
             }
-
             .secondary.pointing.menu .toc.item {
-
                 display: block;
-
             }
-
             .masthead.segment {
-
                 min-height: 350px;
-
             }
-
             .masthead h1.ui.header {
-
                 font-size: 2em;
-
                 margin-top: 1.5em;
-
             }
-
             .masthead h2 {
-
                 margin-top: 0.5em;
-
                 font-size: 1.5em;
-
             }
-
         }
-
         
-
         @media only screen and (max-width: 700px) {
-
             .ui.fixed.menu {
-
                 display: none !important;
-
             }
-
             .top.fixed.menu .item,
-
             .top.fixed.menu .menu {
-
                 display: none;
-
             }
-
             .top.fixed.menu .ftoc.item {
-
                 display: block;
-
             }
-
         }
-
         
-
         .logo.image {
-
             width: 50px;
-
             margin-right: 1px;
-
         }
-
         
-
         .galary {
-
             margin-top: 20px;
-
         }
-
         
-
         .swiper-container {
-
             width: 100%;
-
             height: 600rpx;
-
         }
-
         .beian:hover{
-
             color:white;
-
         }
-
         .beian {
-
             color:grey;
-
         }
-
     </style>
-
-
-
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-
     <script src="semantic/dist/components/visibility.js"></script>
-
     <script src="semantic/dist/components/sidebar.js"></script>
-
     <script src="semantic/dist/components/transition.js"></script>
-
     <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
-
     <script>
-
         $(document)
-
             .ready(function() {
-
-
-
                 // fix menu when passed
-
                 $('.masthead')
-
                     .visibility({
-
                         once: false,
-
                         onBottomPassed: function() {
-
                             $('.fixed.menu').transition('fade in');
-
                         },
-
                         onBottomPassedReverse: function() {
-
                             $('.fixed.menu').transition('fade out');
-
                         }
-
                     });
-
-
-
                 // create sidebar and attach to menu open
-
                 $('.ui.sidebar').sidebar('attach events', '.toc.item');
-
                 $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
-
-
-
                 var swiper = new Swiper('.swiper-container', {
-
                     pagination: '.swiper-pagination',
-
                     paginationClickable: true,
-
                     speed: 1000,
-
                     centeredSlides: true,
-
                     autoplay: 2500,
-
                 });
-
-
-
             });
-
     </script>
-
 </head>
-
-
-
 <body>
-
-
-
     <!-- Following Menu -->
-
     <div class="ui large top fixed hidden menu">
-
         <div class="ui container">
-
             <a class="ftoc item">
-
                 <i class="sidebar icon"></i>
-
             </a>
-
             <a class="header item">
-
                 <img class="logo" src="images/logo.png" /> USSLab.
-
             </a>
-
             <a class="active item" href="#">Home</a>
-
             <a class="item" href="projects/">Projects</a>
-
             <a class="item" href="publications.html">Publications</a>
-
             <a class="item" href="member/">Members</a>
-
             <a class="item" href="/courses.html">Courses</a>
-
             <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
-
             <a class="item" href="/seminar.html">Seminar</a>
-
             <a class="right item" href="/contact.html">Contact us</a>
-
         </div>
-
     </div>
-
-
-
     <!-- Sidebar Menu -->
-
     <div class="ui vertical inverted sidebar menu">
-
         <div class="item">
-
             <a href="#" class="ui logo icon image">
-
                 <img src="images/logo.png" />
-
             </a>
-
             <a href="#"><b>USSLab.</b></a>
-
         </div>
-
         <a class="active item" href="#">Home</a>
-
         <a class="item" href="projects/">Projects</a>
-
         <a class="item" href="publications.html">Publications</a>
-
         <a class="item" href="member/">Members</a>
-
         <a class="item" href="/courses.html">Courses</a>
-
         <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
-
         <a class="item" href="/seminar.html">Seminar</a>
-
         <a class="right item" href="/contact.html">Contact us</a>
-
     </div>
-
-
-
-
-
     <!-- Page Contents -->
-
     <div class="pusher">
-
         <div class="ui inverted vertical masthead center aligned segment">
-
-
-
             <div class="ui container">
-
                 <div class="ui large secondary inverted pointing menu">
-
                     <a class="toc item">
-
                         <i class="sidebar icon"></i>
-
                     </a>
-
                     <a href="/" class="ui logo icon image">
-
                         <img src="images/logo.png" />
-
                     </a>
-
                     <a class="item" href="/"><b>USS Lab.</b></a>
-
                     <a class="active item" href="#">Home</a>
-
                     <a class="item" href="projects/">Projects</a>
-
                     <a class="item" href="publications.html">Publications</a>
-
                     <a class="item" href="member/">Members</a>
-
                     <a class="item" href="/courses.html">Courses</a>
-
                     <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
-
                     <a class="item" href="/seminar.html">Seminar</a>
-
                     <a class="right item" href="/contact.html">Contact us</a>
-
                 </div>
-
             </div>
-
-
-
             <div class="ui container swiper-container">
-
                 <div class="swiper-wrapper">
-
                     <div class="swiper-slide galary"><a href="https://www.sigsac.org/ccs/CCS2017/awards.html"><img width="100%" height="100%" src="images/fm_bp.png" /></a></div>
-
                     <div class="swiper-slide galary"><a href="projects/dolphinAttack.html"><img width="100%" height="100%" src="images/fm_da.png" /></a></div>
-
                     <div class="swiper-slide galary"><img width="100%" height="100%" src="images/fm3.png" /></div>
-
                 </div>
-
                 <!-- Add Pagination -->
-
                 <div class="swiper-pagination"></div>
-
             </div>
-
         </div>
-
-
-
         <div class="ui vertical stripe center aligned container">
-
             <div class="ui container">
-
                 <h2 class="ui largeheader">
-
                     <img src="images/logo.png" /><br/> Ubiquitous System Security Lab.
-
                 </h2>
-
                 <h4>
-
                     Welcome to USS(Ubiquitous System Security)&nbsp;&nbsp;Lab.<br/> USS Lab. belongs to Electrical Engineering College in Zhejiang University. <br/> We are working on universal security area including <br/> traditional security, attack/defence and the security of internet of things(IoT).<br/> And now we are mainly focus on IoT and embedded system security.
-
                 </h4>
-
             </div>
-
         </div>
-
-
-
         <div class="ui vertical stripe container segment">
-
             <h1>PROJECTS</h1>
-
             <div class="ui divider"></div>
-
             <div class="ui stackable top aligned four column grid">
-
                 <div class="column" style="text-align:center">
-
-
-
                     <a href="projects/dolphinAttack.html">
-
                         <img width="100%" src="images/DA1.png" alt="">
-
                     </a>
-
                     <h4>DolphinAttack</h4>
-
                     <br/>
-
                 </div>
-
                 <div class="column" style="text-align:center">
-
-
-
                     <a href="projects/ics.html">
-
                         <img width="100%" src="images/plc.jpg" alt="">
-
                     </a>
-
                     <h4>ICS Security</h4>
-
                     <br/>
-
-
-
                 </div>
-
                 <div class="column" style="text-align:center">
-
-
-
                     <a href="projects/sssv.html">
-
                         <img width="100%" src="images/sssv3.png" alt="">
-
                     </a>
-
                     <h4>Securing Sensors of Self-Driving Vehicles</h4>
-
                     <br/>
-
                 </div>
-
                 <div class="column" style="text-align:center">
-
-
-
                     <a href="projects/dewicam.html">
-
                         <img width="100%" src="images/dewicam.png" alt="">
-
                     </a>
-
                     <h4>DeWiCam</h4>
-
                     <br/>
-
                 </div>
-
             </div>
-
             <p align="right"><a href="projects/">More>></a></p>
-
             <h1>NEWS</h1>
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/dewicam6.jpg" />
                 </div>
-
                 <div class="thirteen wide column">
                     <h1> Best paper award at ACM ASIACCS 2018</h1>
                     <p> Our paper, DeWiCam: Detecting Hidden Wireless Cameras via Smartphones, has been awarded as best paper (3/60) at the 2018 ACM Asia Conference on Computer and Communications Security (ASIACCS). Cheers!
@@ -654,23 +309,15 @@
                             <a align="right" href="projects/dewicam.html"> <font color="white">Read More</font>  </a>
                         </button>
                     </p>
-
                     <font color="gray">7/23/2018</font></i>
-
                 </div>
-
                 <br/>
             </div>
-
-
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/top10.jpg" />
                 </div>
-
                 <div class="thirteen wide column">
                     <h1> Top 10 Academic Advances of Zhejiang University in 2017</h1>
                     <p> The project “Dolphin Attacks - Protecting the Security of Speech Recognition Systems against Microphone Hardware Vulnerabilities” led by Xu Wenyuan and Ji Xiaoyu from Ubiquitous System Security Lab (USS LAB) of the EE College won the “Top 10 Academic Advances of Zhejiang University in 2017”....
@@ -679,21 +326,14 @@
                         </button>
                     </p>
                     <font color="gray">5/29/2018</font></i>
-
                 </div>
-
                 <br/>
             </div>
-
-
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/new_2.png" />
                 </div>
-
                 <div class="thirteen wide column">
                     <h1>Paper accepted by ACM ASIACCS 2018</h1>
                     <p> Our papers, "HlcAuth: Key-free and Secure Communications via Home-Limited Channel", "DeWiCam: Detecting Hidden Wireless Cameras via Smartphones", "FBSleuth: Fake Base Station Forensics via Radio Frequency Fingerprinting", have been accepted by the 2018 ACM ASIA Conference on Computer and Communications Security (ASIACCS)...
@@ -702,41 +342,28 @@
                         </button>
                     </p>
                     <font color="gray">4/10/2018</font></i>
-
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/cuba_yan.jpg" />
                 </div>
-
                 <div class="thirteen wide column">
-
                     <h1>Technical report on the "sonic weapon" in Cuba</h1>
                     <p>  Our technical report, “On Cuba, Diplomats, Ultrasound, and Intermodulation Distortion” is available <a class="item" href="papers/YanFuXuCuba.pdf"><b>(PDF)</b></a>. An article about our research will be published soon by IEEE Spectrum in March. Our story has been covered by <a class="item" href="https://spectrum.ieee.org/semiconductors/devices/finally-a-likely-explanation-for-the-sonic-weapon-used-at-the-us-embassy-in-cuba"><b>IEEE Spectrum</b></a> and <a class="item" href="https://theconversation.com/can-sound-be-used-as-a-weapon-4-questions-answered-83627"><b>The Conversation</b></a>.
-
                     </p>
                     <i><font color="gray">3/02/2018</font></i>
-
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/best_paper.png" />
                 </div>
-
                 <div class="thirteen wide column">
-
                     <h1>Best paper award at ACM CCS 2017</h1>
                     <p>  Our paper, DolphinAttack: Inaudible Voice Commands, has been awarded as best paper (5/115) at the 2017 ACM Conference on Computer and Communications Security (CCS). Cheers!
                         <button class="ui primary button">
@@ -744,19 +371,15 @@
                         </button>
                     </p>
                     <i><font color="gray">11/07/2017</font></i>
-
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
             
              <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/new_1.png" />
                 </div>
-
                 <div class="thirteen wide column">
                   
                     <h1>USSLab gave a speech in the 1st IRCSC</h1>
@@ -768,17 +391,13 @@
                       <i><font color="gray">9/21/2017</font></i>
               
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/new_3.png" />
                 </div>
-
                 <div class="thirteen wide column">
                 
                     <h1>DolphinAttack on the news</h1>
@@ -791,17 +410,13 @@
                      <i><font color="gray">9/15/2017</font></i>
                    
                 </div>
-
                 <br/>
             </div>
-
             <div class="ui divider"></div>
-
             <div class="ui stackable two column grid">
                 <div class="three wide column">
                     <img width="100%" src="images/new_2.png" />
                 </div>
-
                 <div class="thirteen wide column">
                     <h1>Paper accepted by ACM CCS 2017</h1>
                     <p> Our paper, DolphinAttack: Inaudible Voice Commands, has been accepted by the 2017 ACM Conference on Computer and Communications Security (CCS)...
@@ -812,52 +427,46 @@
                     <font color="gray">8/3/2017</font></i>
                 
                 </div>
+                <br/>
+            </div>
 
+            <div class="ui divider"></div>
+            <div class="ui stackable two column grid">
+                <div class="three wide column">
+                    <img width="100%" src="images/ieee-infocom2.png" />
+                </div>
+                <div class="thirteen wide column">
+                    <h1>Paper accepted by IEEE INFOCOM 2019</h1>
+                    <p> Our paper, ” NAuth: Secure Face-to-Face Device Authentication via Nonlinearity”, has been accepted by the 2019 IEEE INFOCOM...
+                        <button class="ui primary button">
+                            <a align="right" href="http://infocom2019.ieee-infocom.org/accepted-paper-list-main-conference"> <font color="white">Read More</font>  </a>
+                        </button>
+                    </p>
+                    <font color="gray">8/3/2017</font></i>
+
+                </div>
                 <br/>
             </div>
 
             <p align="right"><a href="news/">More>></a></p>
-
              <div class="ui divider"></div>
              
             
         </div>
-
-
            
-
         <div class="ui inverted vertical footer segment">
-
             <div class="ui center aligned container">
-
                 <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
-
                 <div class="ui horizontal inverted small divided link list">
-
                     Copyright &copy; USS Lab. 2016-2017
-
                     <br/> Zhejiang University, Hangzhou, Zhejiang, China. 310027
-
                     <br/> All Right Reserved.
-
                     <br/><a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
-
                     <b>浙ICP备16045554号-1</b>
-
                     </a>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
-
-
 </body>
-
-
-
 </html>

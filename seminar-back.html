@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <base href="/" />
+    <!-- Site Properties -->
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+
+    <style type="text/css">
+        .hidden.menu {
+            display: none;
+        }
+
+        .largeheader {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+
+        .ui.vertical.stripe {
+            padding: 3em 0em;
+        }
+
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
+
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
+
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+
+        .footer.segment {
+            padding: 5em 0em;
+        }
+
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+
+        .top.fixed.menu .ftoc.item {
+            display: none;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .logo,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+
+            .masthead.segment {
+                min-height: 350px;
+            }
+
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+
+            .top.fixed.menu .item,
+            .top.fixed.menu .menu {
+                display: none;
+            }
+
+            .top.fixed.menu .ftoc.item {
+                display: block;
+            }
+        }
+
+        .logo.image {
+            width: 50px;
+            margin-right: 1px;
+        }
+
+        .galary {
+            margin-top: 20px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 600px;
+        }
+
+        .beian:hover {
+            color: white;
+        }
+
+        .beian {
+            color: grey;
+        }
+    </style>
+
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="semantic/dist/components/visibility.js"></script>
+    <script src="semantic/dist/components/sidebar.js"></script>
+    <script src="semantic/dist/components/transition.js"></script>
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+    <script>
+        $(document)
+            .ready(function () {
+
+                // fix menu when passed
+                $('.secondary.menu')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    speed: 1000,
+                    centeredSlides: true,
+                    autoplay: 2500,
+                });
+
+            });
+    </script>
+</head>
+
+<body>
+
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="ftoc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="header item">
+                <img class="logo" src="images/logo.png" /> USSLab.
+            </a>
+            <a class="item" href="/">Home</a>
+            <a class="item" href="projects/">Projects</a>
+            <a class="item" href="publications.html">Publications</a>
+            <a class="item" href="member/">Members</a>
+            <a class="item active">Courses</a>
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+            <a class="item active" href="/seminar.html">Seminar</a>
+
+            <a class="right item" href="/contact.html">Contact us</a>
+
+
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <div class="item">
+            <a class="ui logo icon image">
+                <img src="images/logo.png" />
+            </a>
+            <a href="#"><b>USSLab.</b></a>
+        </div>
+        <a class="item" href="/">Home</a>
+        <a class="item" href="projects/">Projects</a>
+        <a class="item" href="publications.html">Publications</a>
+        <a class="item" href="member/">Members</a>
+        <a class="item active">Courses</a>
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+        <a class="item active" href="/seminar.html">Seminar</a>
+
+        <a class="right item" href="/contact.html">Contact us</a>
+    </div>
+
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui inverted vertical center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="ui logo icon image">
+                        <img src="images/logo.png" />
+                    </a>
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+                    <a class="item" href="/">Home</a>
+                    <a class="item" href="projects/">Projects</a>
+                    <a class="item" href="publications.html">Publications</a>
+                    <a class="item" href="member/">Members</a>
+                    <a class="item" href="/courses.html">Courses</a>
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+                    <a class="item active" href="/seminar.html">Seminar</a>
+                    <a class="right item" href="/contact.html">Contact us</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ui vertical stripe container segment">
+            <h1 class="ui header">Seminar</h1>
+
+
+            <div class="ui divider"></div>
+
+            <h2 class="ui header">Autumn 2018 Seminars:</h2>
+
+            <div>
+                <table class="table tiny-table" rules=rows width="100%">
+                    <tr style="color:#FFFFFF;text-decoration:none;background:#005A9C;text-align:center;font-weight:bold;"
+                        valign="top">
+                        <td width="15%"></td>
+                        <td align="left" width="15%">
+                            <p>Speaker</p>
+                        </td>
+                        <td align="left" width="50%">
+                            <p>Title</p>
+                        </td>
+                        <td align="left" width="20%">
+                            <p>Conference</p>
+                        </td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="15%" align="center" rowspan="3">September 29</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%"> Yet Another Text Captcha Solver: A Generative Adversarial Network
+                            Based Approach</td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">JiaYu Zhang</td>
+                        <td align="left" width="50%">Acquisitional Rule-based Engine for Discovering Internet-of-Thing
+                            Devices</td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Ruiwen He</td>
+                        <td align="left" width="50%">BlackIoT: IoT Botnet of High Wattage Devices Can Disrupt the Power
+                            Grid</td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">October 11</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Guoming Zhang</td>
+                        <td align="left" width="50%"> PrinTracker: Fingerprinting 3D Printers using Commodity Scanners</td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Chen Yan</td>
+                        <td align="left" width="50%">Fear the Reaper: Characterization and Fast Detection of Card
+                            Skimmers</td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Bingjing Yan</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">October 15</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Yushi Cheng</td>
+                        <td align="left" width="50%"> Fear the Reaper: Characterization and Fast Detection of Card
+                            Skimmers</td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Taiming Zhang</td>
+                        <td align="left" width="50%">Polisis: Automated Analysis and Presentation of Privacy Policies
+                            Using Deep Learning</td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Kai Wang</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">October 22</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Juchuan Zhang</td>
+                        <td align="left" width="50%"> Detecting Attacks Against Robotic Vehicles: A Control Invariant
+                            Approach
+                        </td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Zhou Zhuang</td>
+                        <td align="left" width="50%"></td>
+                        <td align="left" width="20%"></td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Ruochen Zhou</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">October 29</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Yanmiao Zhang</td>
+                        <td align="left" width="50%"> Meltdown: Reading Kernel Memory from User Space
+                        </td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Tianchen Zhang</td>
+                        <td align="left" width="50%">QSYM : A Practical Concolic Execution Engine Tailored for Hybrid
+                            Fuzzing</td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Xinfeng Li</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="5">November 19</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Ruochen Zhou</td>
+                        <td align="left" width="50%"> If This Then What? Controlling Flows in IoT Apps
+                        </td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Yanjie Li</td>
+                        <td align="left" width="50%">DOPING: Generative Data Augmentation for Unsupervised Anomaly
+                            Detection with GAN</td>
+                        <td align="left" width="20%">IEEE 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Jiangyi Deng</td>
+                        <td align="left" width="50%">Clock Around the Clock: Time-Based Device Fingerprinting</td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Tao Zhao</td>
+                        <td align="left" width="50%">DScreaming Channels: When Electromagnetic Side Channels Meet Radio
+                            Transceivers</td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">November 29</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Chaohao Li</td>
+                        <td align="left" width="50%"> SoK: Security Evaluation of Home-Based IoT Deployments
+                        </td>
+                        <td align="left" width="20%">S&P 2019</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Bingjing Yan</td>
+                        <td align="left" width="50%">Fp-Scanner: The Privacy Implications of Browser Fingerprint
+                            Inconsistencies</td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Ruiwen He</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">December 6</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Ruiwen He</td>
+                        <td align="left" width="50%">
+                            Ohm's Law in Data Centers: A Voltage Side Channel for Timing Power Attacks
+                        </td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Jiayu Zhang</td>
+                        <td align="left" width="50%">HoMonit: Monitoring Smart Home Apps from Encrypted Traffic</td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Yanjie Li</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">December 13</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%">PatternListener: Cracking Android Pattern Lock Using Acoustic
+                            Signals
+                        </td>
+                        <td align="left" width="20%">CCS 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Xuan Ouyang</td>
+                        <td align="left" width="50%"></td>
+                        <td align="left" width="20%"></td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Tao Zhao</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">December 20</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Chen Yan</td>
+                        <td align="left" width="50%">Rebooting Ultrasonic Positioning Systems for Ultrasound-incapable Smart Devices
+                        </td>
+                        <td align="left" width="20%">MobiCom2019</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Guoming Zhang</td>
+                        <td align="left" width="50%">No Training Hurdles: Fast Training-Agnostic Atacks to Infer
+                            Your Typing </td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Bingjing Yan</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">December 27</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Yushi Cheng</td>
+                        <td align="left" width="50%">DeepMasterPrints: Generating Master Prints for Dictionary Attacks
+                            via Latent Variable Evolution
+                        </td>
+                        <td align="left" width="20%">CCS 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Taiming Zhang</td>
+                        <td align="left" width="50%"></td>
+                        <td align="left" width="20%"></td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Kai Wang</td>
+                        <td align="left" width="50%">RainbowLight: Towards Low Cost Ambient Light Positioning with Mobile Phones</td>
+                        <td align="left" width="20%">MobiCom 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">January 3</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Juchuan Zhang</td>
+                        <td align="left" width="50%">ChromaCode: A Fully Imperceptible Screen-Camera Communication System
+                        </td>
+                        <td align="left" width="20%">CCS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Zhou Zhuang</td>
+                        <td align="left" width="50%"></td>
+                        <td align="left" width="20%"></td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Xinfeng Li</td>
+                        <td align="left" width="50%">Resolving Policy Conflicts in Multi-Carrier Cellular Access</td>
+                        <td align="left" width="20%">MobiCom 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">January 10</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Yanmiao Zhang</td>
+                        <td align="left" width="50%">FUZE:Towards Facilitating Exploit Generation for Kernel
+                            Use-After-Free Vulnerabilities
+                        </td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Tianchen Zhang</td>
+                        <td align="left" width="50%">Inception: System-Wide Security Testing of Real-World Embedded
+                            Systems Software</td>
+                        <td align="left" width="20%">USENIX 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Ruochen Zhou</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">January 17</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Jiangyi Deng</td>
+                        <td align="left" width="50%">Turning Your Weakness Into a Strength: Watermarking Deep Neural
+                            Networks by Backdooring
+                        </td>
+                        <td align="left" width="20%">USENIX 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Yanjie Li</td>
+                        <td align="left" width="50%">Feature Squeezing: Detecting Adversarial Examples in Deep Neural Networks</td>
+                        <td align="left" width="20%">NDSS 2017</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%">New issues</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="ui divider"></div>
+
+
+
+            <h2 class="ui header">Autumn 2018 Workshop:</h2>
+
+            <div>
+                <table class="table tiny-table" rules=rows width="100%">
+                    <tr style="color:#FFFFFF;text-decoration:none;background:#005A9C;text-align:center;font-weight:bold;"
+                        valign="top">
+                        <td width="20%"></td>
+                        <td align="left" width="20%">
+                            <p>Speaker</p>
+                        </td>
+                        <td align="left" width="60%">
+                            <p>Title</p>
+                        </td>
+                    </tr>
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">9:00 - 9:05 Workshop Openning</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session 1: Talks</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">9:05 - 9:25</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Chaohao Li</td>
+                        <td align="left" width="60%">Person Identification</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">9:25 - 9:45</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Xinyan Zhou</td>
+                        <td align="left" width="60%">Keylogging side channels</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">9:45 - 10:05</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Jiayu Zhang</td>
+                        <td align="left" width="60%">Hiding Information in Noise: Fundamental Limits of Covert Wireless
+                            Communication</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session Break (10 min)</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">10:15 - 10:35</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Yushi Cheng</td>
+                        <td align="left" width="60%">Becoming Supersonic: Writing Good Papers Fast！</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session 2: IoT Security</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">10:35-10:55</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Tao Zhao</td>
+                        <td align="left" width="60%">BlackIoT: IoT Botnet of High Wattage Devices Can Disrupt the Power
+                            Grid</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">10:55-11:15</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Ruochen Zhou</td>
+                        <td align="left" width="60%">Rethinking Access Control and Authentication for the Home Internet
+                            of Things (IoT)</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">11:15-11:35</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Guoming Zhang</td>
+                        <td align="left" width="60%">LipPass: Lip Reading-based User Authentication on Smartphones
+                            Leveraging Acoustic Signals</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Lunch</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session 3-I</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">13:00-13:20</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Yanmiao Zhang</td>
+                        <td align="left" width="60%">HEAPHOPPER: Bringing Bounded Model Checking to Heap Implementation
+                            Security</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">13:20-13:40</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Jiangyi Deng</td>
+                        <td align="left" width="60%">One&Done: A Single-Decryption EM-Based Attack on OpenSSL’s
+                            Constant-Time Blinded RSA</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">13:40-14:00</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Tianchen Zhang</td>
+                        <td align="left" width="60%">With Great Training Comes Great Vulnerability: Practical Attacks
+                            against Transfer Learning</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">14:00-14:20</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Binjing Yan</td>
+                        <td align="left" width="60%">Arbitrum: Scalable, private smart contracts</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session Break (10 min)</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session 3-II</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">14:30-14:50</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Taimin Zhang</td>
+                        <td align="left" width="60%">AttriGuard: A Practical Defense Against Attribute Inference
+                            Attacks via Adversarial Machine Learning</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">14:50-15:10</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Yanjie Li</td>
+                        <td align="left" width="60%">A4NT: Author Attribute Anonymity by Adversarial Training of Neural
+                            Machine Translation</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">15:10-15:30</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Ruiwen He</td>
+                        <td align="left" width="60%">Off-Path TCP Exploit: How Wireless Routers Can Jeopardize Your
+                            Secrets</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session Break (10 min)</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">15:40-16:00</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Chen Yan</td>
+                        <td align="left" width="60%">Tutorials from Chen Yan</td>
+                    </tr>
+
+                    <tr style="font-size:15px;font-weight:bold;" valign="center">
+                        <td width="20%" align="center"></td>
+                        <td align="left" width="20%" style="font-weight:bold;"></td>
+                        <td align="left" width="60%">Session 4: Sensor Attacks</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">16:00-16:20</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="60%">Analysis of Privacy Protections in Fitness Tracking Social
+                            Networks -or- You can run, but can you hide?</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="20%" align="center">16:20-16:40</td>
+                        <td align="left" width="20%" style="font-weight:bold;">Juchuan Zhang</td>
+                        <td align="left" width="60%">Injected and Delivered: Fabricating Implicit Control over
+                            Actuation Systems by Spoofing Inertial Sensors</td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+
+            <div class="ui divider"></div>
+
+            <h2 class="ui header">Spring 2018 Seminars:</h2>
+
+            <div>
+                <table class="table tiny-table" rules=rows width="100%">
+                    <tr style="color:#FFFFFF;text-decoration:none;background:#005A9C;text-align:center;font-weight:bold;"
+                        valign="top">
+                        <td width="15%"></td>
+                        <td align="left" width="15%">
+                            <p>Speaker</p>
+                        </td>
+                        <td align="left" width="50%">
+                            <p>Title</p>
+                        </td>
+                        <td align="left" width="20%">
+                            <p>Conference</p>
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td width="15%" align="center" rowspan="3">March 26</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%">ABC：Enabling Smartphone Authentication with Built-in Camera</td>
+                        <td align="left" width="20%">NDSS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Xuan OuYang</td>
+                        <td align="left" width="50%">Feature Squeezing:Detecting Adversarial Examples in Deep Neural
+                            Networks</td>
+                        <td align="left" width="20%">NDSS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Yan Long</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">April 2</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Guoming Zhang</td>
+                        <td align="left" width="50%">Inaudible Voice Commands: The Long-range Attack and Defense </td>
+                        <td align="left" width="20%">NSDI 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Chen Yan</td>
+                        <td align="left" width="50%">rtCaptcha: A Real-Time CAPTCHA Based Liveness Detection System</td>
+                        <td align="left" width="20%">NDSS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Weizhao Jin</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">April 9</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Jvchuan Zhang</td>
+                        <td align="left" width="50%">EyeTell: Video-Assisted Touchscreen Keystroke Inference from Eye
+                            Movements
+                        </td>
+                        <td align="left" width="20%">S&P 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Jiangyi Deng</td>
+                        <td align="left" width="50%">Classifiers and their Metrics Quantified</td>
+                        <td align="left" width="20%">Molecular Informatics[J](2018)</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Xingdong Cao</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">April 16</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Chaohao Li</td>
+                        <td align="left" width="50%">IoT Seminar
+                        </td>
+                        <td align="left" width="20%">Big Four
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Taimin Zhang</td>
+                        <td align="left" width="50%">Stealing Hyperparameters in Machine Learning </td>
+                        <td align="left" width="20%">S&P 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Ruiwen He</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">April 23</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Zhou Zhuang</td>
+                        <td align="left" width="50%">Privacy Risks with Facebook’s PII-based Targeting: Auditing a Data
+                            Broker’s Advertising Interface
+                        </td>
+                        <td align="left" width="20%">S&P 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%"> </td>
+                        <td align="left" width="20%"> </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Jiangyi Deng</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center">April 30</td>
+                        <td align="left" style="font-weight:bold;">Labor day break</td>
+                        <td align="left" style="font-weight:bold;">&nbsp;</td>
+                        <td align="left" style="font-weight:bold;">&nbsp;</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">May 7</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Yanmiao Zhang</td>
+                        <td align="left" width="50%">Rise of the HaCRS: Augmenting Autonomous Cyber Reasoning Systems
+                            with Human Assistance
+                        </td>
+                        <td align="left" width="20%">CCS 2017
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Tianchen Zhang</td>
+                        <td align="left" width="50%"> VulDeepecker: A Deep Learning-Based System for Vulnerability
+                            Dectection </td>
+                        <td align="left" width="20%">NDSS 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Chuer Yu</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center">May 14</td>
+                        <td align="left" style="font-weight:bold;">Spring break</td>
+                        <td align="left" style="font-weight:bold;">&nbsp;</td>
+                        <td align="left" style="font-weight:bold;">&nbsp;</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">May 21</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Xinyan Zhou</td>
+                        <td align="left" width="50%"> Device Pairing at the Touch of an Electrode
+
+                        </td>
+                        <td align="left" width="20%">NDSS 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Yushi Cheng</td>
+                        <td align="left" width="50%"> ABC: Enabling Smartphone Authentication with Built-in Camera</td>
+                        <td align="left" width="20%">NDSS 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Jiayu Zhang</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">May 28</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Jiayu Zhang</td>
+                        <td align="left" width="50%"> FPGA-Based Remote Power Side-Channel Attacks
+
+                        </td>
+                        <td align="left" width="20%"> S&P 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Ruiwen He</td>
+                        <td align="left" width="50%"> IoT Goes Nuclear: Creating a ZigBee Chain Reaction
+                        </td>
+                        <td align="left" width="20%">S&P 2017</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center">June 4</td>
+                        <td align="left" style="font-weight:bold;">ASIACCS 2018 break</td>
+                        <td align="left" style="font-weight:bold;">&nbsp;</td>
+                        <td align="left" style="font-weight:bold;">&nbsp;</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">June 11</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%"> FP-STALKER: Tracking Browser Fingerprint Evolutions Along Time
+
+                        </td>
+                        <td align="left" width="20%"> S&P 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Xuan Ouyang</td>
+                        <td align="left" width="50%"> Automated Website Fingerprinting through Deep Learning
+                        </td>
+                        <td align="left" width="20%">NDSS 2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Zhuo Zhang</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">June 19</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Chen Yan</td>
+                        <td align="left" width="50%">When Your Fitness Tracker Betrays You: Quantifying the
+                            Predictability of Biometric Features Across Contexts
+
+                        </td>
+                        <td align="left" width="20%"> S&P 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Guoming Zhang</td>
+                        <td align="left" width="50%">Walls： have ears traffic-based side-channel attack in video
+                            streaming
+                        </td>
+                        <td align="left" width="20%">INFOCOM2018</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Yan Long</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">June 25</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Taimin Zhang</td>
+                        <td align="left" width="50%">
+                            MAGIK: An Efficient Key Extraction Mechanism Based on Dynamic Geomagnetic Field
+                        </td>
+                        <td align="left" width="20%">INFOCOM2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+
+                        <td align="left" width="15%" style="font-weight:bold;">Yushi Cheng</td>
+                        <td align="left" width="50%"> Detecting Wireless Spy Cameras Via Stimulating and Probing
+                        </td>
+                        <td align="left" width="20%">Mobisys 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Weizhao Jin</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">July 2</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Jvchuan Zhang</td>
+                        <td align="left" width="50%">
+                            Trojaning Attack on Neural Networks
+                        </td>
+                        <td align="left" width="20%">NDSS 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Zhou Zhuang</td>
+                        <td align="left" width="50%"> All Your GPS Are Belong To Us: Towards Stealthy Manipulation of
+                            Road Navigation Systems
+                        </td>
+                        <td align="left" width="20%">USENIX 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Xingdong Cao</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">July 9</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Tianchen Zhang</td>
+                        <td align="left" width="50%">
+                            &nbsp;
+                        </td>
+                        <td align="left" width="20%">&nbsp;
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Yanmiao Zhang</td>
+                        <td align="left" width="50%"> CollAFL: Path Sensitive Fuzzing
+                        </td>
+                        <td align="left" width="20%">S&P 2018 </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Bingjing Yan</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">July 16</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Xinyan Zhou</td>
+                        <td align="left" width="50%">
+                            Face Flashing: a Secure Liveness Detection Protocol based on Light Reflections
+                        </td>
+                        <td align="left" width="20%">NDSS 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Chaohao Li</td>
+                        <td align="left" width="50%">Do You Feel What I Hear? Enabling Autonomous IoT Device Pairing
+                            using Different Sensor Types
+                        </td>
+                        <td align="left" width="20%">S&P 2018
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Jiayu Zhang</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="center" rowspan="3">July 23</td>
+                        <td align="left" width="15%" style="font-weight:bold;">Ruiwen He</td>
+                        <td align="left" width="50%">
+                            &nbsp;
+                        </td>
+                        <td align="left" width="20%">&nbsp;
+                        </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+
+                        <td align="left" width="15%" style="font-weight:bold;">Jiayu Zhang</td>
+                        <td align="left" width="50%"> &nbsp;
+                        </td>
+                        <td align="left" width="20%">&nbsp; </td>
+                    </tr>
+
+                    <tr style="font-size:15px" valign="center">
+                        <td align="left" width="15%" style="font-weight:bold;">Zhiyun Wang</td>
+                        <td align="left" width="50%">New Sensor</td>
+                    </tr>
+
+
+                </table>
+            </div>
+
+
+            <br />
+        </div>
+
+        <div class="ui inverted vertical footer segment">
+            <div class="ui center aligned container">
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+                <div class="ui horizontal inverted small divided link list">
+                    Copyright &copy; USS Lab. 2016-2017
+                    <br /> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+                    <br /> All Right Reserved.
+                    <br />
+                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+                        <b>浙ICP备16045554号-1</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
