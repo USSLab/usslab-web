@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <base href="/" />
+    <!-- Site Properties -->
+    <title>USS Lab. - Ubiquitous System Security Lab.</title>
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/for-table/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="third-party/Swiper-3.4.1/dist/css/swiper.min.css" />
+
+    <style type="text/css">
+        .hidden.menu {
+            display: none;
+        }
+
+        .largeheader {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+
+        .ui.vertical.stripe {
+            padding: 3em 0em;
+        }
+
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
+
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
+
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+
+        .footer.segment {
+            padding: 5em 0em;
+        }
+
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+
+        .top.fixed.menu .ftoc.item {
+            display: none;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .logo,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+
+            .masthead.segment {
+                min-height: 350px;
+            }
+
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+
+            .top.fixed.menu .item,
+            .top.fixed.menu .menu {
+                display: none;
+            }
+
+            .top.fixed.menu .ftoc.item {
+                display: block;
+            }
+        }
+
+        .logo.image {
+            width: 50px;
+            margin-right: 1px;
+        }
+
+        .galary {
+            margin-top: 20px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 600px;
+        }
+
+        .beian:hover {
+            color: white;
+        }
+
+        .beian {
+            color: grey;
+        }
+
+        .list-container {
+            padding-left: 15%;
+            padding-right: 15%;
+            padding-top: 15px;
+        }
+    </style>
+    <!-- <script src="third-party/Swiper-3.4.1/dist/css/for-table/bootstrap.min.js"></script>
+    <script src="third-party/Swiper-3.4.1/dist/css/for-table/headroom.min.js"></script>
+    <script src="third-party/Swiper-3.4.1/dist/css/for-table/jQuery.headroom.min.js"></script>
+    <script src="third-party/Swiper-3.4.1/dist/css/for-table/layer.min.js"></script> -->
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="semantic/dist/components/visibility.js"></script>
+    <script src="semantic/dist/components/sidebar.js"></script>
+    <script src="semantic/dist/components/transition.js"></script>
+    <script src="third-party/Swiper-3.4.1/dist/js/swiper.min.js"></script>
+
+    <script>
+        $(document)
+            .ready(function () {
+
+                // fix menu when passed
+                $('.secondary.menu')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function () {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function () {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+                $('.ui.sidebar').sidebar('attach events', '.ftoc.item');
+
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    speed: 1000,
+                    centeredSlides: true,
+                    autoplay: 2500,
+                });
+
+            });
+    </script>
+</head>
+
+<body>
+
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="ftoc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a class="header item">
+                <img class="logo" src="images/logo.png" /> USSLab.
+            </a>
+            <a class="item" href="/">Home</a>
+            <a class="item" href="projects/">Projects</a>
+            <a class="item" href="publications.html">Publications</a>
+            <a class="item" href="member/">Members</a>
+            <a class="item active">Courses</a>
+            <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+            <a class="right item" href="/contact.html">Contact us</a>
+
+
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+        <div class="item">
+            <a class="ui logo icon image">
+                <img src="images/logo.png" />
+            </a>
+            <a href="#"><b>USSLab.</b></a>
+        </div>
+        <a class="item" href="/">Home</a>
+        <a class="item" href="projects/">Projects</a>
+        <a class="item" href="publications.html">Publications</a>
+        <a class="item" href="member/">Members</a>
+        <a class="item active">Courses</a>
+        <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+        <a class="right item" href="/contact.html">Contact us</a>
+    </div>
+
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui inverted vertical center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="ui logo icon image">
+                        <img src="images/logo.png" />
+                    </a>
+                    <a class="item" href="/"><b>USS Lab.</b></a>
+                    <a class="item" href="/">Home</a>
+                    <a class="item" href="projects/">Projects</a>
+                    <a class="item" href="publications.html">Publications</a>
+                    <a class="item" href="member/">Members</a>
+                    <a class="item active">Courses</a>
+                    <a class="item" href="/jarvisoj.html">Jarvis OJ</a>
+                    <a class="right item" href="/contact.html">Contact us</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ui vertical stripe container segment">
+            <h1 class="ui header">Internet of Things Security</h1>
+            <div class="ui divider"></div>
+            <div style="font-size: 18px; line-height:  130%;">
+                <b> • 通知公告</b></br>
+                <div>
+                    <ol>
+                        <li>探究性实验通知：1月6日13点-17点，教二104。请各个小组提前准备好硬件设备、拷贝ppt等。</br>
+                            每个小组按照题目类型进行汇报，先讲PPT再现场演示，一共5分钟。</br></li>
+                        <li>第一次实验课：12月2日。时间：下午9、10节。地点：教二213</br></li>
+                        <li>请及时提交HW1、 HW2 (详细要求见教学日历中的作业链接)</br></li>
+                        <li>PPT勘误文件和HW4&5已经发布，请下载。</br></li>
+                    </ol>
+                </div>
+                </br>
+                <b> • 课程概述</b></br>
+                <div>
+                    <ol>
+                        <li>课程名称：《物联网安全(导论)》</br></li>
+                        <li>授课形式：理论+实验</br></li>
+                        <li>预修要求：计算机网络、嵌入式系统、C语言等</br></li>
+                        <li>推荐教材：</br></li>
+                        <ul>
+                            <li>徐文渊，冀晓宇等，《物联网安全》， to be published</br></li>
+                            <li>刘云浩，《物联网导论》（第三版），科学出版社</br></li>
+                            <li>武传坤等，《物联网安全基础》，科学出版社</br></li>
+                            <li>李善仓等，《物联网安全》，清华大学出版社</br></li>
+                            <li>Brian Russell, etc.,《物联网安全》，机械工业出版社</br></li>
+                            <li>Nitesh Dhanjani, etc.,《物联网设备安全》，机械工业出版社</br></li>
+                            <li>李联宁，《物联网安全导论》，清华大学出版社</br>
+                        </ul>
+                    </ol>
+                </div>
+
+
+                <br />
+
+                <b> • 授课教师</b> <br />
+                <ul>
+                    <li> 冀晓宇：电气工程学院副教授、博导<br /></li>
+                    <li> 研究方向：物联网安全、移动智能感知及其安全、人工智能安全等<br /></li>
+                    <li> 办公地址：教二325，欢迎前来讨论问题：）<br /></li>
+                    <li> 个人主页：<a href="http://www.xiaoyu.dev" target="_blank">www.xiaoyu.dev</a><br /></li>
+                    <li> 电子邮箱：xji@zju.edu.cn<br /></li>
+                </ul>
+                <br />
+
+                <b> • 课程信息 </b><br />
+                <ul>
+                    <li> 课程主页：<a
+                            href="http://www.usslab.org/courses/iot_security.html">www.usslab.org/courses/iot_security.html</a>
+                        (课程教学安排、课件、习题等)<br /></li>
+                    <li> 课程QQ群： 912021467<br /></li>
+                    <li> 课程助教：王凯<br /></li>
+                    <li> 邮箱：3150104922@zju.edu.cn<br /></li>
+                    <li>电话：18867110373<br /></li>
+                </ul>
+                <br />
+
+                <b> • 教学日历 </b> <br />
+                <!-- <img width="50%" src="images/iot_security-min.png"> -->
+
+                <table class="table table-hover table-bordered"
+                    style="position: absolution; right: 10px; font-size: 18px; width: 85%; ">
+                    <thead>
+                        <tr class="active">
+                            <td width="10%"><span style="color: green; font-weight: bold;">课时</span></td>
+                            <td width="15%"><span style="color: green; font-weight: bold;">日期</span></td>
+                            <td width="30%"><span style="color: green; font-weight: bold;">内容</span></td>
+                            <td width="20%"><span style="color: green; font-weight: bold;">课件
+                                    <span style="font-size: 14px">(当次课程结束后上传)</span>
+                                </span>
+                            </td>
+                            <td width="20%"><span style="color: green; font-weight: bold;">参考文献</span></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>第一次</td>
+                            <td>11.19</td>
+                            <td>物联网基础知识1</td>
+                            <td   rowspan="2" style="vertical-align: middle;">    <!--  由于rowspan=2，就是同一列中两行合并，下面第二次课的那列td可以注释掉 -->
+                                <a href="courses/iot_slides/第一章-物联网概述.pdf" target="_blank" download>课件</a>
+                                /
+                                <a href="courses/iot_slides/作业1.docx" target="_blank" download>HW1</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第二次</td>
+                            <td>11.21</td>
+                            <td>物联网基础知识2</td>
+                            <!-- <td>
+                                <a href="courses/iot_slides/第一章-物联网概述.pdf" target="_blank" download>课件1</a>
+                                /
+                                <a href="courses/iot_slides/作业1.docx" target="_blank" download>HW1</a>
+                            </td> -->
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第三次</td>
+                            <td>11.25(补11.12课)</td>
+                            <td>专题1：语音安全</td>
+                            <td rowspan="2"  style="vertical-align: middle;">
+                                <a href="courses/iot_slides/专题一语音安全-公开版.pdf" target="_blank" download>课件</a>
+                                /
+                                <a href="courses/iot_slides/HW2.pptx" target="_blank" download>HW2</a><br>
+
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第四次</td>
+                            <td>11.26</td>
+                            <td>
+                                专题1：语音安全
+                            </td>
+                            <!-- <td>
+                                <a href="courses/iot_slides/第一章-物联网概述.pdf" target="_blank" download>专题1</a>
+                                /
+                                <a href="courses/iot_slides/作业1.docx" target="_blank" download>HW2</a>
+                            </td> -->
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第五次</td>
+                            <td>11.28</td>
+                            <td>信息安全基础知识——古典密码学</td>
+                            <td>
+                                <a href="courses/iot_slides/第三章-安全理论基础-古典密码学.pdf" target="_blank" download>课件</a>
+                                /
+                                <a href="courses/iot_slides/ruantaitai.py" target="_blank" download>参考代码</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第六次</td>
+                            <td>12.03</td>
+                            <td>信息安全基础知识——现代密码学</td>
+                            <td><a href="courses/iot_slides/物联网安全现代密码学.pdf" target="_blank" download>课件</a>
+                                \
+                                <a href="courses/iot_slides/课件勘误-现代密码学.pdf" target="_blank" download>课件勘误</a>
+                            </td>
+                            <td></td>
+                            <!-- <td>课件11 / <a href="courses/iot_slides/Ch12 边缘计算.pdf" target="_blank">课件12</a></td> -->
+                        </tr>
+                        <tr>
+                            <td>第七次</td>
+                            <td>12.05</td>
+                            <td>终端安全：设备认证</td>
+                            <td><a href="courses/iot_slides/第四章-物联网终端安全-认证安全.pdf" target="_blank" download>课件</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第八次</td>
+                            <td>12.10</td>
+                            <td>终端安全：传感器安全</td>
+                            <td><a href="courses/iot_slides/第五章-物联网终端安全-传感器和执行器.pdf" target="_blank" download>课件</a>
+                                /
+                                <a href="courses/iot_slides/HW3.pptx" target="_blank" download>HW3</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第九次</td>
+                            <td>12.12</td>
+                            <td>终端安全：芯片安全</td>
+                            <td><a href="courses/iot_slides/物联网安全书PPT芯片安全.pdf" target="_blank" download>课件</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第十次</td>
+                            <td>12.17</td>
+                            <td>终端安全：软件安全</td>
+                            <td>
+                                <a href="courses/iot_slides/物联网软件安全概述.pdf" target="_blank" download>课件</a>
+                                /
+                                <a href="courses/iot_slides/软件安全参考代码.zip" target="_blank" download>参考代码</a>
+                                /
+                                <a href="courses/iot_slides/HW4&5.pdf" target="_blank" download>HW4&5</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第十一次</td>
+                            <td>12.19 / 12.24</td>
+                            <td>专题二：边缘计算及其安全</td>
+                            <td>
+                                <a href="courses/iot_slides/边缘计算.pdf" target="_blank" download>课件</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第十二次</td>
+                            <td>12.26</td>
+                            <td>协议流量安全</td>
+                            <td>
+                                <a href="courses/iot_slides/第八章-物联网协议流量安全.pdf" target="_blank" download>课件</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第十三次</td>
+                            <td>12.30(补两节课)</td>
+                            <td>AI安全</td>
+                            <td>
+                                <a href="courses/iot_slides/人工智能的安全与隐私.pdf" target="_blank" download>课件</a>
+                                /
+                                <a href="courses/iot_slides/scaling attack.zip" target="_blank" download>scaling attack例子</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第十四次</td>
+                            <td>1.2</td>
+                            <td>物联网业务及云安全</td>
+                            <td>
+                                <a href="courses/iot_slides/第九章-物联网业务安全.pdf" target="_blank" download>课件(业务安全)</a>
+                                /
+                                <a href="courses/iot_slides/第九章-物联网云安全.pdf" target="_blank" download>课件（云安全）</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第十五次</td>
+                            <td>1.4(补一节课)</td>
+                            <td>总结复习</td>
+                            <td>
+                                <a href="courses/iot_slides/课件汇总.7z" target="_blank" download>课件汇总</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>第十六次</td>
+                            <td>1.6</td>
+                            <td>课堂展示(探究实验比赛*)</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1.11</td>
+                            <td>考试</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                </table>
+                <br />
+                <!-- <b> •课程架构</b> <br />
+                <img width="50%" src="images/iot_security_structure-min.png"> -->
+
+                <b> • 实验安排 </b> <br>
+                <ol>
+                    <li>12.2基础实验课，12.9探究性实验课</li>
+                    <li><a href="courses/iot_slides/参考文献.ppt" target="_blank" download>参考文献目录</a>
+                        /
+                        <a href="courses/iot_slides/参考文献.zip" target="_blank" download>参考文献资料</a>
+                    </li>
+                </ol>
+                <br />
+
+                <b> • 实验数据集 </b>
+                <ol>
+                    <li>探究性实验可以实现ASVspoof 2019，Automatic Speaker Verification Spoofing And Countermeasures Challenge，<a href="https://www.asvspoof.org" target="_blank">https://www.asvspoof.org</a></li>
+                    <li>数据下载：语音活体检测数据集：https://github.com/YuanGongND/ReMASC</li>
+                    <li><a href="courses/iot_slides/TIMIT_recorded_recovered.rar" target="_blank" download>海豚音数据集</a></li>
+                    <br>
+                </ol>
+                <br />
+
+                <b> • 实验报告及要求 </b>
+                <ol>
+                    <li>
+                        <a href="courses/iot_slides/探究性实验报告模板-物联网安全.doc" target="_blank" download>探究性实验报告格式</a>
+                    </li>
+                    <li><a href="courses/iot_slides/基础实验报告要求.doc" target="_blank" download>基础实验报告要求</a>
+                    <li>提交：探究性实验报告、PPT、核心软件代码、演示视频、硬件设计图如（PCB）等，邮件发送至3150104922@zju.edu.cn或者U盘拷贝给助教。文件和邮件命名格式：探究性实验_王三_3170100000。DDL：1.16下午5点前。纸质版实验报告考试时候交</li>
+                </ol>
+                <br />
+
+                <b> • 成绩组成 </b> <br />
+                <ol>
+                    <li>期末考试(50%)：中文闭卷考试 <br /></li>
+                    <li>实验课程(30%)：实验成绩：基本实验(20%) + 探究实验(10%)<br /></li>
+                    <li>课后作业(15%)：3次作业 <br /></li>
+                    <li>课堂表现(5%)</li>
+                </ol>
+                <br />
+
+                <b>希望大家享受这门课程！</b>
+
+                <br />
+                <!-- <b> • 实验课程设计 </b> <br />
+                - 2人一组，需要分工明确，按照个人打分<br/>
+                - 基础实验2次<br/>
+                <li>"海豚音"攻击最小系统实现<br/>
+                <li>TBD (管道协议破解 / 流量分析)<br/>
+                - 探究实验2次<br/>
+                &emsp; - "海豚音"攻击拓展延伸<br />
+                &emsp;&emsp; - 攻击距离、角度、应用场景；攻击方式，如<a href="https://lightcommands.com/">Lightcommand</a>等等<br/>
+                &emsp; - 语音活体检测<br />
+                &emsp;&emsp; - 真人和扬声器分别播放同一段声音，如"Hey, Siri"，识别出人和扬声器，使用声音相关的任何方法都可以！<br/>
+                &emsp;&emsp; - 查阅文献集思广益<br/>
+                - 举办IoT CTF，各队进行现场演示和PPT讲解进行评比<br />
+
+                <b> • 实验一: 基于麦克风非线性作用的语音系统安全攻击与防护</b><br/>
+                - 实验描述：本实验要求学生结合理论课程中物联网终端传感器安全核心技术，结合信号分析和处理技术，基于矢量信号发生器、频谱分析仪、示波器、超声波发生器等设备，观察麦克风非线性作用；针对智能语音系统，实现基于器件非线性作用的安全攻击，并进行防护机制设计。<br />
+                - 实验性质：必做<br />
+                - 实验形式：2人一组<br />
+                - 设备要求：信号发生器、示波器、超声波探头（>30个）、音频连接线<br />
+                - 实验步骤：“海豚音”攻击重现，基于单超声波探头，实现对手机或者电脑等设备的攻击<br />
+                - 探究实验：对攻击效果（如攻击距离、角度等）进行拓展，或者增加防护，如识别、对抗攻击等。<br /><br />
+                &emsp; <b> • 详细实验步骤 </b><br/>
+                &emsp; - 1. 下载TTS工具<br />
+                &emsp; - 2. 连接手机、信号发生器、超声波探头<br />
+                &emsp; - 3. 调试信号发生器参数<br />
+                &emsp; - 4. 在手机上播放攻击声音<br />
+                &emsp; - 5. 在被攻击手机上观察是否成功<br />
+
+                <br />
+
+                <b> • 实验二: 基于流量特征的物联网设备探测</b><br/>
+                - 实验描述：本实验要求学生结合理论课程中物联网管道流量和协议安全核心技术，结合数据统计和分析技术，利用wireshark等抓包工具、频谱分析仪等设备，观察并分析不同物联网设备的流量特性；针对摄像头等典型设备，实现基于流量特性的设备探测。<br />
+                - 实验性质：必做<br />
+                - 实验形式：2人一组<br />
+                - 设备需求：电脑、wireshark；录制好的流量包<br />
+                - 实验步骤：<br/>
+                &emsp; - 教师搭建好场景，其中包括若干物联网设备，如摄像头、录音笔等<br />
+                &emsp; - 学生通过wireshark采集流量包，分析其中设备的流量特征<br />
+                <br/><br/> -->
+            </div>
+            <br />
+        </div>
+
+        <div class="ui inverted vertical footer segment">
+            <div class="ui center aligned container">
+                <!--<img src="assets/images/logo.png" class="ui centered mini image">-->
+                <div class="ui horizontal inverted small divided link list">
+                    Copyright &copy; USS Lab. 2016-2017
+                    <br /> Zhejiang University, Hangzhou, Zhejiang, China. 310027
+                    <br /> All Right Reserved.
+                    <br />
+                    <a class="beian" href="http://www.miitbeian.gov.cn/" target="_blank">
+                        <b>浙ICP备16045554号-1</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
